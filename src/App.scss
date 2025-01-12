@@ -1,0 +1,113 @@
+@use '@/styles/variable.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Ephesis&family=Frijole&family=Russo+One&family=Sigmar&display=swap');
+
+#root {
+ width: 100%;
+ display: flex;
+ flex-shrink: 0;
+}
+
+.sidebar {
+ top: 0;
+ left: 0;
+ width: 45px;
+ height: 80%;
+ display: flex;
+ position: fixed;
+ padding-top: 50px;
+ align-items: center;
+ padding-bottom: 80px;
+ text-orientation: mixed;
+ writing-mode: vertical-lr;
+ border-radius: 0 0 80px 0px;
+ justify-content: space-between;
+ background-color: $secondary-color-cards;
+}
+
+.navbar {
+ bottom: 0;
+ width: 17em;
+ display: flex;
+ position: fixed;;
+ padding: 15px 30px 8px 30px;
+ border-radius: 35px 35px 0 0;
+ justify-content: space-between;
+ box-shadow: 0px -3px 3px $primary-color-cards;
+}
+
+.navbar .items {
+ display: flex;
+ position: relative;
+ justify-content: center;
+}
+
+.navbar:has(.icons) {
+ color: $primary-color-icons;
+}
+
+.cards {
+ gap: 10px;
+ width: 100%;
+ display: flex;
+ padding: 0 60px 0 75px;
+ flex-direction: column;
+}
+
+.header-cards {
+ color: $primary-color-text;
+}
+
+.header-cards .title {
+ font-size: 25px;
+ font-weight: 600;
+ text-transform: capitalize;
+ font-family: "Russon one", serif;
+}
+
+.box-cards {
+ display: flex;
+ width: 15rem;
+ height: 18rem;
+ align-items: start;
+ border-radius: 15px;
+ flex-direction: column;
+ justify-content: center;
+ background-color: $secondary-color-cards;
+}
+
+.box-image-cards {
+ width: 100%;
+ height: 80%;
+ position: relative;
+ border-radius: 15px 15px;
+ background-color: $primary-color-cards;
+}
+
+.description-cards {
+ padding: 10px;
+ position: relative;
+ padding-right: 40px;
+}
+
+.description-cards .box-icons .icons {
+ font-size: 20px;
+}
+
+.description-cards .box-icons {
+ padding: 7px;
+ right: -5px;
+ bottom: -5px;
+ display: flex;
+ align-items: center;
+ position: absolute;
+ border-radius: 50%;
+ background-color: $secondary-color-cards;
+ border: 4px solid $primary-color-background;
+}
+ 
+.reminder {
+ padding: 10px;
+ margin-top: 20px;
+ border-radius: 10px;
+ background-color: $secondary-color-cards;
+}

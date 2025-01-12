@@ -1,0 +1,21 @@
+{
+  "name": "Reminders Apps",
+  "short_name": "Reminder",
+  "description": "an encyclopedia website about dinosaurs and provides information about prehistoric times",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05210a",
+  "theme_color": "#0b2810",
+  "icons": [
+    {
+      "src": "/src/assets/dinosaurus.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/assets/dinosaurus.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
