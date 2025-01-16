@@ -2,14 +2,24 @@ import Cards from '@/components/cards';
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
 import Sidebar from '@/components/sidebar';
+import { useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 
 const userJSON = localStorage.getItem('user');
 const user = JSON.parse(userJSON);
 
-const Home = ({ datas }) => {
+const Home = () => {
+  const location = useLocation();
   const [ userData, setUserData ] = useState({});
-  const { name, kelas, email } = userData;
+  
+  useEffect(() => { setUserData(user) }, [userData])
+  
+  const { dataLogin } = location.state || {};
+  const { name, kelas, email } = userData || dataLogin;
+  
+  useEffect(() => {
+   localStorage.setItem('user', JSON.stringify(dataLogin));
+  }, [dataLogin])
   
   const data = [
     { description: 'Deskripsi 1', hadits: 'Hadits 1' },
@@ -18,7 +28,6 @@ const Home = ({ datas }) => {
     { description: 'Deskripsi 4', hadits: 'Hadits 4' },
   ];
   
-  useEffect(() => { setUserData(user) }, [])
   
   return (
    <div className='container'>

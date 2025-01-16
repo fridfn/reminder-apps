@@ -1,4 +1,4 @@
-import Reaxt from 'react';
+import React from 'react';
 import property from '@/property';
 import generateRandomValue from '@/utils/generateRandomValue';
 

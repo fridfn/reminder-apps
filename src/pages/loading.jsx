@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate,  } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import ComponentImages from '@/components/common/componentImages';
 import Image from '@/components/common/image';
 import kids from '@/assets/ornament/kid_muslim.webp';
@@ -25,7 +25,9 @@ const Loading = () => {
   
   const handleSubmit = (e) => {
    e.preventDefault();
-   localStorage.setItem('user', JSON.stringify(formData));
+   
+   navigate('/home');
+   handleFullscreen();
   }
   
   return (
@@ -67,10 +69,7 @@ const Loading = () => {
           onChange={handleChange}
         />
        </div>
-        <button type='submit' onClick={() => {
-         navigate('/home')
-         handleFullscreen();
-        }}>Masuk</button>
+        <Link className='button' to='/home' state={{ dataLogin: formData }}>Masuk</Link>
       </form>
     </div>
     <div className='name-apps'>

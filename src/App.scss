@@ -234,12 +234,12 @@
  background-color: $primary-color-cards;
 }
 
-.wrapper-form form .wrapper input, .wrapper-form form button {
+.wrapper-form form .wrapper input, .wrapper-form form .button {
  transition: all .3s ease-in-out;
  box-shadow: .8px 2px 2px $primary-color-shadow;
 }
 
-.wrapper-form form button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text {
+.wrapper-form form .button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text {
  font-weight: 600;
 }
 
@@ -265,16 +265,19 @@
  color: $secondary-color-text;
 }
 
-.wrapper-form form button, .wrapper-form form .wrapper input {
+.wrapper-form form .button, .wrapper-form form .wrapper input {
  height: 35px;
  padding: 0px 15px;
 }
 
-.wrapper-form form button {
+.wrapper-form form .button {
  width: 250px;
+ display: grid;
  font-size: 16px;
  margin-top: 20px;
+ place-items: center;
  border-radius: 20px;
+ text-decoration: none;
  border: 1px solid transparent;
  background-color: $secondary-color-cards;
 }
