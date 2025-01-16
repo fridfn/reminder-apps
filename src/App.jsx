@@ -1,19 +1,22 @@
 import '@/App.scss';
 import '@/styles/pseudo.scss';
-import Cards from '@/components/cards';
-import Sidebar from '@/components/sidebar';
-import Navbar from '@/components/navbar';
+import Home from '@/pages/home';
+import Loading from '@/pages/loading';
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='container'>
-      <Sidebar />
-        <Cards />
-      <Navbar />
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Loading />} />
+          <Route path='/home' element={<Home />} />
+        </Routes>
+      </Router>
+    </>
   )
 }
 

@@ -1,5 +1,5 @@
 @use '@/styles/variable.scss' as *;
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Ephesis&family=Frijole&family=Russo+One&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Ephesis&family=Frijole&family=Pattaya&family=Russo+One&family=Sigmar&display=swap');
 
 #root {
  width: 100%;
@@ -10,8 +10,9 @@
 .sidebar {
  top: 0;
  left: 0;
+ z-index: 20;
  width: 45px;
- height: 80%;
+ height: 85%;
  display: flex;
  position: fixed;
  padding-top: 50px;
@@ -46,11 +47,39 @@
 }
 
 .cards {
- gap: 10px;
- width: 100%;
+ gap: 20px;
+ width: 260px;
  display: flex;
- padding: 0 60px 0 75px;
  flex-direction: column;
+}
+
+.container-cards {
+ transform: scale(.8);
+ scroll-snap-align: start;
+ transition: transform .3s linear;
+}
+
+.header {
+ width: 250px;
+ display: flex;
+ position: relative;
+ margin-bottom: 10px;
+}
+
+.header .text {
+ font-size: 12px;
+ font-weight: 500;
+}
+
+.header .box-notification {
+ position: absolute;
+ right: -35px;
+ top: -5px;
+}
+
+.header .icons {
+ font-size: 1.8em;
+ color: $primary-color-icons;
 }
 
 .header-cards {
@@ -66,7 +95,7 @@
 
 .box-cards {
  display: flex;
- width: 15rem;
+ width: 100%;
  height: 18rem;
  align-items: start;
  border-radius: 15px;
@@ -85,12 +114,13 @@
 
 .description-cards {
  padding: 10px;
+ height: 80px;
  position: relative;
- padding-right: 40px;
+ padding-right: 45px;
 }
 
 .description-cards .box-icons .icons {
- font-size: 20px;
+ font-size: 24px;
 }
 
 .description-cards .box-icons {
@@ -101,13 +131,150 @@
  align-items: center;
  position: absolute;
  border-radius: 50%;
+ border: 5px solid;
+ border-top: solid 7px;
+ border-left: solid 7px;
+ border-color: $primary-color-background;
  background-color: $secondary-color-cards;
- border: 4px solid $primary-color-background;
 }
  
 .reminder {
- padding: 10px;
- margin-top: 20px;
+ padding: 20px;
+ min-height: 180px;
+ min-height: 180px;
  border-radius: 10px;
+ background-color: $secondary-color-cards;
+}
+
+.wrapper-reminder {
+ gap: 1em;
+ display: flex;
+ text-align: center;
+ flex-direction: column;
+}
+
+.reminder .arab, .reminder .hadits-surah {
+ font-size: 17px;
+ font-weight: 600;
+}
+
+.section-cards {
+ display: flex;
+ flex-shrink: 0;
+ left: 50px;
+ width: 350px;
+ position: relative;
+ overflow-y: scroll;
+ padding-right: 100px;
+ padding-bottom: 25px;
+ scroll-snap-type: x mandatory;
+ scrollbar-color: $primary-color-text #000000;
+}
+
+.pages-loading {
+ width: 100%;
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.pages-loading .component-images {
+ width: 100%;
+ position: absolute;
+ object-fit: contain;
+}
+
+.wrapper-lantern .component-images {
+ z-index: -1;
+ width: 90px;
+ height: 130px;
+ position: absolute;
+ object-fit: contain;
+}
+
+.wrapper-form, .wrapper-form form {
+ gap: 15px;
+ width: 250px;
+ height: 300px;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.wrapper-form form .wrapper label {
+ margin-left: 10px;
+}
+
+.wrapper-form form .wrapper {
+ gap: 5px;
+ display: flex;
+ font-size: 15px;
+ flex-direction: column;
+}
+
+.wrapper-form form .wrapper [name='email'] {
+ text-transform: none;
+}
+.wrapper-form form .wrapper [name='kelas'] {
+ text-transform: uppercase;
+}
+
+.wrapper-form form .wrapper input {
+ width: 250px;
+ outline: none;
+ font-weight: 600;
+ border-radius: 20px;
+ min-inline-size: 7ch;
+ field-sizing: content;
+ text-transform: capitalize;
+ border: 2px solid transparent;
+ background-color: $primary-color-cards;
+}
+
+.wrapper-form form .wrapper input, .wrapper-form form button {
+ transition: all .3s ease-in-out;
+ box-shadow: .8px 2px 2px $primary-color-shadow;
+}
+
+.wrapper-form form button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text {
+ font-weight: 600;
+}
+
+.text-login-form {
+ font-size: 50px;
+ margin-top: 120px;
+ margin-bottom: 30px;
+ letter-spacing: 2px;
+ color: $secondary-color-text;
+ font-family: 'Pattaya', serif;
+}
+
+.name-apps .copyright {
+ font-size: 13px;
+ text-align: center;
+ margin: 5px 0 20px 0;
+ color: $primary-color-text;
+}
+
+.name-apps .text {
+ font-size: 17px;
+ text-align: center;
+ color: $secondary-color-text;
+}
+
+.wrapper-form form button, .wrapper-form form .wrapper input {
+ height: 35px;
+ padding: 0px 15px;
+}
+
+.wrapper-form form button {
+ width: 250px;
+ font-size: 16px;
+ margin-top: 20px;
+ border-radius: 20px;
+ border: 1px solid transparent;
  background-color: $secondary-color-cards;
 }

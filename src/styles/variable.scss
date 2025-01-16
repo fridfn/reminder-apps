@@ -1,7 +1,25 @@
 $secondary-color-text: #FCFEF9;
-$primary-color-text: #585F3B;
-$primary-color-cards: #907951;
-$secondary-color-cards: #565E47;
-$primary-color-icons: #585F3B;
-$secondary-color-icons: #585F3B;
-$primary-color-background: #d0cc87;
+$primary-color-text: #D9D9E8;
+$primary-color-cards: #7787BE;
+$secondary-color-cards: #2F3E6D;
+$primary-color-icons: #7787BE;
+$secondary-color-text: #D9D9E8;
+$primary-color-shadow: #8eaaff;
+$primary-color-border: #a97525;
+$secondary-color-icons: #7787BE;
+$primary-color-background: #202848;
+
+
+@keyframes scale_effect {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+$scale-effect: scale_effect;

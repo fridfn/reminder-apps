@@ -1,18 +1,11 @@
-import React from 'react';
-import muslimWoman1 from '@/assets/muslim_woman_1.webp';
+import React, { useEffect, useRef } from 'react';
+import property from '@/property';
+import generateRandomValue from '@/utils/generateRandomValue';
 
-const Cards = () => {
+const Cards = ({ data }) => {
+  const itemRef = useRef([]);
   const handleMenu = (e) => {
    e.preventDefault();
-  }
-  
-  const HeaderCards = ({ title }) => {
-   return (
-     <div className='header-cards'>
-       <p className='md-txt title'>Hello, {title}!</p>
-       <p className='tny-txt'>Jangan malas malasan yah</p>
-     </div>
-   )
   }
   
   const Description = ({ desc }) => {
@@ -33,23 +26,61 @@ const Cards = () => {
    return (
      <div className='reminder'>
        <div className='wrapper-reminder'>
+         <p className='hadits-surah'>QS Al Isra Ayat 32</p>
+         <p className='arab'>وَلَا تَقْرَبُوا۟ ٱلزِّنَىٰٓ ۖ إِنَّهُۥ كَانَ فَٰحِشَةً وَسَآءَ سَبِيلًا</p>
          <p className='tny-txt'>eu velit nostrud esse adipisicing cupidatat labore ut eiusmod fugiat nisi veniam officia tempor minim id ex qui labore excepteur sint occaecat pariatur adipisicing officia dolor velit irure nulla elit</p>
        </div>
      </div>
    )
   }
   
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('scale');
+          } else {
+            entry.target.classList.remove('scale');
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+    itemRef.current.forEach((item) => {
+      if (item) observer.observe(item);
+    });
+
+    return () => {
+      itemRef.current.forEach((item) => {
+        if (item) observer.unobserve(item);
+      });
+    };
+  }, []);
+  
+  const images = property.home.data.image;
+  
   return (
-    <div className='cards'>
-     <HeaderCards title='farid' />
-      <div className='box-cards'>
-        <div className='box-image-cards'>
-          <img src={muslimWoman1} className='image-cards' onContextMenu={handleMenu} />
-        </div>
-        <Description />
+   <>
+    {data.map((item, index) => {
+     const randomImage = generateRandomValue(images);
+     
+     return (
+      <div key={index} className='container-cards' ref={(el) => (itemRef.current[index] = el)}>
+       <div className='cards'>
+         <div className='box-cards'>
+          <div className='box-image-cards'>
+            <img src={randomImage} className='image-cards' onContextMenu={handleMenu} />
+          </div>
+          <Description />
+         </div>
+        <Reminder />
+       </div>
       </div>
-      <Reminder />
-    </div>
+     )})}
+   </>
   )
 }
 

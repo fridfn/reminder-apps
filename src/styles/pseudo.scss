@@ -1,3 +1,4 @@
+@use '@/styles/variable.scss' as *;
 
 .navbar .items:nth-child(2):after {
  top: -45px;
@@ -5,4 +6,18 @@
  font-weight: 600;
  position: absolute;
  content: 'REMINDERS';
+}
+
+.description-cards .box-icons .icons:hover {
+ animation: $scale_effect .3s linear;
+}
+
+.wrapper-form form .wrapper input:focus {
+ border: 2px solid $primary-color-text;
+}
+
+.wrapper-form form button:hover {
+ line-height: 35px;
+ transform: translateY(5px);
+ text-shadow: 0px 1px 5px $primary-color-text;
 }
