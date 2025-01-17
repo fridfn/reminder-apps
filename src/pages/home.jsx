@@ -12,14 +12,18 @@ const Home = () => {
   const location = useLocation();
   const [ userData, setUserData ] = useState({});
   
-  useEffect(() => { setUserData(user) }, [userData])
-  
   const { dataLogin } = location.state || {};
-  const { name, kelas, email } = userData || dataLogin;
   
   useEffect(() => {
+   if (dataLogin) {
    localStorage.setItem('user', JSON.stringify(dataLogin));
-  }, [dataLogin])
+    setUserData(dataLogin)
+   } else {
+    setUserData(user)
+   }
+  }, [dataLogin, user]);
+  
+  const { name, kelas, email } = userData || dataLogin;
   
   const data = [
     { description: 'Deskripsi 1', hadits: 'Hadits 1' },

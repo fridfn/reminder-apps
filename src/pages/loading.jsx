@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Navigate, useNavigate, Link } from 'react-router-dom';
 import ComponentImages from '@/components/common/componentImages';
 import Image from '@/components/common/image';
 import kids from '@/assets/ornament/kid_muslim.webp';
@@ -13,6 +13,7 @@ const Loading = () => {
   
   const navigate = useNavigate();
   const handleFullscreen = () => document.documentElement.requestFullscreen();
+  const isAuthenticated = localStorage.getItem('authToken');
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,10 +25,15 @@ const Loading = () => {
   };
   
   const handleSubmit = (e) => {
+   localStorage.setItem('authToken', true);
    e.preventDefault();
    
-   navigate('/home');
+   navigate('/home', { state:{ dataLogin: formData } });
    handleFullscreen();
+  }
+  
+  if (isAuthenticated) {
+   return <Navigate to='/home' />;
   }
   
   return (
@@ -69,7 +75,7 @@ const Loading = () => {
           onChange={handleChange}
         />
        </div>
-        <Link className='button' to='/home' state={{ dataLogin: formData }}>Masuk</Link>
+        <button className='button'>Masuk</button>
       </form>
     </div>
     <div className='name-apps'>
