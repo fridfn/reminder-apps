@@ -29,11 +29,12 @@
  bottom: 0;
  width: 17em;
  display: flex;
- position: fixed;;
+ position: fixed;
+ margin-left: 10px;
  padding: 15px 30px 8px 30px;
  border-radius: 35px 35px 0 0;
  justify-content: space-between;
- box-shadow: 0px -3px 3px $primary-color-cards;
+ background-color: $secondary-color-cards;
 }
 
 .navbar .items {
@@ -114,43 +115,98 @@
 
 .description-cards {
  padding: 10px;
- height: 80px;
+ font-weight: 500;
+ padding-left: 13px;
  position: relative;
  padding-right: 45px;
 }
 
-.description-cards .box-icons .icons {
+.description-cards .box-icons .icons, .reminder .box-icons .icons {
  font-size: 24px;
 }
 
-.description-cards .box-icons {
+.description-cards .box-icons, .reminder .box-icons {
  padding: 7px;
  right: -5px;
  bottom: -5px;
  display: flex;
- align-items: center;
+ border: 5px solid;
  position: absolute;
  border-radius: 50%;
- border: 5px solid;
+ align-items: center;
  border-top: solid 7px;
  border-left: solid 7px;
  border-color: $primary-color-background;
  background-color: $secondary-color-cards;
 }
- 
-.reminder {
- padding: 20px;
- min-height: 180px;
- min-height: 180px;
+
+.reminder .box-icons {
+ gap: 10px;
+ z-index: 20;
+ padding: 7px 10px;
+ border-radius: 20px;
+ border-top: solid 5px;
+ border-left: solid 5px;
+ border-color: $primary-color-background;
+}
+
+.reminder .box-icons .text {
+ font-size: 13px;
+ font-weight: 600;
+}
+
+.full-hadits {
+ inset: 0;
+ width: 100%;
+ height: 0px;
+ position: absolute;
+ padding: 20px 15px;
+ visibility: hidden;
  border-radius: 10px;
+ transition: all .2s linear;
+ background-color: $secondary-color-cards;
+ box-shadow: inset 0px 4px 7px 4px $primary-color-background;
+}
+
+.full-hadits.active {
+ width: 260px;
+ height: 91%;
+ visibility: visible;
+}
+
+.full-hadits .text {
+ opacity: 0;
+}
+.full-hadits.active .text {
+ opacity: 1;
+ transition-delay: .5s;
+}
+
+.reminder {
+ padding: 15px;
+ text-align: center;
+ border-radius: 10px;
+ scrollbar-color: transparent transparent;
  background-color: $secondary-color-cards;
 }
 
 .wrapper-reminder {
  gap: 1em;
+ height: 130px;
+ padding: 10px;
  display: flex;
+ overflow: scroll;
+ padding-top: 5px;
  text-align: center;
+ border-radius: 10px;
+ align-items: center;
+ margin: 10px 0 35px 0;
  flex-direction: column;
+ box-shadow: inset 0px 3.2px 10px 0px $primary-color-background;
+}
+
+.wrapper-reminder p, .full-hadits .text, .description-cards .text {
+ font-size: .78em;
 }
 
 .reminder .arab, .reminder .hadits-surah {
@@ -239,7 +295,7 @@
  box-shadow: .8px 2px 2px $primary-color-shadow;
 }
 
-.wrapper-form form .button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text {
+.wrapper-form form .button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text, .full-hadits .text {
  font-weight: 600;
 }
 

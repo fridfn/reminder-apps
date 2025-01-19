@@ -1,18 +1,31 @@
 import Cards from '@/components/cards';
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
+import fetchData from '@/utils/fetchData';
 import Sidebar from '@/components/sidebar';
 import { useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
+
+const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-110`;
 
 const userJSON = localStorage.getItem('user');
 const user = JSON.parse(userJSON);
 
 const Home = () => {
   const location = useLocation();
+  const [ dataHadits, setDataHadits ] = useState([]);
   const [ userData, setUserData ] = useState({});
   
+  const { id, name, hadiths } = dataHadits;
   const { dataLogin } = location.state || {};
+  
+  useEffect(() => {
+   const handlerFetchData = async () => {
+    const data = await fetchData(endpoint);
+    setDataHadits(data.data);
+   }
+   handlerFetchData();
+  }, [])
   
   useEffect(() => {
    if (dataLogin) {
@@ -23,22 +36,18 @@ const Home = () => {
    }
   }, [dataLogin, user]);
   
-  const { name, kelas, email } = userData || dataLogin;
-  
-  const data = [
-    { description: 'Deskripsi 1', hadits: 'Hadits 1' },
-    { description: 'Deskripsi 2', hadits: 'Hadits 2' },
-    { description: 'Deskripsi 3', hadits: 'Hadits 3' },
-    { description: 'Deskripsi 4', hadits: 'Hadits 4' },
-  ];
-  
+  const { nama, kelas, email } = userData || dataLogin;
   
   return (
    <div className='container'>
      <Sidebar />
-     <Header title={name} />
+     <Header title={nama} />
      <section className='section-cards'>
-       <Cards data={data} />
+      {hadiths && hadiths.length > 0 ? (
+       <Cards data={hadiths} detail={dataHadits} />
+       ) : (
+        <p>loading</p>
+      )}
      </section>
      <Navbar />
    </div>

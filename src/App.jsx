@@ -2,6 +2,7 @@ import '@/App.scss';
 import '@/styles/pseudo.scss';
 import Home from '@/pages/home';
 import Loading from '@/pages/loading';
+import NotFound from '@/pages/notFound';
 import React, { useState } from 'react';
 import ProtectedRoute from '@/protectedRoute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -19,7 +20,8 @@ function App() {
            <ProtectedRoute>
              <Home />
            </ProtectedRoute>
-          } />
+          }/>
+          <Route path='*' element={ <NotFound/>}/>
         </Routes>
       </Router>
     </>

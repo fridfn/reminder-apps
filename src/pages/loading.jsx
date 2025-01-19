@@ -6,13 +6,12 @@ import kids from '@/assets/ornament/kid_muslim.webp';
 
 const Loading = () => {
   const [ formData, setFormData ] = useState({
-   name: '',
+   nama: '',
    kelas: '',
    email: '',
   });
   
   const navigate = useNavigate();
-  const handleFullscreen = () => document.documentElement.requestFullscreen();
   const isAuthenticated = localStorage.getItem('authToken');
   
   const handleChange = (e) => {
@@ -27,6 +26,8 @@ const Loading = () => {
   const handleSubmit = (e) => {
    localStorage.setItem('authToken', true);
    e.preventDefault();
+   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+   console.log(regexEmail.test(email))
    
    navigate('/home', { state:{ dataLogin: formData } });
    handleFullscreen();
@@ -46,12 +47,12 @@ const Loading = () => {
       <p className='text-login-form'>Login</p>
       <form onSubmit={handleSubmit}>
        <div className='wrapper'>
-        <label htmlFor='name'>Nama Pengguna</label>
+        <label htmlFor='nama'>Nama Pengguna</label>
         <input 
           type='text'
-          id='name'
-          name='name'
-          value={formData.name}
+          id='nama'
+          name='nama'
+          value={formData.nama}
           onChange={handleChange}
         />
        </div>
