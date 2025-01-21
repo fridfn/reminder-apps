@@ -1,5 +1,5 @@
 @use '@/styles/variable.scss' as *;
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Ephesis&family=Frijole&family=Pattaya&family=Russo+One&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Caveat+Brush&family=Ephesis&family=Frijole&family=Pattaya&family=Russo+One&family=Sigmar&display=swap');
 
 #root {
  width: 100%;
@@ -17,12 +17,31 @@
  position: fixed;
  padding-top: 50px;
  align-items: center;
- padding-bottom: 80px;
+ padding-bottom: 100px;
  text-orientation: mixed;
  writing-mode: vertical-lr;
  border-radius: 0 0 80px 0px;
  justify-content: space-between;
  background-color: $secondary-color-cards;
+}
+
+.sidebar nav {
+ display: flex;
+ font-size: 10px;
+ position: relative;
+ justify-content: center;
+ text-transform: uppercase;
+ font-family: 'Russo One', serif;
+}
+
+.is-active-page {
+ width: 25px;
+ height: 25px;
+ right: -25px;
+ position: absolute;
+ border-radius: 50%;
+ background-color: $primary-color-text;
+ border: 8px solid $primary-color-background;
 }
 
 .navbar {
@@ -41,6 +60,7 @@
  display: flex;
  position: relative;
  justify-content: center;
+ color: $primary-color-text;
 }
 
 .navbar:has(.icons) {
@@ -92,6 +112,14 @@
  font-weight: 600;
  text-transform: capitalize;
  font-family: "Russon one", serif;
+}
+
+.header-sec {
+ left: 0%;
+ padding: 7px 35px;
+ position: relative;
+ border-radius: 10px;
+ background-color: $secondary-color-cards;
 }
 
 .box-cards {
@@ -158,7 +186,7 @@
 .full-hadits {
  inset: 0;
  width: 100%;
- height: 0px;
+ height: 91%;
  position: absolute;
  padding: 20px 15px;
  visibility: hidden;
@@ -168,18 +196,8 @@
  box-shadow: inset 0px 4px 7px 4px $primary-color-background;
 }
 
-.full-hadits.active {
- width: 260px;
- height: 91%;
- visibility: visible;
-}
-
 .full-hadits .text {
  opacity: 0;
-}
-.full-hadits.active .text {
- opacity: 1;
- transition-delay: .5s;
 }
 
 .reminder {
@@ -336,4 +354,76 @@
  text-decoration: none;
  border: 1px solid transparent;
  background-color: $secondary-color-cards;
+}
+
+.content-first {
+ width: 100%;
+ height: 100px;
+ display: flex;
+ align-items: center;
+ border-radius: 10px;
+ padding: 10px 15px;
+ padding-right: 30px;
+// border: 2px solid white;
+ background-color: $secondary-color-cards;
+}
+
+.content-first .wrapper-text {
+ width: 300px;
+ font-size: 28px;
+ text-align: start;
+ text-transform: uppercase;
+ font-family: 'Caveat Brush', serif;
+}
+
+.content-first .box-image {
+ width: 125px;
+ height: 100%;
+ position: relative;
+}
+
+.content-first .wrapper-info {
+ display: flex;
+ text-align: end;
+ font-size: 10px;
+ justify-content: end;
+ flex-direction: column;
+}
+
+.content-first .box-image .component-images {
+ width: 100px;
+ bottom: -10px;
+ position: absolute;
+ filter: drop-shadow(4px -5px 0px $primary-color-background);
+}
+
+.section-reminder {
+ gap: 30px;
+ width: 350px;
+ display: flex;
+ padding-left: 10%;
+ position: relative;
+ flex-direction: column;
+ //border: 2px solid green;
+}
+
+.section-reminder .wrapper {
+ display: flex;
+ justify-content: space-between;
+}
+
+.container-reminder .wrapper {
+ display: flex;
+ justify-content: end;
+ //border: 2px solid red;
+}
+
+.container-reminder:nth-child(1) {
+ width: 130px;
+ border: 2px solid blue;
+}
+
+.container-reminder:nth-child(2) {
+ width: 100%;
+ border: 2px solid red;
 }

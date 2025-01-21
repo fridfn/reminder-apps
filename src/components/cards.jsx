@@ -11,14 +11,14 @@ const Cards = ({ data, detail }) => {
   
   const Description = ({ quote }) => {
    return (
-     <div className='description-cards'>
-       <div className='description'>
-          <p className='text'>{quote}</p>
-       </div>
-       <div className='box-icons'>
-         <ion-icon name='heart' class='icons'></ion-icon>
-       </div>
-     </div>
+    <div className='description-cards'>
+      <div className='description'>
+         <p className='text'>{quote}</p>
+      </div>
+      <div className='box-icons'>
+        <ion-icon name='heart' class='icons'></ion-icon>
+      </div>
+    </div>
    )
   }
   
@@ -50,7 +50,7 @@ const Cards = ({ data, detail }) => {
     };
   }, []);
   
-  const images = property.home.data.image;
+  const images = property.pages.home.data.image;
   
   return (
    <>

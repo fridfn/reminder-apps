@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import muslimWoman5 from '@/assets/muslim_woman_5.webp';
+import Image from '@/components/common/image';
 
 const Reminder = ({ hadits, riwayat }) => {
   const { name, number } = riwayat;
@@ -33,6 +35,31 @@ const Reminder = ({ hadits, riwayat }) => {
      <div className='full-hadits' ref={fullHaditsRef}>
        <p className='text'>{hadits}</p>
      </div>
+   </div>
+  )
+}
+
+
+export const ReminderSec = ({ text, data }) => {
+  return (
+   <div className='container-reminder'>
+   <div className='wrapper'>
+    <div className='content-first'>
+     {text ? (
+      <div className='wrapper-text'>
+        <p className='text'>Jangan Asal Dalam Beramal</p>
+      </div>) : (null)}
+      {data ? (
+      <div className='box-image'>
+        <Image image={muslimWoman5}/>
+      </div>) : (
+       <div className='wrapper-info'>
+        <p className='text'>Post : 21 Januari 2025</p>
+        <p className='text'>Sumber : faridfathoni.com</p>
+       </div>
+       )}
+     </div>
+    </div>
    </div>
   )
 }

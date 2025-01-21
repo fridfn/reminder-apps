@@ -21,3 +21,28 @@
  transform: translateY(5px);
  text-shadow: 0px 1px 5px $primary-color-text;
 }
+
+
+//// SECTION JAVASCRIPT ACTIVE MODE ////
+
+
+.full-hadits.active {
+ width: 260px;
+ height: 91%;
+ visibility: visible;
+}
+
+.full-hadits.active .text {
+ opacity: 1;
+ transition: opacity 1s linear;
+ transition-delay: .5s;
+}
+
+.is-active-page.active {
+ animation: $scale_effect .4s linear;
+}
+
+.sidebar nav .text.active {
+ margin-right: 10px;
+ transition: all .3s linear;
+}

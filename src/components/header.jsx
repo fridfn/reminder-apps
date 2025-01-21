@@ -3,7 +3,7 @@ import property from '@/property';
 import generateRandomValue from '@/utils/generateRandomValue';
 
 const Header = ({ title }) => {
-  const motivation = property.home.data.motivation;
+  const motivation = property.pages.home.data.motivation;
   const randomMotivation = generateRandomValue(motivation);
   
   return (
@@ -15,6 +15,14 @@ const Header = ({ title }) => {
      <div className='box-notification'>
        <ion-icon name='notifications' class='icons'></ion-icon>
      </div>
+   </div>
+  )
+}
+
+export const HeaderSec = ({ title }) => {
+  return (
+   <div className='header-sec'>
+     <p className='text'>{title}</p>
    </div>
   )
 }

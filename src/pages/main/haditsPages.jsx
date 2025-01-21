@@ -6,12 +6,12 @@ import Sidebar from '@/components/sidebar';
 import { useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 
-const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-110`;
+const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-120`;
 
 const userJSON = localStorage.getItem('user');
 const user = JSON.parse(userJSON);
 
-const Home = () => {
+const HaditsPages = () => {
   const location = useLocation();
   const [ dataHadits, setDataHadits ] = useState([]);
   const [ userData, setUserData ] = useState({});
@@ -40,7 +40,7 @@ const Home = () => {
   
   return (
    <div className='container'>
-     <Sidebar />
+     <Sidebar active='hadits'/>
      <Header title={nama} />
      <section className='section-cards'>
       {hadiths && hadiths.length > 0 ? (
@@ -54,4 +54,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default HaditsPages;
