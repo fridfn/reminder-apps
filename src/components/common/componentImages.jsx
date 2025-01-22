@@ -3,8 +3,8 @@ import property from '@/property';
 import EachUtils from '@/utils/eachUtils';
 
 const ComponentImages = ({ pages, getting, img }) => {
-  const values = property[pages][getting][img]
-  const { image, position, space } = property[pages][getting][img];
+  const values = property.pages[pages][getting][img];
+  const { image, position, space } = property.pages[pages][getting][img];
   
   const disableContext = (e) => { e.preventDefault()}
   

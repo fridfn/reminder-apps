@@ -74,7 +74,7 @@ const Cards = ({ data, detail }) => {
           <div className='box-image-cards'>
             <img src={randomImage} className='image-cards' onContextMenu={handleMenu} />
           </div>
-          <Description quote={randomQuote} />
+          <Description quote={arab} />
          </div>
         <Reminder hadits={cleanHadits} riwayat={{ name, number }} />
        </div>

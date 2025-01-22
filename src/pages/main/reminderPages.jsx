@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '@/components/sidebar';
-import { ReminderSec } from '@/components/common/reminder';
+import { ReminderSec, ReminderThird } from '@/components/common/reminder';
 import { HeaderSec } from '@/components/header';
 import Navbar from '@/components/navbar';
 
@@ -12,10 +12,8 @@ const ReminderPages = () => {
     <section className='section-reminder'>
      <HeaderSec title='Reminder Of The Day' />
      <ReminderSec text={true} data={true}/>
-     
      <div className='wrapper'>
-       <ReminderSec text={false} data={true} />
-       <ReminderSec text={false} />
+      <ReminderThird />
      </div>
     </section>
    </div>

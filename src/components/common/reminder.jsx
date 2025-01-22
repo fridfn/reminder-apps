@@ -49,15 +49,26 @@ export const ReminderSec = ({ text, data }) => {
       <div className='wrapper-text'>
         <p className='text'>Jangan Asal Dalam Beramal</p>
       </div>) : (null)}
-      {data ? (
       <div className='box-image'>
         <Image image={muslimWoman5}/>
-      </div>) : (
-       <div className='wrapper-info'>
-        <p className='text'>Post : 21 Januari 2025</p>
-        <p className='text'>Sumber : faridfathoni.com</p>
-       </div>
-       )}
+      </div>
+     </div>
+    </div>
+   </div>
+  )
+}
+
+export const ReminderThird = () => {
+  return (
+   <div className='container-reminder'>
+    <div className='wrapper'>
+     <div className='wrapper-text' id='wrapped-reminder'>
+       <p className='text-title'>Rasulullah ﷺ bersabda :</p>
+       <p className='text-arab'>حَدَّثَنَا أَبُوْ بَكْرِ بْنُ أَبِيْ شَيْبَةَ حَدَّثَنَا حَفْصُ بْنُ غِيَاثٍ عَنْ دَاوُدَ عَنِ الشَّعْبِيِّ عَنْ جَرِيْرٍ قَالَ قَالَ رَسُوْلُ اللهِ صَلَّى اللهُ عَلَيْهِ وَ سَلَّمَ أَيُّمَا عَبْدٍ أَبَقَ فَقَدْ بَرِئَتْ مِنْهُ الذِّمَّ</p>
+       <div className='box'>
+        <p className='text-arti'>"Siapa pun hamba sahaya yang melarikan diri dari tuannya, maka jaminan Islam telah terlepas darinya."</p>
+        <p className='text-arti'>(HR. Muslim No. 102)</p>
+      </div>
      </div>
     </div>
    </div>
