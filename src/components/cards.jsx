@@ -50,7 +50,7 @@ const Cards = ({ data, detail }) => {
     };
   }, []);
   
-  const images = property.pages.home.data.image;
+  const images = property.pages.home.data.image
   
   return (
    <>

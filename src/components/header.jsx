@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import property from '@/property';
 import generateRandomValue from '@/utils/generateRandomValue';
 
-const Header = ({ title }) => {
-  const motivation = property.pages.home.data.motivation;
-  const randomMotivation = generateRandomValue(motivation);
+const Header = ({ title, quote }) => {
+  const [motivation, setMotivation] = useState('');
+  
+  useEffect(() => {
+   const motivation = property.pages.home.data.motivation;
+   const randomMotivation = generateRandomValue(motivation);
+   setMotivation(randomMotivation)
+  }, [])
   
   return (
    <div className='header'>
      <div className='header-cards'>
-       <p className='md-txt title'>Hello, {title}!</p>
-       <p className='text'>{randomMotivation}</p>
+       <p className='md-txt title'>{title}!</p>
+       {motivation ? (
+       <p className='text'>{!quote ? motivation : quote}</p>) : (null)}
      </div>
      <div className='box-notification'>
        <ion-icon name='notifications' class='icons'></ion-icon>

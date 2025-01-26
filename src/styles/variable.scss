@@ -22,4 +22,17 @@ $primary-color-background: #202848;
   }
 }
 
+@keyframes scale_effect_small {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 $scale-effect: scale_effect;
+$scale-effect-small: scale_effect_small;

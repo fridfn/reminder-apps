@@ -46,21 +46,30 @@
 
 .navbar {
  bottom: 0;
- width: 17em;
+ width: 18em;
  display: flex;
  position: fixed;
  margin-left: 10px;
- padding: 15px 30px 8px 30px;
+ justify-content: center;
+ padding: 10px 30px 5px 30px;
  border-radius: 35px 35px 0 0;
- justify-content: space-between;
  background-color: $secondary-color-cards;
+}
+
+.navbar .wrapper {
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
 }
 
 .navbar .items {
  display: flex;
+ padding: 5px 7px;
+ border-radius: 5px;
  position: relative;
  justify-content: center;
  color: $primary-color-text;
+ box-shadow: inset -2px 4px 3px $primary-color-background;
 }
 
 .navbar:has(.icons) {
@@ -163,11 +172,11 @@
  margin: 5px 0;
 }
 
-.description-cards .box-icons .icons, .reminder .box-icons .icons {
+.description-cards .box-icons .icons, .reminder .box-icons .icons, #wrapped-reminder .box-icons {
  font-size: 24px;
 }
 
-.description-cards .box-icons, .reminder .box-icons {
+.description-cards .box-icons, .reminder .box-icons, #wrapped-reminder .box-icons {
  padding: 7px;
  right: -5px;
  bottom: -5px;
@@ -242,7 +251,7 @@
 }
 
 .reminder .arab, .reminder .hadits-surah {
- font-size: 17px;
+ font-size: 20px;
  font-weight: 600;
 }
 
@@ -328,7 +337,7 @@
  box-shadow: .8px 2px 2px $primary-color-shadow;
 }
 
-.wrapper-form form .button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text, .full-hadits .text {
+.wrapper-form form .button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text, .full-hadits .text, .button {
  font-weight: 600;
 }
 
@@ -373,7 +382,7 @@
 
 .content-first {
  width: 100%;
- height: 100px;
+ height: 105px;
  display: flex;
  align-items: center;
  border-radius: 10px;
@@ -385,7 +394,7 @@
 
 .content-first .wrapper-text {
  width: 300px;
- font-size: 28px;
+ font-size: 26px;
  text-align: start;
  text-transform: uppercase;
  font-family: 'Caveat Brush', serif;
@@ -416,37 +425,79 @@
  gap: 30px;
  width: 350px;
  display: flex;
- padding: 0 3% 0 15%;
  position: relative;
+ padding: 0 4% 0 14%;
  flex-direction: column;
  //border: 2px solid green;
 }
 
 .section-reminder .wrapper {
+ gap: 1.5rem;
+ height: 100%;
  display: flex;
+ flex-direction: column;
  justify-content: space-between;
+}
+
+.container-button {
+ width: 100%;
+ display: flex;
+}
+
+.container-button .box-button .items {
+ gap: 5px;
+ display: flex;
+ padding: 7px 15px;
+ align-items: center;
+ border-radius: 5px;
+ justify-content: center;
+ transition: all .120s ease;
+ color: $primary-color-text;
+ background-color: $secondary-color-cards;
+}
+
+.container-button .box-button .items .button {
+ font-size: 13px;
+ transition: all .120s ease;
+ background-color: transparent;
+ font-family: 'Russo One', serif;
 }
 
 .container-reminder .wrapper, .cards .reminder, .cards .box-cards {
  display: flex;
- flex-direction: column;
  border-radius: 10px;
  justify-content: end;
+ flex-direction: column;
  box-shadow: 8px -8px 2px rgba(0,0,0,0.2);
 }
 
 .container-reminder .wrapper #wrapped-reminder {
  gap: 25px;
  display: flex;
+ position: relative;
  padding: 15px 20px;
  padding-left: 15px;
+ border-radius: 10px;
  flex-direction: column;
+ background-color: $secondary-color-cards;
+}
+
+.container-reminder .wrapper #wrapped-reminder .box-icons {
+ top: -5px;
+ right: -5px;
+ width: 45px;
+ height: 45px;
+ bottom: 100%;
+ position: absolute;
+ border-radius: 10px;
 }
 
 .container-reminder .wrapper #wrapped-reminder  .box {
  gap: 15px;
+ width: 250px;
  display: flex;
  padding: 10px;
+ margin-top: 15px;
  position: relative;
  border-radius: 5px;
  flex-direction: column;
@@ -465,13 +516,10 @@
  font-weight: 600;
 }
 
-.container-reminder .wrapper .wrapper-text .text-arti, .container-reminder .wrapper #wrapped-reminder .box:before, .container-reminder .wrapper .wrapper-text .text-title{
+.container-reminder .wrapper .wrapper-text .text-arti, .container-reminder .wrapper #wrapped-reminder .box:before, .container-reminder .wrapper .wrapper-text .text-title, .text-latin {
  font-size: 12px;
  font-weight: 500;
+ white-space: wrap;
  text-align: start;
-}
-
-.container-reminder {
- border-radius: 10px;
- background-color: $secondary-color-cards;
+ word-break: break-word;
 }

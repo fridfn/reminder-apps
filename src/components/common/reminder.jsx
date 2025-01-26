@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import muslimWoman5 from '@/assets/muslim_woman_5.webp';
 import Image from '@/components/common/image';
 
 const Reminder = ({ hadits, riwayat }) => {
@@ -40,17 +39,30 @@ const Reminder = ({ hadits, riwayat }) => {
 }
 
 
-export const ReminderSec = ({ text, data }) => {
+export const ReminderSec = ({ inti, image, animate }) => {
+  let fSize;
+  
+  if (inti) {
+   if (inti.length >= 45) {
+     fSize = '15px';
+   } else if (inti.length >= 30) {
+     fSize = '18px';
+   } else if (inti.length > 20) {
+     fSize = '25px';
+   } else if (inti.length < 20) {
+     fSize = '28px';
+   }
+  }
+  
   return (
    <div className='container-reminder'>
-   <div className='wrapper'>
-    <div className='content-first'>
-     {text ? (
-      <div className='wrapper-text'>
-        <p className='text'>Jangan Asal Dalam Beramal</p>
-      </div>) : (null)}
-      <div className='box-image'>
-        <Image image={muslimWoman5}/>
+    <div className='wrapper'>
+     <div className='content-first'>
+      <div className='wrapper-text' id='parent-inti-reminder'>
+        <p className='text' style={{fontSize: fSize }}>{inti}</p>
+       </div>
+       <div className='box-image'>
+        <Image image={image} animate={animate} />
       </div>
      </div>
     </div>
@@ -58,16 +70,25 @@ export const ReminderSec = ({ text, data }) => {
   )
 }
 
-export const ReminderThird = () => {
+
+export const ReminderThird = ({ data }) => {
+  const { arab, latin, artinya, nomor_sumber, sumber, pelajaran } = data;
+  const sumberNnomor = !nomor_sumber ? sumber : sumber + ' / ' + nomor_sumber;
+  const title_text = !nomor_sumber ? 'Allah Swt ﷻ Berfirman :' : 'Rasulullah ﷺ bersabda :';
+  
   return (
-   <div className='container-reminder'>
-    <div className='wrapper'>
-     <div className='wrapper-text' id='wrapped-reminder'>
-       <p className='text-title'>Rasulullah ﷺ bersabda :</p>
-       <p className='text-arab'>حَدَّثَنَا أَبُوْ بَكْرِ بْنُ أَبِيْ شَيْبَةَ حَدَّثَنَا حَفْصُ بْنُ غِيَاثٍ عَنْ دَاوُدَ عَنِ الشَّعْبِيِّ عَنْ جَرِيْرٍ قَالَ قَالَ رَسُوْلُ اللهِ صَلَّى اللهُ عَلَيْهِ وَ سَلَّمَ أَيُّمَا عَبْدٍ أَبَقَ فَقَدْ بَرِئَتْ مِنْهُ الذِّمَّ</p>
+   <div className='container-reminder' data-aos="fade-up">
+    <div className='wrapper' id='wrapper-reminder'>
+     <div className='wrapper-text' id='wrapped-reminder' data-aos="zoom-out">
+       <p className='text-title'>{title_text}</p>
+       <p className='text-arab'>{arab}</p>
+       <p className='text-latin'>{latin}</p>
        <div className='box'>
-        <p className='text-arti'>"Siapa pun hamba sahaya yang melarikan diri dari tuannya, maka jaminan Islam telah terlepas darinya."</p>
-        <p className='text-arti'>(HR. Muslim No. 102)</p>
+        <p className='text-arti'>{artinya}</p>
+        <p className='text-arti'>({sumberNnomor})</p>
+      </div>
+      <div className='box-icons'>
+        <ion-icon name='heart' class='icons'></ion-icon>
       </div>
      </div>
     </div>

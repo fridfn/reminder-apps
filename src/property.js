@@ -93,6 +93,12 @@ const props = {
      icons: ['person', 'home', 'globe'],
      title: ['hadits', 'reminder', 'surah', 'odos']
     }
+   },
+   navbar: {
+    button: {
+     icons: ['person', 'home', 'globe', 'settings'],
+     title: ['hadits', 'reminder', 'surah', 'odos']
+    }
    }
   }
 }
