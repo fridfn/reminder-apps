@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import property from '@/property';
-import generateRandomValue from '@/utils/generateRandomValue';
+import React, { useEffect, useState } from 'react'
+import property from '@/property'
+import generateRandomValue from '@/utils/generateRandomValue'
 
 const Header = ({ title, quote }) => {
-  const [motivation, setMotivation] = useState('');
+  const [image, setImage] = useState('')
+  const [animate, setAnimate] = useState(false)
+  const [reminder, setReminder] = useState([])
+  const [motivation, setMotivation] = useState('')
   
   useEffect(() => {
-   const motivation = property.pages.home.data.motivation;
-   const randomMotivation = generateRandomValue(motivation);
+   const motivation = property.pages.home.data.motivation
+   const randomMotivation = generateRandomValue(motivation)
    setMotivation(randomMotivation)
   }, [])
   
@@ -19,7 +22,7 @@ const Header = ({ title, quote }) => {
        <p className='text'>{!quote ? motivation : quote}</p>) : (null)}
      </div>
      <div className='box-notification'>
-       <ion-icon name='notifications' class='icons'></ion-icon>
+       <ion-icon name='options' class='icons'></ion-icon>
      </div>
    </div>
   )
@@ -33,4 +36,4 @@ export const HeaderSec = ({ title }) => {
   )
 }
 
-export default Header;
+export default Header

@@ -71,25 +71,32 @@ export const ReminderSec = ({ inti, image, animate }) => {
 }
 
 
-export const ReminderThird = ({ data }) => {
-  const { arab, latin, artinya, nomor_sumber, sumber, pelajaran } = data;
+export const ReminderThird = ({ data, value, attr }) => {
+  const { arab, latin, artinya, nomor_sumber, sumber, pelajaran, kategori } = data;
   const sumberNnomor = !nomor_sumber ? sumber : sumber + ' / ' + nomor_sumber;
+  const kategori_text = "Kategori Hadits : " + kategori;
   const title_text = !nomor_sumber ? 'Allah Swt ﷻ Berfirman :' : 'Rasulullah ﷺ bersabda :';
   
   return (
    <div className='container-reminder' data-aos="fade-up">
     <div className='wrapper' id='wrapper-reminder'>
      <div className='wrapper-text' id='wrapped-reminder' data-aos="zoom-out">
-       <p className='text-title'>{title_text}</p>
-       <p className='text-arab'>{arab}</p>
-       <p className='text-latin'>{latin}</p>
-       <div className='box'>
-        <p className='text-arti'>{artinya}</p>
-        <p className='text-arti'>({sumberNnomor})</p>
-      </div>
-      <div className='box-icons'>
-        <ion-icon name='heart' class='icons'></ion-icon>
-      </div>
+     {value ? (
+       <>
+        <p className='text-title'>{title_text}</p>
+        <p className='text-arab'>{arab}</p>
+        <p className='text-latin'>{latin}</p>
+       </>
+       ) : (null)}
+       <div className='box' data-info={attr}>
+        <p className='text-arti'>{value ? value : pelajaran}</p>
+        <p className='text-arti'>({!value ? kategori_text : sumberNnomor})</p>
+       </div>
+       {value ? (
+        <div className='box-icons'>
+          <ion-icon name='heart' class='icons'></ion-icon>
+        </div>
+       ) : (null)}
      </div>
     </div>
    </div>

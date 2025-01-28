@@ -36,6 +36,26 @@
  color: $primary-color-icons;
 }
 
+.container-reminder .wrapper #wrapped-reminder .box:before {
+ content: attr(data-info);
+ left: 0;
+ top: -25px;
+ position: absolute;
+}
+
+.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):before, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after {
+ top: -5px;
+ left: -7px;
+ content: '✨';
+ font-size: 15px;
+ position: absolute;
+}
+
+.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2) {
+ top: 95%;
+ left: 94%;
+ text-transform: capitalize;
+}
 
 //// SECTION JAVASCRIPT ACTIVE MODE ////
 

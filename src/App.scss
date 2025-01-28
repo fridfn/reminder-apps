@@ -46,6 +46,7 @@
 
 .navbar {
  bottom: 0;
+ z-index: 20;
  width: 18em;
  display: flex;
  position: fixed;
@@ -422,10 +423,11 @@
 }
 
 .section-reminder {
- gap: 30px;
+ gap: 5px;
+ top: 0px;
  width: 350px;
  display: flex;
- position: relative;
+ position: sticky;
  padding: 0 4% 0 14%;
  flex-direction: column;
  //border: 2px solid green;
@@ -475,7 +477,7 @@
  gap: 25px;
  display: flex;
  position: relative;
- padding: 15px 20px;
+ padding: 25px 20px;
  padding-left: 15px;
  border-radius: 10px;
  flex-direction: column;
@@ -483,17 +485,20 @@
 }
 
 .container-reminder .wrapper #wrapped-reminder .box-icons {
- top: -5px;
- right: -5px;
+ top: -2px;
+ right: -2px;
  width: 45px;
  height: 45px;
  bottom: 100%;
  position: absolute;
  border-radius: 10px;
+ border-top: 2px solid;
+ border-right: 2px solid;
+ border-color: $primary-color-background;
 }
 
 .container-reminder .wrapper #wrapped-reminder  .box {
- gap: 15px;
+ gap: 20px;
  width: 250px;
  display: flex;
  padding: 10px;
@@ -501,25 +506,27 @@
  position: relative;
  border-radius: 5px;
  flex-direction: column;
- box-shadow: inset -2px 4px 10px $primary-color-background;
-}
-
-.container-reminder .wrapper #wrapped-reminder .box:before {
- left: 0;
- top: -25px;
- position: absolute;
- content: 'Artinya :';
+ box-shadow: inset -2px 2px 10px 3px $primary-color-background;
 }
 
 .container-reminder .wrapper .wrapper-text .text-arab {
+ font-size: 18px;
  text-align: end;
  font-weight: 600;
 }
 
 .container-reminder .wrapper .wrapper-text .text-arti, .container-reminder .wrapper #wrapped-reminder .box:before, .container-reminder .wrapper .wrapper-text .text-title, .text-latin {
- font-size: 12px;
+ font-size: 12.5px;
  font-weight: 500;
  white-space: wrap;
  text-align: start;
+ text-align: justify;
  word-break: break-word;
+}
+
+#wrapper-content-reminder {
+ height: 70dvh;
+ overflow-y: scroll;
+ overflow-x: hidden;
+ scrollbar-color: transparent transparent;
 }

@@ -15,7 +15,7 @@ const ReminderPages = () => {
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
-  const { arab, artinya, inti, latin, sumber, nomor_sumber } = reminder
+  const { inti, artinya, nomor_sumber } = reminder
   const { nama } = userData
   
   useEffect(() => {
@@ -29,6 +29,9 @@ const ReminderPages = () => {
   
   
   const handleGenerateReminder = (data, image) => {
+   const element = document.getElementById('tops-reminder');
+   const element2 = document.querySelector('.section-reminder');
+   [element, element2].forEach((items) => {items.scrollIntoView({behavior: 'auto'})})
    setImage(image)
    setAnimate(true)
    setReminder(data)
@@ -51,10 +54,12 @@ const ReminderPages = () => {
     {userData.nama ? (
      reminder ? (
      <section className='section-reminder'>
-      <Header title={`Reminder Of The Day, ${nama.split(' ')[0]}`} quote='Selalu ingat hadits di bawah ini ya!' />
-      <ReminderSec inti={inti} image={image || muslimWoman5} animate={animate} />
-      <div className='wrapper'>
-       <ReminderThird data={reminder} />
+      <Header title={`Reminder Of The Day, ${nama.split(' ')[0]}`} quote='Selalu ingat dan amalkan hadits di bawah ini dalam keseharian kamu ya!' />
+      <div className='wrapper' id='wrapper-content-reminder'>
+       <div id='tops-reminder'></div>
+       <ReminderSec inti={inti} image={image || muslimWoman5} animate={animate} />
+       <ReminderThird data={reminder} value={artinya} attr='Artinya :' />
+       <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
        <ButtonPagination endpoint='/hadits.json' onFetch={handleGenerateReminder} name='Next' />
       </div>
      </section>) : (null)

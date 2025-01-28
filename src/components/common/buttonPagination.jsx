@@ -29,8 +29,8 @@ const ButtonPagination = ({ endpoint, onFetch, name }) => {
   return (
    <div className='container-button'>
     <div className='box-button'>
-     <div className='items'>
-      <button className='button' onClick={() => {handleNext(endpoints)}}>{name}</button>
+     <div className='items' onClick={() => {handleNext(endpoints)}}>
+      <button className='button'>{name}</button>
       <ion-icon class="small" name='arrow-forward-circle'></ion-icon>
      </div>
     </div>
