@@ -546,14 +546,14 @@
 }
 
 #wrapper-motivasi .bg-txt, .md-txt {
- letter-spacing: 2px;
+ letter-spacing: 1.5px;
  opacity: .8;
  font-family: 'Russo One', serif;
 }
 
 #motivasi-pages .header .header-cards .title {
  width: 95%;
- font-size: 23px;
+ font-size: 22px;
  text-transform: capitalize;
 }
 
@@ -612,6 +612,7 @@
 .box-motivasi-cards {
  gap: 20px;
  display: flex;
+ margin-top: 15px;
  padding: 20px 15px;
  padding-top: 40px;
  position: relative;
