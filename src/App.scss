@@ -103,9 +103,12 @@
 }
 
 .header .box-notification {
- position: absolute;
+ top: 0;
  right: -35px;
- top: -5px;
+ padding: 1px 5px;
+ position: absolute;
+ border-radius: 5px;
+ box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.258);
 }
 
 .header .icons {
@@ -148,7 +151,7 @@
  height: 80%;
  position: relative;
  border-radius: 15px 15px;
- background-color: $primary-color-cards;
+ background-color: $primary-color-image;
 }
 
 .description-cards {
@@ -237,17 +240,18 @@
  height: 130px;
  padding: 10px;
  display: flex;
- overflow: scroll;
  padding-top: 5px;
+ position: relative;
  text-align: center;
  border-radius: 10px;
  align-items: center;
  margin: 10px 0 35px 0;
  flex-direction: column;
+ background-color: $primary-color-cards;
  box-shadow: inset 0px 3.2px 10px 0px $primary-color-background;
 }
 
-.wrapper-reminder p, .full-hadits .text, .description-cards .text {
+.wrapper-reminder p, .full-hadits .text, .description-cards .text, .box-motivasi-cards .text {
  font-size: .78em;
 }
 
@@ -279,18 +283,17 @@
  justify-content: space-between;
 }
 
-.pages-loading .component-images {
+.component-images {
  width: 100%;
  position: absolute;
  object-fit: contain;
+ bottom: -10px;
 }
 
 .wrapper-lantern .component-images {
  z-index: -1;
  width: 90px;
  height: 130px;
- position: absolute;
- object-fit: contain;
 }
 
 .wrapper-form, .wrapper-form form {
@@ -415,10 +418,9 @@
  flex-direction: column;
 }
 
-.content-first .box-image .component-images {
+.content-first .box-image .component-images, .container-bubble .box-image .component-images {
  width: 100px;
  bottom: -10px;
- position: absolute;
  filter: drop-shadow(4px -5px 0px $primary-color-background);
 }
 
@@ -444,6 +446,7 @@
 .container-button {
  width: 100%;
  display: flex;
+ justify-content: space-between;
 }
 
 .container-button .box-button .items {
@@ -501,12 +504,16 @@
  gap: 20px;
  width: 250px;
  display: flex;
- padding: 10px;
+ padding: 12px;
  margin-top: 15px;
  position: relative;
  border-radius: 5px;
  flex-direction: column;
- box-shadow: inset -2px 2px 10px 3px $primary-color-background;
+ background-color: $primary-color-cards;
+}
+
+.container-reminder .wrapper #wrapped-reminder  .box .text-arti {
+ z-index: 10;
 }
 
 .container-reminder .wrapper .wrapper-text .text-arab {
@@ -529,4 +536,97 @@
  overflow-y: scroll;
  overflow-x: hidden;
  scrollbar-color: transparent transparent;
+}
+
+#wrapper-motivasi {
+ gap: 20px;
+ height: 70dvh;
+ overflow-y: scroll;
+ padding-top: 15px;
+}
+
+#wrapper-motivasi .bg-txt, .md-txt {
+ letter-spacing: 2px;
+ opacity: .8;
+ font-family: 'Russo One', serif;
+}
+
+#motivasi-pages .header .header-cards .title {
+ width: 95%;
+ font-size: 23px;
+ text-transform: capitalize;
+}
+
+.container-bubble {
+ gap: 20px;
+ width: 100%;
+ display: flex;
+ padding: 7px 10px;
+ align-items: center;
+ border-radius: 10px;
+ background-color: $secondary-color-cards;
+}
+
+.container-bubble .box-text {
+ width: 100%;
+ line-height: 14px;
+ padding: 8px 12px;
+ border-radius: 5px;
+ position: relative;
+ color: $primary-color-text;
+ background-color: $primary-color-cards;
+ box-shadow: inset 0px 1px 6px 2px $primary-color-background;
+}
+
+.container-bubble .box-text span {
+ font-weight: 500;
+ font-size: 12px;
+ opacity: .9;
+}
+
+.container-bubble .box-text .text {
+ gap: 5px;
+ display: flex;
+ font-size: 15px;
+ font-weight: 500;
+ flex-direction: column;
+}
+
+.container-bubble .box-image {
+ width: 80px;
+ height: 80px;
+ position: relative;
+}
+
+.container-bubble .box-image .component-images {
+ width: 135%;
+ bottom: 0px;
+ left: -5px;
+}
+
+.container-reminder .wrapper #wrapped-reminder  .box, .reminder .wrapper-reminder {
+ border-radius: 15px;
+ box-shadow: inset 0px 1px 6px 2px $primary-color-background;
+}
+
+.box-motivasi-cards {
+ gap: 20px;
+ display: flex;
+ padding: 20px 15px;
+ padding-top: 40px;
+ position: relative;
+ border-radius: 10px;
+ flex-direction: column;
+ background-color: $secondary-color-cards;
+}
+
+.box-motivasi-cards #title-motivasi {
+ border: 2px solid blue;
+ top: -17px;
+ left: -5px;
+ padding: 7px 14px;
+ position: absolute;
+ border-radius: 10px;
+ background-color: $secondary-color-cards;
+ border: 5px solid $primary-color-background;
 }

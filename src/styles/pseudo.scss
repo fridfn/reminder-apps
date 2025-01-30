@@ -1,7 +1,7 @@
 @use '@/styles/variable.scss' as *;
 
 .navbar:after {
- top: -45px;
+ top: -25px;
  font-size: 11px;
  font-weight: 600;
  position: absolute;
@@ -43,19 +43,29 @@
  position: absolute;
 }
 
-.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):before, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after {
+.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):before, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .reminder .wrapper-reminder:before, .reminder .wrapper-reminder:after, .container-bubble .box-text:before, .container-bubble
+.box-text:after, .box-motivasi-cards #title-motivasi:before {
  top: -5px;
  left: -7px;
+ z-index: 25;
  content: '✨';
  font-size: 15px;
  position: absolute;
+ animation: $sparkle_effect 4s ease infinite;
 }
 
-.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2) {
- top: 95%;
- left: 94%;
+.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2), .reminder .wrapper-reminder:after, .container-bubble
+.box-text:after {
+ top: 92%;
+ left: 95%;
+ animation-delay: 1.5s;
  text-transform: capitalize;
 }
+
+ .box-motivasi-cards #title-motivasi:before {
+ font-size: 20px;
+ animation: $sparkle_effect 4s ease infinite;
+ }
 
 //// SECTION JAVASCRIPT ACTIVE MODE ////
 

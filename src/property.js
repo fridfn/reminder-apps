@@ -80,18 +80,27 @@ const props = {
      ]
     }
    },
+   reminder: {
+    sidebar: {
+     button: {
+      title: ['Next', 'Filter', 'Detail'],
+      icons: ['arrow-forward-circle', '2', '3']
+     }
+    }
+   }, 
   }, 
   component: {
    sidebar: {
     path: [
      '/home/hadits',
      '/home/reminder',
+     '/home/motivasi',
      '/home/surah',
      '/home/odos',
     ],
     button: {
      icons: ['person', 'home', 'globe'],
-     title: ['hadits', 'reminder', 'surah', 'odos']
+     title: ['hadits', 'reminder', 'motivasi', 'surah', 'odos']
     }
    },
    navbar: {

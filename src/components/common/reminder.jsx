@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Image from '@/components/common/image';
 
 const Reminder = ({ hadits, riwayat }) => {

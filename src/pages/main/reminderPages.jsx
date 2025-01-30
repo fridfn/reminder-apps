@@ -16,7 +16,7 @@ const ReminderPages = () => {
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
   const { inti, artinya, nomor_sumber } = reminder
-  const { nama } = userData
+  const button_reminder = property.pages.reminder.sidebar.button;
   
   useEffect(() => {
    const handlerFetchData = async () => {
@@ -54,13 +54,16 @@ const ReminderPages = () => {
     {userData.nama ? (
      reminder ? (
      <section className='section-reminder'>
-      <Header title={`Reminder Of The Day, ${nama.split(' ')[0]}`} quote='Selalu ingat dan amalkan hadits di bawah ini dalam keseharian kamu ya!' />
+      <Header title={`Reminder Of The Day, ${userData.nama.split(' ')[0]}`} quote='Selalu ingat dan amalkan hadits di bawah ini dalam keseharian kamu ya!' />
       <div className='wrapper' id='wrapper-content-reminder'>
        <div id='tops-reminder'></div>
        <ReminderSec inti={inti} image={image || muslimWoman5} animate={animate} />
        <ReminderThird data={reminder} value={artinya} attr='Artinya :' />
        <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
-       <ButtonPagination endpoint='/hadits.json' onFetch={handleGenerateReminder} name='Next' />
+       <ButtonPagination 
+        endpoint='/hadits.json' 
+        func={handleGenerateReminder} 
+        props={button_reminder} />
       </div>
      </section>) : (null)
     ) : (null)}

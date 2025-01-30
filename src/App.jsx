@@ -5,6 +5,7 @@ import HaditsPages from '@/pages/main/haditsPages';
 import OdosPages from '@/pages/main/odosPages'
 import ReminderPages from '@/pages/main/reminderPages';
 import SurahPages from '@/pages/main/surahPages';
+import MotivasiPages from '@/pages/main/motivasiPages';
 import Loading from '@/pages/loading';
 import NotFound from '@/pages/notFound';
 import React, { useState } from 'react';
@@ -25,6 +26,7 @@ function App() {
             <Route path='/home/odos' element={<OdosPages />} />
             <Route path='/home/surah' element={<SurahPages />} />
             <Route path='/home/reminder' element={<ReminderPages />} />
+            <Route path='/home/motivasi' element={<MotivasiPages />} />
           </Route>
           <Route path='/login' element={<Loading />} />
           <Route path='*' element={ <NotFound/>} />

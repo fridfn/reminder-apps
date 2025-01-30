@@ -66,7 +66,7 @@ const Cards = ({ data, detail }) => {
      cleanHadits = cleanHadits.replace(/Telah menceritakan kepada kami.*/i, '');
      cleanHadits = cleanHadits.replace(/Dan telah menceritakan kepadaku.*/i, '');
      
-    if (cleanHadits.length >= 70 && cleanHadits.length <= 300) {
+    if (cleanHadits.length >= 70 && cleanHadits.length <= 285) {
      return (
       <div key={index} className='container-cards' ref={(el) => (itemRef.current[index] = el)}>
        <div className='cards'>

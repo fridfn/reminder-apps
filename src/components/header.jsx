@@ -17,7 +17,7 @@ const Header = ({ title, quote }) => {
   return (
    <div className='header'>
      <div className='header-cards'>
-       <p className='md-txt title'>{title}!</p>
+       <p className='md-txt title'>{title}</p>
        {motivation ? (
        <p className='text'>{!quote ? motivation : quote}</p>) : (null)}
      </div>

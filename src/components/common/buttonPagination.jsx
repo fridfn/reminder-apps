@@ -5,7 +5,8 @@ import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
 import generateRandomValue from '@/utils/generateRandomValue';
 
-const ButtonPagination = ({ endpoint, onFetch, name }) => {
+const ButtonPagination = ({ endpoint, func, props }) => {
+  const { title, icons } = props;
   const [content, setContent] = useState([]);
   const [endpoints, setEndpoint] = useState({});
   
@@ -21,19 +22,23 @@ const ButtonPagination = ({ endpoint, onFetch, name }) => {
      const getOneImage = generateRandomValue(images);
     
     setContent(result);
-    onFetch(getOneResult, getOneImage);
+    func(getOneResult, getOneImage);
    }
    handleFetch(endpoints);
   }
   
   return (
    <div className='container-button'>
-    <div className='box-button'>
-     <div className='items' onClick={() => {handleNext(endpoints)}}>
-      <button className='button'>{name}</button>
-      <ion-icon class="small" name='arrow-forward-circle'></ion-icon>
+   <EachUtils
+    of={title}
+    render={(items, index) => (
+     <div className='box-button' key={index}>
+      <div className='items' onClick={() => {handleNext(endpoints)}}>
+       <button className='button'>{items}</button>
+       <ion-icon class="small" name={icons[index]}></ion-icon>
+      </div>
      </div>
-    </div>
+    )}/>
    </div>
   )
 }
