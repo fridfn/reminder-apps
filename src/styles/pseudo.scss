@@ -47,7 +47,7 @@
 .box-text:after, .box-motivasi-cards #title-motivasi:before {
  top: -5px;
  left: -7px;
- z-index: 25;
+ z-index: 15;
  content: '✨';
  font-size: 15px;
  position: absolute;
@@ -56,8 +56,8 @@
 
 .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2), .reminder .wrapper-reminder:after, .container-bubble
 .box-text:after {
- top: 92%;
- left: 95%;
+ top: 85%;
+ left: 94%;
  animation-delay: 1.5s;
  text-transform: capitalize;
 }
