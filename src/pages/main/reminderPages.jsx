@@ -16,7 +16,7 @@ const ReminderPages = () => {
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
   const { inti, artinya, nomor_sumber } = reminder
-  const button_reminder = property.pages.reminder.sidebar.button;
+  const button_reminder = property.pages.reminder.button;
   
   useEffect(() => {
    const handlerFetchData = async () => {
@@ -32,6 +32,7 @@ const ReminderPages = () => {
    const element = document.getElementById('tops-reminder');
    const element2 = document.querySelector('.section-reminder');
    [element, element2].forEach((items) => {items.scrollIntoView({behavior: 'auto'})})
+   
    setImage(image)
    setAnimate(true)
    setReminder(data)
@@ -61,9 +62,11 @@ const ReminderPages = () => {
        <ReminderThird data={reminder} value={artinya} attr='Artinya :' />
        <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
        <ButtonPagination 
-        endpoint='/hadits.json' 
+        endpoint='/hadits.json'
         func={handleGenerateReminder} 
-        props={button_reminder} />
+        props={button_reminder} 
+        values='reminder'
+       />
       </div>
      </section>) : (null)
     ) : (null)}

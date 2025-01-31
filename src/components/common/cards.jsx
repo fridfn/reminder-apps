@@ -9,7 +9,7 @@ const BubbleMessage = ({ message }) => {
      <Image image={muslimWoman5} />
     </div>
     <div className='box-text'>
-     <p className='text'>Me :<span>jangan menuerah ya karna aku selalu ada buat kamu</span></p>
+     <p className='text'>Me :<span>{message}</span></p>
     </div>
    </div>
   )

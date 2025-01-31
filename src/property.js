@@ -81,14 +81,34 @@ const props = {
     }
    },
    reminder: {
-    sidebar: {
-     button: {
-      title: ['Next', 'Filter', 'Detail'],
-      icons: ['arrow-forward-circle', '2', '3']
+    button: {
+     title: ['Next', 'Filter', 'Detail'],
+     icons: ['arrow-forward-circle', 'list', 'search-circle']
+    }
+   },
+   motivasi: {
+    button: {
+     title: ['Next', 'Filter'],
+     icons: ['arrow-forward-circle', 'list']
+    },
+    data: {
+     attribute: {
+      0: '',
+      1: '',
+      2: 'Artinya : ',
+      3: 'Sumber : ',
+      4: 'Maksud dan inti dari hadist yang di sebutkan diatas adalah :',
+     },
+     classes: {
+      0: 'text text-arab',
+      1: 'text text-arti',
+      2: 'text box-text text-arti',
+      3: 'text nm-txt',
+      4: 'text box-text',
      }
     }
-   }, 
-  }, 
+   }
+  },
   component: {
    sidebar: {
     path: [

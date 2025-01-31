@@ -36,36 +36,58 @@
  color: $primary-color-icons;
 }
 
-.container-reminder .wrapper #wrapped-reminder .box:before {
- content: attr(data-info);
- left: 0;
- top: -25px;
- position: absolute;
-}
-
-.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):before, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .reminder .wrapper-reminder:before, .reminder .wrapper-reminder:after, .container-bubble .box-text:before, .container-bubble
-.box-text:after, .box-motivasi-cards #title-motivasi:before {
+.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):before, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .reminder .wrapper-reminder:before, .reminder .wrapper-reminder:after, .box-text:before, .box-text:after, .box-motivasi-cards #title-motivasi:before {
  top: -5px;
  left: -7px;
  z-index: 15;
  content: '✨';
- font-size: 15px;
+ font-size: 18px;
  position: absolute;
  animation: $sparkle_effect 4s ease infinite;
 }
 
-.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2), .reminder .wrapper-reminder:after, .container-bubble
-.box-text:after {
+.container-reminder .wrapper #wrapped-reminder .box:before, .box-motivasi-cards .box-text:before {
+ left: 0;
+ top: -25px;
+ position: absolute;
+ animation-name: none;
+ content: attr(data-info);
+}
+
+.box-motivasi-cards .box-text:before {
+ font-size: 13px;
+ text-transform: capitalize;
+}
+
+.container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2), .reminder .wrapper-reminder:after, .box-text:after {
  top: 85%;
  left: 94%;
  animation-delay: 1.5s;
  text-transform: capitalize;
 }
 
- .box-motivasi-cards #title-motivasi:before {
+.box-motivasi-cards #title-motivasi:before {
  font-size: 20px;
  animation: $sparkle_effect 4s ease infinite;
  }
+
+.box-motivasi-cards .box-text:before {
+ text-transform: none;
+ text-align: start;
+ top: -40px;
+}
+
+.box-motivasi-cards .nm-txt:before, .box-motivasi-cards .text-arti:before {
+ content: attr(data-info);
+}
+
+.box-motivasi-cards .text-arti:nth-child(3) {
+ padding-bottom: 25px;
+}
+
+.box-motivasi-cards .box-text.text-arti:before {
+ top: -25px;
+}
 
 //// SECTION JAVASCRIPT ACTIVE MODE ////
 
@@ -78,8 +100,8 @@
 
 .full-hadits.active .text {
  opacity: 1;
- transition: opacity 1s linear;
  transition-delay: .5s;
+ transition: opacity 1s linear;
 }
 
 .is-active-page.active {

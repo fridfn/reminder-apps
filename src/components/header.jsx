@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import property from '@/property'
 import generateRandomValue from '@/utils/generateRandomValue'
 
-const Header = ({ title, quote }) => {
+const Header = ({ size, title, quote }) => {
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
@@ -17,7 +17,11 @@ const Header = ({ title, quote }) => {
   return (
    <div className='header'>
      <div className='header-cards'>
-       <p className='md-txt title'>{title}</p>
+       <p 
+        className='md-txt title'
+        style={size && {fontSize: size + 'px'}}>
+        {title}
+       </p>
        {motivation ? (
        <p className='text'>{!quote ? motivation : quote}</p>) : (null)}
      </div>

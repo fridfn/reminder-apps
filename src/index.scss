@@ -33,7 +33,7 @@ button {
 
 .container {
  width: 100%;
- height: 100vh;
+ height: 100dvh;
  display: flex;
  padding-top: 20px;
  padding-left: 10px;
@@ -59,6 +59,10 @@ button {
  font-size: 11px;
 }
 
+.nm-txt {
+ font-size: 17px;
+}
+
 .md-txt {
  font-size: 17px;
 }
@@ -67,7 +71,7 @@ button {
  font-size: 22px;
 }
 
-.tny-txt, .bg-txt, .md-txt, .text {
+.tny-txt, .bg-txt, .md-txt, .text, .nm-txt {
  font-weight: 500;
 }
 

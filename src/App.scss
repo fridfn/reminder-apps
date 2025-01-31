@@ -523,7 +523,7 @@
  font-weight: 600;
 }
 
-.container-reminder .wrapper .wrapper-text .text-arti, .container-reminder .wrapper #wrapped-reminder .box:before, .container-reminder .wrapper .wrapper-text .text-title, .text-latin {
+.container-reminder .wrapper .wrapper-text .text-arti, .container-reminder .wrapper #wrapped-reminder .box:before, .container-reminder .wrapper .wrapper-text .text-title, .text-latin, .box-text {
  font-size: 12.5px;
  font-weight: 500;
  white-space: wrap;
@@ -543,7 +543,6 @@
  gap: 20px;
  height: 70dvh;
  overflow-y: scroll;
- padding-top: 15px;
 }
 
 #wrapper-motivasi .bg-txt, .md-txt {
@@ -568,7 +567,7 @@
  background-color: $secondary-color-cards;
 }
 
-.container-bubble .box-text {
+.container-bubble .box-text, .box-motivasi-cards .box-text {
  width: 100%;
  line-height: 14px;
  padding: 8px 12px;
@@ -580,6 +579,7 @@
 }
 
 .container-bubble .box-text span {
+ text-align: start;
  font-weight: 500;
  font-size: 12px;
  opacity: .9;
@@ -631,4 +631,16 @@
  border-radius: 10px;
  background-color: $secondary-color-cards;
  border: 5px solid $primary-color-background;
+}
+
+.box-motivasi-cards .text-arab {
+ text-align: end;
+ font-size: 20px;
+ font-weight: 800;
+}
+
+.box-motivasi-cards .nm-txt {
+ padding-top: 10px;
+ padding-bottom: 60px;
+ border-top: 2px ridge $primary-color-text;
 }
