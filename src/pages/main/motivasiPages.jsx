@@ -4,7 +4,7 @@ import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
 import BubbleMessage from '@/components/common/cards';
-import MotivasiCards from '@/components/common/motivasi';
+import MotivasiCards from '@/components/common/cardsTemplate';
 import ButtonPagination from '@/components/common/buttonPagination';
 import generateRandomValue from '@/utils/generateRandomValue'
 import fetchData from '@/utils/fetchData'
@@ -29,6 +29,7 @@ const MotivasiPages = () => {
   const CLASSES = property.pages.motivasi.data.classes;
   
   const selectedValues = [motivasi.quote,  motivasi.latin, motivasi.translation, motivasi.source, motivasi.explanation]
+  
   
   useEffect(() => {
    const handlerFetchData = async () => {

@@ -1,5 +1,6 @@
 import '@/App.scss';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '@/styles/pseudo.scss';
 import HaditsPages from '@/pages/main/haditsPages';
 import OdosPages from '@/pages/main/odosPages'
@@ -13,8 +14,7 @@ import ProtectedRoute from '@/protectedRoute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0);
-  AOS.init({ duration: '1200', once: true});
+  AOS.init({ duration: '1000', mirror: true, once: false});
   
   return (
     <>
@@ -36,4 +36,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

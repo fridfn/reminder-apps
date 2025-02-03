@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import Image from '@/components/common/image';
 
 const Reminder = ({ hadits, riwayat }) => {
-  const { name, number } = riwayat;
+  const { name, number, id } = riwayat;
+  console.log(riwayat)
   const fullHaditsRef = useRef([]);
   
   const handlerFullHadits = () => {
@@ -21,6 +22,7 @@ const Reminder = ({ hadits, riwayat }) => {
   
   return (
    <div className='reminder'>
+   <div className='ribbon ribbon-hadits'>Id : {id}</div>
     <p className='hadits-surah'>{name} {number}</p>
      <div
       className='wrapper-reminder'
@@ -78,9 +80,9 @@ export const ReminderThird = ({ data, value, attr }) => {
   const title_text = !nomor_sumber ? 'Allah Swt ﷻ Berfirman :' : 'Rasulullah ﷺ bersabda :';
   
   return (
-   <div className='container-reminder' data-aos="fade-up">
+   <div className='container-reminder'>
     <div className='wrapper' id='wrapper-reminder'>
-     <div className='wrapper-text' id='wrapped-reminder' data-aos="zoom-out">
+     <div className='wrapper-text' id='wrapped-reminder'>
      {value ? (
        <>
         <p className='text-title'>{title_text}</p>

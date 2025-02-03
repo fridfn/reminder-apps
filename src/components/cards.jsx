@@ -76,7 +76,7 @@ const Cards = ({ data, detail }) => {
           </div>
           <Description quote={arab} />
          </div>
-        <Reminder hadits={cleanHadits} riwayat={{ name, number }} />
+        <Reminder hadits={cleanHadits} riwayat={{ name, number, id: detail.id }} />
        </div>
       </div>
      )}})}

@@ -20,9 +20,9 @@ const ButtonPagination = ({ endpoint, func, props, values }) => {
     const getOneResult = generateRandomValue( result[values]);
      const images = property?.pages?.home?.data?.image
      const getOneImage = generateRandomValue(images);
-    
-    setContent(result);
-    func(getOneResult, getOneImage);
+     
+     setContent(result);
+     func(getOneResult, getOneImage);
    }
    handleFetch(endpoints);
   }
@@ -33,7 +33,7 @@ const ButtonPagination = ({ endpoint, func, props, values }) => {
     of={title}
     render={(items, index) => (
      <div className='box-button' key={index}>
-      <div className='items' onClick={() => {handleNext(endpoints, values)}}>
+      <div className='items' onClick={() => func(index === 0 ? 'next' : 'prev')}>
        <button className='button'>{items}</button>
        <ion-icon class="small" name={icons[index]}></ion-icon>
       </div>

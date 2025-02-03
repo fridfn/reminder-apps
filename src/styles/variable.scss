@@ -140,6 +140,48 @@ $primary-color-image: #7787BE;
     }
 }
 
+.ribbon {
+ font-size: 10px;
+ font-weight: bold;
+ color: #fff;
+}
+
+.ribbon-surah {
+ --f: .8em; /* control the folded part */
+ z-index: 1;
+ 
+ position: absolute;
+ top: 0;
+ right: 0;
+ line-height: 1.8;
+ padding-inline: 1lh;
+ padding-bottom: var(--f);
+ border-image: conic-gradient(#030d2388 0 0) 59%/var(--f);
+ clip-path: polygon(
+   100% calc(100% - var(--f)),100% 100%,calc(100% - var(--f)) calc(100% - var(--f)),var(--f) calc(100% - var(--f)), 0 100%,0 calc(100% - var(--f)),999px calc(100% - var(--f) - 999px),calc(100% - 999px) calc(100% - var(--f) - 999px));
+ transform: translate(calc((1 - cos(45deg))*100%), -100%) rotate(45deg);
+ transform-origin: 0% 100%;
+ background-color: $primary-color-image; /* the main color  */
+}
+
+.ribbon-hadits {
+ --r: .9em; /* control the cutout */
+ 
+ left: 0;
+ bottom: 5px;
+ font-size: 14px;
+ line-height: 1.8;
+ position: absolute;
+ text-transform: capitalize;
+ border-block: .5em solid #0000;
+ padding-inline: .8em calc(var(--r) + .9em);
+ clip-path: polygon(100% 0,0 0,0 100%,100% 100%,100% calc(100% - .25em),calc(100% - var(--r)) 50%,100% .25em);
+ background:
+  radial-gradient(.2em 50% at left,transparent,#0000) border-box,
+  $primary-color-image padding-box; /* the color  */
+ width: fit-content;
+}
+
 $scale-effect: scale_effect;
 $zoomIn: zoomIn;
 $sparkle-effect: sparkle_effect;
