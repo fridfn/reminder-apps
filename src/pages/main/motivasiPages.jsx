@@ -75,13 +75,15 @@ const MotivasiPages = () => {
        <p className='md-txt' style={{textTransform: 'capitalize'}}>{userData.nama?.split(' ')[0]}, harus ingat ayat ini</p>
      </span>
      <MotivasiCards data={selectedValues} title={"Allah SWT Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
-     <ButtonPagination
-      endpoint={'/motivasi.json'} 
-      func={handleGenerateReminder}
-      props={BUTTON}
-      values='motivasi'
-     />
     </div>
+     <div className='section-reminder' id='wrapper-button-pagination'>
+      <ButtonPagination
+       endpoint={'/motivasi.json'} 
+       func={handleGenerateReminder}
+       props={BUTTON}
+       values='motivasi'
+      />
+     </div>
    </div>
   )
 }

@@ -49,18 +49,22 @@ const ReminderPages = () => {
   },[animate])
  
   return (
-   <div className='container'>
+   <div className='container' id='motivasi-pages'>
     <Sidebar active='reminder' />
     <Navbar />
     {userData.nama ? (
      reminder ? (
-     <section className='section-reminder'>
+     <section className='section-reminder' id='wrapper-motivasi'>
       <Header title={`Reminder Of The Day, ${userData.nama.split(' ')[0]}`} quote='Selalu ingat dan amalkan hadits di bawah ini dalam keseharian kamu ya!' />
       <div className='wrapper' id='wrapper-content-reminder'>
        <div id='tops-reminder'></div>
        <ReminderSec inti={inti} image={image || muslimWoman5} animate={animate} />
        <ReminderThird data={reminder} value={artinya} attr='Artinya :' />
        <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
+      </div>
+     </section>) : (null)
+    ) : (null)}
+       <div className='section-reminder' id='wrapper-button-pagination'>
        <ButtonPagination 
         endpoint='/hadits.json'
         func={handleGenerateReminder} 
@@ -68,8 +72,6 @@ const ReminderPages = () => {
         values='reminder'
        />
       </div>
-     </section>) : (null)
-    ) : (null)}
    </div>
   )
 }

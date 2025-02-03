@@ -532,8 +532,8 @@
  word-break: break-word;
 }
 
-#wrapper-content-reminder {
- height: 70dvh;
+#wrapper-content-reminder, #wrapper-motivasi {
+ height: 75dvh;
  overflow-y: scroll;
  overflow-x: hidden;
  scrollbar-color: transparent transparent;
@@ -541,7 +541,6 @@
 
 #wrapper-motivasi {
  gap: 20px;
- height: 70dvh;
  overflow-y: scroll;
 }
 
