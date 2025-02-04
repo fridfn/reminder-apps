@@ -97,7 +97,7 @@ const props = {
       1: ' ',
       2: 'Artinya : ',
       3: 'Sumber : ',
-      4: 'Maksud dan inti dari hadist yang di sebutkan diatas adalah :',
+      4: 'Maksud dan inti dari surah yang di sebutkan diatas adalah :',
      },
      classes: {
       0: 'text text-arab',

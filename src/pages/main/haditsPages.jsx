@@ -7,7 +7,7 @@ import Sidebar from '@/components/sidebar'
 import { useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
-const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-120`
+const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-180`
 
 const HaditsPages = () => {
   const getUsers = getUser()

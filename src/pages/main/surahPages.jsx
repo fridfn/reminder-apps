@@ -83,7 +83,7 @@ const SurahPages = () => {
        endpoint={'/motivasi.json'} 
        func={handleButtonSurah}
        props={BUTTON}
-       values='motivasi'
+       values='surah'
      />
     </div>
    </div>

@@ -269,6 +269,555 @@
      "latin": "Wa yarzuqhu min ḥayṡu lā yaḥtasib.",
      "source": "Q.S At-Talaq: 3",
      "explanation": "Allah menjanjikan rezeki dari arah yang tidak disangka-sangka bagi mereka yang bertawakkal kepada-Nya. Tetaplah berusaha dan bertawakkal, karena rezeki bisa datang dari mana saja."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa doaku tidak pernah dikabulkan, kenapa Allah belum menjawab doaku? :(",
+     "quote": "وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ",
+     "translation": "Dan Tuhanmu berfirman: Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu.",
+     "latin": "Wa qāla rabbukum ud‘ūnī astajiblakum.",
+     "source": "Q.S Ghafir: 60",
+     "explanation": "Allah selalu mendengarkan doa-doa kita. Terkadang jawabannya datang dalam bentuk yang tidak kita duga atau di waktu yang tepat menurut Allah. Teruslah berdoa dan bersabar, karena Allah pasti akan memberikan yang terbaik untukmu."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa sangat putus asa, kenapa hidupku begini sulit? :(",
+     "quote": "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Inna ma‘al-‘usri yusrā.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Setiap kesulitan akan diikuti dengan kemudahan. Jangan putus asa, karena doa dan kesabaran akan mengantarkan kita kepada pertolongan dan kemudahan dari Allah."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku tidak tahu apa yang terbaik untuk hidupku, semuanya tampak tak pasti :(",
+     "quote": "وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ",
+     "translation": "Boleh jadi kamu membenci sesuatu, padahal itu baik bagimu.",
+     "latin": "Wa ‘asā an takrahū shay’an wa huwa khayrun lakum.",
+     "source": "Q.S Al-Baqarah: 216",
+     "explanation": "Kita tidak selalu tahu apa yang terbaik, namun Allah Maha Mengetahui. Teruslah berdoa dan tawakkal, karena hal yang tampak buruk bisa jadi adalah kebaikan yang tersembunyi."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa tidak ada yang peduli dengan doaku, kenapa aku harus terus berdoa? :(",
+     "quote": "وَرَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ",
+     "translation": "Dan rahmat-Ku meliputi segala sesuatu.",
+     "latin": "Wa raḥmatī wasi‘at kulla shay’in.",
+     "source": "Q.S Al-A'raf: 156",
+     "explanation": "Rahmat Allah meliputi segala hal, dan Dia selalu mendengar hamba-Nya. Jangan berhenti berdoa, karena Allah lebih dekat kepada kita daripada yang kita kira."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku sudah berdoa lama, tapi kenapa hidupku tetap begini? :(",
+     "quote": "إِنَّ رَبِّي لَسَمِيعُ الدُّعَاءِ",
+     "translation": "Sesungguhnya Tuhanku benar-benar Maha Mendengar doa.",
+     "latin": "Inna rabbī lasamī‘ud-du‘ā’i.",
+     "source": "Q.S Ibrahim: 39",
+     "explanation": "Allah selalu mendengar doa-doa kita, meskipun kita merasa tidak ada perubahan. Teruslah berdoa, karena segala sesuatu berjalan sesuai dengan kehendak-Nya, yang pasti terbaik bagi kita."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku takut doaku tidak diterima karena aku banyak dosa :(",
+     "quote": "إِنَّ اللّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا",
+     "translation": "Sesungguhnya Allah mengampuni dosa-dosa semuanya.",
+     "latin": "Inna Allāha yaghfiru adz-dzunūba jamī‘ā.",
+     "source": "Q.S Az-Zumar: 53",
+     "explanation": "Allah Maha Pengampun dan Maha Penyayang. Meskipun kita memiliki banyak dosa, Allah akan mengampuni kita jika kita bertaubat dan berdoa dengan tulus."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa hidupku tidak berubah meski aku berdoa setiap hari, apa yang salah? :(",
+     "quote": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Maka sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Fa inna ma‘al-‘usri yusrā.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Kesulitan yang kita alami akan diikuti dengan kemudahan dari Allah. Doa adalah cara untuk mendekatkan diri kepada-Nya, dan perubahan akan datang di waktu yang tepat."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa tidak sanggup menghadapi ujian ini, kenapa hidupku penuh tantangan? :(",
+     "quote": "إِنَّ اللَّهَ لَا يُكَلِّفُ نَفْسًا إِلَّا وُسْعَهَا",
+     "translation": "Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya.",
+     "latin": "Inna Allāha lā yukallifu nafsan illā wus‘ahā.",
+     "source": "Q.S Al-Baqarah: 286",
+     "explanation": "Setiap ujian yang diberikan Allah pasti sesuai dengan kemampuan kita. Jangan berhenti berdoa, karena Allah tahu batas kemampuanmu dan pasti akan memberikan kekuatan untuk melewatinya."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa kecewa karena sudah berusaha keras tapi belum mendapatkan hasil :(",
+     "quote": "وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ",
+     "translation": "Dan tiadalah taufik bagiku melainkan dengan pertolongan Allah.",
+     "latin": "Wa mā tawfīqī illā billāh.",
+     "source": "Q.S Hud: 88",
+     "explanation": "Segala hasil dari usaha kita datang dari Allah. Jangan berhenti berusaha dan berdoa, karena hasil terbaik akan datang dari-Nya di waktu yang tepat."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku takut jika harapanku tak tercapai, bagaimana jika semua sia-sia? :(",
+     "quote": "فَصَبْرٌ جَمِيلٌ",
+     "translation": "Maka kesabaran yang baik (itulah kesabaranku).",
+     "latin": "Fa ṣabrun jamīl.",
+     "source": "Q.S Yusuf: 18",
+     "explanation": "Bersabar dalam berdoa dan berusaha akan menghasilkan kebaikan. Teruslah berdoa, karena Allah menyukai hamba yang bersabar dalam menanti pertolongan-Nya."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa jauh dari Allah, apa Dia masih mendengar doaku? :(",
+     "quote": "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ",
+     "translation": "Dan Kami lebih dekat kepadanya daripada urat lehernya.",
+     "latin": "Wa naḥnu aqrabu ilayhi min ḥablil-warīd.",
+     "source": "Q.S Qaf: 16",
+     "explanation": "Allah selalu dekat dengan kita, lebih dekat dari apa yang kita bayangkan. Jangan merasa jauh, karena Dia selalu mendengar dan memperhatikan doa-doamu."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa tidak berharga, apa Allah masih peduli dengan hamba yang hina seperti aku? :(",
+     "quote": "إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ",
+     "translation": "Sesungguhnya orang yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa.",
+     "latin": "Inna akramakum ‘inda Allāhi atqākum.",
+     "source": "Q.S Al-Hujurat: 13",
+     "explanation": "Allah tidak melihat penampilan atau status kita, melainkan ketakwaan kita. Teruslah berdoa dan bertakwa, karena itulah yang membuatmu mulia di sisi-Nya."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa tidak kuat menghadapi cobaan ini, mengapa aku harus terus berdoa? :(",
+     "quote": "لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا",
+     "translation": "Janganlah engkau bersedih, sesungguhnya Allah beserta kita.",
+     "latin": "Lā taḥzan inna Allāha ma‘anā.",
+     "source": "Q.S At-Taubah: 40",
+     "explanation": "Allah selalu bersama orang-orang yang beriman dan bersabar. Jangan pernah menyerah dalam berdoa, karena Allah akan memberikan kekuatan dan bantuan yang tidak kita sangka."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa kesulitan menjalani hidup ini, kenapa selalu banyak hambatan? :(",
+     "quote": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Maka sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Fa inna ma‘al-‘usri yusrā.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Setiap kesulitan akan diikuti dengan kemudahan yang dijanjikan oleh Allah. Jangan berhenti berdoa, karena Allah akan membukakan jalan setelah kesulitan."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa Allah terlalu jauh, apa Dia masih mendengar doaku? :(",
+     "quote": "وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ",
+     "translation": "Dan apabila hamba-hamba-Ku bertanya kepadamu tentang Aku, maka (jawablah) bahwasanya Aku adalah dekat.",
+     "latin": "Wa idhā sa’alaka ‘ibādī ‘annī fa innī qarīb.",
+     "source": "Q.S Al-Baqarah: 186",
+     "explanation": "Allah selalu dekat dengan hamba-Nya, dan Dia selalu mendengar doa kita. Jangan ragu untuk terus berdoa, karena Allah akan mengabulkan doa-doa dengan cara yang terbaik."
+   },
+   {
+     "title": "Teruslah Berdoa Karena...",
+     "me": "Aku merasa takut menghadapi masa depan, bagaimana aku bisa yakin segalanya akan baik-baik saja? :(",
+     "quote": "اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ",
+     "translation": "Allah adalah cahaya langit dan bumi.",
+     "latin": "Allāhu nūrus-samāwāti wal-arḍi.",
+     "source": "Q.S An-Nur: 35",
+     "explanation": "Allah adalah sumber cahaya dan petunjuk. Teruslah berdoa dan mintalah bimbingan kepada-Nya, karena Dia akan memberikan cahaya dalam kegelapan dan petunjuk dalam ketidakpastian."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa hidupku tidak ada harapan, apa yang bisa aku lakukan? :(",
+     "quote": "لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ",
+     "translation": "Janganlah kamu berputus asa dari rahmat Allah.",
+     "latin": "Lā taqnaṭū min raḥmatillāh.",
+     "source": "Q.S Az-Zumar: 53",
+     "explanation": "Jangan pernah berputus asa, karena rahmat Allah begitu luas. Teruslah berharap kepada-Nya, karena Dia Maha Pengasih dan Maha Penyayang."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa tidak ada yang mendukungku, kenapa semuanya terasa sulit? :(",
+     "quote": "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Inna ma‘al-‘usri yusrā.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Setiap kesulitan akan diikuti oleh kemudahan yang dijanjikan oleh Allah. Teruslah berharap, karena setelah kesulitan, Allah akan memberikan kemudahan."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa apa yang aku lakukan sia-sia, kapan hasilnya akan datang? :(",
+     "quote": "وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ",
+     "translation": "Boleh jadi kamu membenci sesuatu, padahal itu baik bagimu.",
+     "latin": "Wa ‘asā an takrahū shay’an wahuwa khayrullakum.",
+     "source": "Q.S Al-Baqarah: 216",
+     "explanation": "Terkadang kita tidak melihat hikmah di balik sesuatu yang sulit. Teruslah berharap dan yakin bahwa apa yang Allah tetapkan adalah yang terbaik untuk kita."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku takut menghadapi masa depan, semuanya terlihat gelap dan sulit :(",
+     "quote": "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا",
+     "translation": "Barangsiapa bertakwa kepada Allah, niscaya Dia akan mengadakan baginya jalan keluar.",
+     "latin": "Wa man yattaqillāha yaj‘al lahu makhrajan.",
+     "source": "Q.S At-Talaq: 2",
+     "explanation": "Ketakwaan kepada Allah adalah kunci untuk keluar dari kesulitan. Teruslah berharap kepada-Nya, dan Dia akan menunjukkan jalan keluar serta memberikan harapan baru."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa Allah sudah tidak peduli padaku, kenapa doa-doaku belum dikabulkan? :(",
+     "quote": "إِنَّ اللّهَ مَعَ الصَّابِرِينَ",
+     "translation": "Sesungguhnya Allah bersama orang-orang yang sabar.",
+     "latin": "Inna Allāha ma‘aṣ-ṣābirīn.",
+     "source": "Q.S Al-Baqarah: 153",
+     "explanation": "Allah selalu bersama orang-orang yang sabar. Teruslah berharap dan bersabar, karena setiap doa dan usaha akan dibalas dengan kebaikan di waktu yang tepat."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa terlalu banyak masalah, kapan semuanya akan berakhir? :(",
+     "quote": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+     "translation": "Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya.",
+     "latin": "Lā yukallifullāhu nafsan illā wus‘ahā.",
+     "source": "Q.S Al-Baqarah: 286",
+     "explanation": "Allah tidak akan membebani kita melebihi kemampuan kita. Teruslah berharap dan yakin bahwa segala masalah yang kita hadapi pasti bisa kita lewati dengan pertolongan-Nya."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa tak ada yang peduli, kenapa aku harus berharap? :(",
+     "quote": "إِنَّ رَبِّي قَرِيبٌ مُّجِيبٌ",
+     "translation": "Sesungguhnya Tuhanku Maha Dekat lagi Maha Mengabulkan.",
+     "latin": "Inna rabbī qarībun mujīb.",
+     "source": "Q.S Hud: 61",
+     "explanation": "Allah adalah yang paling dekat dan Maha Mengabulkan doa-doa hamba-Nya. Teruslah berharap kepada-Nya, karena Dia selalu memperhatikan dan mendengar setiap doa kita."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa semua pintu rezeki tertutup, bagaimana aku bisa bertahan? :(",
+     "quote": "وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+     "translation": "Barangsiapa bertawakal kepada Allah, maka Dia akan mencukupkan keperluannya.",
+     "latin": "Wa man yatawakkal ‘alallāhi fahuwa ḥasbuh.",
+     "source": "Q.S At-Talaq: 3",
+     "explanation": "Tawakkal kepada Allah adalah jalan untuk mendapatkan kecukupan dan keberkahan. Teruslah berharap kepada-Nya, dan Dia akan mencukupi segala kebutuhanmu dari arah yang tak terduga."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa takut ditinggalkan oleh orang yang aku cintai, bagaimana aku bisa terus berharap? :(",
+     "quote": "وَاللَّهُ وَلِيُّ الْمُؤْمِنِينَ",
+     "translation": "Dan Allah adalah pelindung orang-orang yang beriman.",
+     "latin": "Wallāhu waliyyul-mu’minīn.",
+     "source": "Q.S Ali-Imran: 68",
+     "explanation": "Allah adalah pelindung bagi orang-orang yang beriman. Teruslah berharap kepada-Nya, karena Allah tidak akan pernah meninggalkan atau mengecewakan hamba-Nya yang beriman."
+   },
+   {
+     "title": "Teruslah Berharap Karena...",
+     "me": "Aku merasa doa-doaku tak pernah terkabul, apa yang salah? :(",
+     "quote": "ادْعُونِي أَسْتَجِبْ لَكُمْ",
+     "translation": "Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu.",
+     "latin": "Ud‘ūnī astajiblakum.",
+     "source": "Q.S Ghafir: 60",
+     "explanation": "Allah memerintahkan kita untuk terus berdoa dan berharap kepada-Nya. Jangan pernah putus asa, karena doa-doa kita pasti akan dikabulkan dengan cara dan waktu terbaik menurut-Nya."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah dan hampir menyerah karena semua ujian hidup ini :(",
+     "quote": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Maka sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Fa inna ma‘al-‘usri yusra.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Dalam setiap kesulitan pasti ada kemudahan yang dijanjikan oleh Allah. Jangan lelah, karena setelah kesulitan akan datang kemudahan."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah berjuang, namun aku harus terus berusaha.",
+     "quote": "وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ",
+     "translation": "Dan tidak ada taufik bagiku melainkan dengan pertolongan Allah.",
+     "latin": "Wa mā tawfīqī illā billāh.",
+     "source": "Q.S Hud: 88",
+     "explanation": "Setiap keberhasilan adalah dengan pertolongan Allah. Jangan lelah berjuang, karena Allah selalu memberikan taufik-Nya pada saat yang tepat."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah dan terpuruk, namun aku tahu Allah tidak pernah meninggalkanku.",
+     "quote": "لَا تَهِنُوا وَلَا تَحْزَنُوا",
+     "translation": "Janganlah kamu lemah, dan jangan pula bersedih hati.",
+     "latin": "Lā tahinū wa lā taḥzanū.",
+     "source": "Q.S Ali-Imran: 139",
+     "explanation": "Allah memerintahkan kita untuk tidak berputus asa atau bersedih. Janganlah lelah, karena Allah selalu menyertai hamba-Nya yang sabar."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah menghadapi setiap tantangan, namun aku harus tetap optimis.",
+     "quote": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Fa inna ma‘al-‘usri yusra.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Pengulangan ayat ini menguatkan janji bahwa setiap kesulitan akan diikuti dengan kemudahan. Jangan lelah untuk terus berusaha, karena kemudahan itu pasti datang."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah dalam perjalanan hidup ini, tapi aku harus terus berjalan.",
+     "quote": "وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+     "translation": "Barangsiapa bertawakkal kepada Allah, maka Dia akan mencukupkan keperluannya.",
+     "latin": "Wa man yatawakkal ‘alallāhi fahuwa ḥasbuh.",
+     "source": "Q.S At-Talaq: 3",
+     "explanation": "Kepercayaan dan tawakkal kepada Allah memberikan kekuatan untuk terus berjalan meskipun lelah. Allah akan mencukupkan segala kebutuhan kita."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah dan kehabisan energi, namun aku tahu perjuanganku tidak sia-sia.",
+     "quote": "إِنَّمَا يُوَفَّى الصَّابِرُونَ أَجْرَهُم بِغَيْرِ حِسَابٍ",
+     "translation": "Sesungguhnya hanya orang-orang yang bersabar yang akan dibalas pahalanya tanpa batas.",
+     "latin": "Innamā yuwaffa aṣ-ṣābirūna ajrahum bighayri ḥisāb.",
+     "source": "Q.S Az-Zumar: 10",
+     "explanation": "Kesabaran dalam menghadapi kelelahan dan ujian hidup akan mendapatkan pahala yang tak terhingga. Jangan lelah, karena Allah melihat dan membalas kesabaranmu."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah karena semua beban hidup terasa begitu berat, namun aku harus tetap tabah.",
+     "quote": "وَلَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا",
+     "translation": "Janganlah bersedih, sesungguhnya Allah bersama kita.",
+     "latin": "Wa lā taḥzan, inna Allāha ma‘anā.",
+     "source": "Q.S At-Taubah: 40",
+     "explanation": "Dalam setiap kesulitan, Allah selalu bersama kita. Jangan lelah, karena kehadiran-Nya akan memberikan kekuatan dan penghiburan."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah karena selalu mengalami kegagalan, namun aku harus bangkit kembali.",
+     "quote": "فَسَتُفْتَحُ لَكَ أَبْوَابٌ لَا تُغْلَقُ",
+     "translation": "Pintu-pintu yang tidak akan tertutup akan terbuka bagimu.",
+     "latin": "Fasataftaḥu laka abwābun lā tughlaq.",
+     "source": "Hadis (parafrasa)",
+     "explanation": "Setiap kegagalan adalah kesempatan untuk menemukan pintu rezeki baru yang tak terduga. Jangan lelah, karena selalu ada jalan keluar dan harapan baru di setiap kegagalan."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah karena terus menghadapi penolakan, namun aku tahu usahaku tidak akan sia-sia.",
+     "quote": "إِنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُحْسِنِينَ",
+     "translation": "Sesungguhnya Allah tidak menyia-nyiakan pahala orang-orang yang berbuat baik.",
+     "latin": "Inna Allāha lā yuḍī‘u ajra al-muḥsinīn.",
+     "source": "Q.S At-Taubah: 120",
+     "explanation": "Setiap kebaikan dan usaha yang kita lakukan akan mendapatkan balasan dari Allah. Jangan lelah, karena pahala dari Allah tidak pernah sia-sia."
+   },
+   {
+     "title": "Jangan Lelah Karena...",
+     "me": "Aku merasa lelah menghadapi segala rintangan, namun aku harus terus berharap dan berdoa.",
+     "quote": "ادْعُوا اللَّهَ وَاِسْتَغْفِرُوهُ",
+     "translation": "Mohonlah pertolongan kepada Allah dan mohonlah ampunan-Nya.",
+     "latin": "Ud‘ū Allāha wa istaghfirūhu.",
+     "source": "Anjuran dalam Islam (parafrasa)",
+     "explanation": "Dengan berdoa dan memohon ampunan, Allah akan memberi kekuatan dan pertolongan. Jangan lelah, karena dalam setiap doa terdapat kekuatan untuk bangkit dari segala rintangan."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa hidup ini terlalu berat, dan aku mulai kehilangan harapan.",
+     "quote": "لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ",
+     "translation": "Janganlah kamu berputus asa dari rahmat Allah.",
+     "latin": "Lā taqnaṭū min raḥmatillāh.",
+     "source": "Q.S Az-Zumar: 53",
+     "explanation": "Rahmat Allah tidak pernah berakhir, jadi jangan pernah kehilangan harapan meskipun keadaan terasa suram."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa gagal dalam segala usaha, dan harapanku pudar.",
+     "quote": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Fa inna ma‘al-‘usri yusra.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Setiap kesulitan selalu diikuti oleh kemudahan. Jangan putus asa, karena kemudahan pasti datang setelah kesulitan."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Ketika aku merasa sendirian dalam perjuangan, aku ingat bahwa Allah selalu bersamaku.",
+     "quote": "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+     "translation": "Sesungguhnya Allah bersama orang-orang yang sabar.",
+     "latin": "Inna Allāha ma‘aṣ-ṣābirīn.",
+     "source": "Q.S Al-Baqarah: 153",
+     "explanation": "Kesabaran adalah kunci, dan Allah selalu bersama orang-orang yang sabar. Jangan putus asa dalam menghadapi ujian hidup."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa doaku tidak pernah dikabulkan, membuatku ragu dan putus asa.",
+     "quote": "وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ",
+     "translation": "Dan Tuhanmu berfirman: Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu.",
+     "latin": "Wa qāla rabbukum ud‘ūnī astajiblakum.",
+     "source": "Q.S Ghafir: 60",
+     "explanation": "Doa adalah senjata kita, dan Allah selalu mendengar setiap doa. Jangan putus asa, karena setiap doa akan mendapat jawabannya pada waktu yang tepat."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa jauh dari cahaya harapan, seolah dunia ini gelap tanpa petunjuk.",
+     "quote": "اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ",
+     "translation": "Allah adalah cahaya langit dan bumi.",
+     "latin": "Allāhu nūrus-samāwāti wal-arḍi.",
+     "source": "Q.S An-Nur: 35",
+     "explanation": "Dalam kegelapan sekalipun, Allah adalah cahaya yang memberi petunjuk. Jangan putus asa, karena harapan selalu ada dari-Nya."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa lelah dan putus asa menghadapi kegagalan terus-menerus.",
+     "quote": "وَمَنْ يَتَوَكَّلُ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+     "translation": "Barangsiapa bertawakal kepada Allah, maka Dia akan mencukupkan keperluannya.",
+     "latin": "Wa man yatawakkal ‘alallāhi fahuwa ḥasbuh.",
+     "source": "Q.S At-Talaq: 3",
+     "explanation": "Tawakal kepada Allah membawa kecukupan. Jangan putus asa, karena kepercayaan kepada-Nya akan memberi kekuatan untuk bangkit dari kegagalan."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa segala usaha yang kulakukan sia-sia, dan ragu terhadap kemampuanku sendiri.",
+     "quote": "فَاصْبِرْ صَبْرًا جَمِيلًا",
+     "translation": "Bersabarlah dengan sabar yang baik.",
+     "latin": "Fa ṣabir ṣabran jamīlan.",
+     "source": "Hadis (parafrasa)",
+     "explanation": "Kesabaran yang baik adalah kunci untuk melewati ujian. Jangan putus asa, karena setiap kesabaran akan mendatangkan pahala yang besar dari Allah."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa hancur karena penolakan dan kegagalan, seolah tidak ada jalan keluar.",
+     "quote": "ادْعُوا اللَّهَ وَاِسْتَغْفِرُوهُ",
+     "translation": "Mohonlah pertolongan kepada Allah dan mohonlah ampunan-Nya.",
+     "latin": "Ud‘ū Allāha wa istaghfirūhu.",
+     "source": "Parafrasa (umum)",
+     "explanation": "Dengan berdoa dan memohon ampunan, kita mendapatkan kekuatan baru. Jangan putus asa karena Allah selalu menyediakan jalan keluar bagi hamba-Nya."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa tidak dihargai dan direndahkan, sehingga harapanku mulai memudar.",
+     "quote": "إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ",
+     "translation": "Sesungguhnya orang yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa.",
+     "latin": "Inna akramakum ‘inda Allāhi atqākum.",
+     "source": "Q.S Al-Hujurat: 13",
+     "explanation": "Nilai diri kita tidak ditentukan oleh dunia, melainkan oleh ketakwaan kepada Allah. Jangan putus asa, karena usaha untuk bertakwa akan selalu mendapat penghargaan dari-Nya."
+   },
+   {
+     "title": "Jangan Putus Asa Karena...",
+     "me": "Aku merasa segala sesuatu tidak berpihak kepadaku dan harapanku mulai menghilang.",
+     "quote": "وَاصْبِرْ وَمَا صَبْرُكَ إِلَّا بِاللَّهِ",
+     "translation": "Bersabarlah, dan sesungguhnya kesabaranmu itu bukan karena dirimu sendiri, melainkan karena Allah.",
+     "latin": "Wa aṣbir wa mā ṣabruk illā billāh.",
+     "source": "Parafrasa dari Q.S An-Nahl (127) atau Hadis",
+     "explanation": "Kesabaran yang kita miliki adalah anugerah dari Allah. Jangan putus asa, karena melalui kesabaran, kita akan mendapatkan pertolongan dan rahmat-Nya."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa tidak mampu mengubah keadaan, namun aku tahu ada kekuatan dalam diriku.",
+     "quote": "إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنْفُسِهِمْ",
+     "translation": "Sesungguhnya Allah tidak mengubah keadaan suatu kaum, kecuali kaum itu mengubah keadaan dirinya sendiri.",
+     "latin": "Inna Allāha lā yughayyiru mā biqawmin hattā yughayyiru mā bi-anfusihim.",
+     "source": "Q.S Ar-Ra'd: 11",
+     "explanation": "Percayalah bahwa perubahan dimulai dari diri kita sendiri. Usahakan untuk menjadi lebih baik, karena Allah akan mengubah keadaanmu ketika kamu mengubah dirimu."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa ragu akan masa depanku, tapi aku yakin Allah akan mencukupkan keperluanku.",
+     "quote": "وَمَنْ يَتَوَكَّلُ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+     "translation": "Barangsiapa bertawakkal kepada Allah, maka Dia akan mencukupkan keperluannya.",
+     "latin": "Wa man yatawakkal ‘alallāhi fahuwa ḥasbuh.",
+     "source": "Q.S At-Talaq: 3",
+     "explanation": "Percayalah bahwa dengan bertawakkal kepada Allah, semua kebutuhanmu akan terpenuhi. Kepercayaan kepada-Nya adalah sumber kekuatan dan kecukupan."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa ragu tentang niatku, tapi aku tahu segala amal itu bergantung pada niat.",
+     "quote": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ",
+     "translation": "Sesungguhnya amal itu tergantung pada niatnya.",
+     "latin": "Innāmā al-a'mālu binniyyāt.",
+     "source": "Hadis Nabi",
+     "explanation": "Percayalah bahwa niat yang baik akan membawa hasil yang baik. Segala amal dinilai dari niat, maka pastikan niatmu selalu tulus dan ikhlas."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa kesabaran itu sulit, namun aku tahu Allah selalu bersama orang yang sabar.",
+     "quote": "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+     "translation": "Sesungguhnya Allah bersama orang-orang yang sabar.",
+     "latin": "Inna Allāha ma‘aṣ-ṣābirīn.",
+     "source": "Q.S Al-Baqarah: 153",
+     "explanation": "Percayalah bahwa kesabaran adalah kunci keberhasilan. Allah tidak akan meninggalkan orang-orang yang sabar, jadi tetaplah tabah dalam menghadapi ujian hidup."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa sulit dalam setiap cobaan, tapi aku tahu setiap kesulitan pasti diiringi kemudahan.",
+     "quote": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Maka sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Fa inna ma‘al-‘usri yusra.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Percayalah bahwa tidak ada kesulitan yang abadi. Setelah setiap kesulitan, pasti ada kemudahan yang Allah janjikan untuk setiap hamba-Nya yang sabar."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa terbebani oleh segala ujian, namun aku tahu Allah tidak membebani seseorang melebihi kemampuannya.",
+     "quote": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+     "translation": "Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya.",
+     "latin": "Lā yukallifullāhu nafsan illā wus‘ahā.",
+     "source": "Q.S Al-Baqarah: 286",
+     "explanation": "Percayalah bahwa setiap ujian disesuaikan dengan kemampuan kita. Allah tidak memberikan beban yang tidak bisa kita tanggung, jadi hadapilah dengan keyakinan dan keteguhan hati."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa kecil di hadapan dunia, namun aku tahu bahwa nilai diriku ditentukan oleh ketakwaan.",
+     "quote": "إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ",
+     "translation": "Sesungguhnya orang yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa.",
+     "latin": "Inna akramakum ‘inda Allāhi atqākum.",
+     "source": "Q.S Al-Hujurat: 13",
+     "explanation": "Percayalah bahwa ukuran martabat seseorang di hadapan Allah bukan terletak pada kekayaan atau status, melainkan pada ketakwaan. Tetaplah teguh dalam keimanan."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa sendirian dalam perjuanganku, tapi aku tahu Allah selalu mendengar setiap doaku.",
+     "quote": "قَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ",
+     "translation": "Dan Tuhanmu berfirman: Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu.",
+     "latin": "Qāla rabbukum ud‘ūnī astajiblakum.",
+     "source": "Q.S Ghafir: 60",
+     "explanation": "Percayalah bahwa setiap doa tidak pernah sia-sia. Allah selalu mendengar dan merespon dengan cara terbaik menurut-Nya, jadi teruslah berdoa dengan keyakinan."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa ragu dan tak berdaya menghadapi dunia, tapi aku tahu Allah adalah pelindungku.",
+     "quote": "وَاللَّهُ وَلِيُّ الْمُؤْمِنِينَ",
+     "translation": "Dan Allah adalah pelindung orang-orang yang beriman.",
+     "latin": "Wallāhu waliyyul-mu’minīn.",
+     "source": "Q.S Ali-Imran: 68",
+     "explanation": "Percayalah bahwa Allah adalah pelindungmu. Dengan keimanan, tidak ada yang perlu ditakutkan karena Allah selalu melindungi dan memberikan pertolongan kepada hamba-Nya yang beriman."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa hancur karena segala cobaan, namun aku yakin setiap ujian membawa hikmah.",
+     "quote": "وَاصْبِرْ وَمَا صَبْرُكَ إِلَّا بِاللَّهِ",
+     "translation": "Bersabarlah, karena sesungguhnya kesabaranmu itu bukan karena dirimu sendiri, melainkan karena Allah.",
+     "latin": "Wa aṣbir wa mā ṣabruk illā billāh.",
+     "source": "Parafrasa (Hadis/Q.S)",
+     "explanation": "Percayalah bahwa kesabaran yang diberikan Allah adalah sumber kekuatan. Dalam setiap ujian, ada hikmah yang tersembunyi untuk membentuk kita menjadi lebih baik."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa hampa dan tak berarti, tapi aku tahu Allah menciptakan aku dengan tujuan.",
+     "quote": "مَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ",
+     "translation": "Aku tidak menciptakan jin dan manusia melainkan supaya mereka menyembah-Ku.",
+     "latin": "Mā khalaqtu al-jinna wal-insa illā liya‘budūn.",
+     "source": "Q.S Adz-Dzariyat: 56",
+     "explanation": "Percayalah bahwa hidup ini memiliki makna dan tujuan yang mulia, yaitu untuk menyembah Allah dan mendapatkan kebaikan di dunia serta akhirat."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa tersesat di jalan hidup, namun aku tahu petunjuk Allah selalu ada untukku.",
+     "quote": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+     "translation": "Tunjukilah kami jalan yang lurus.",
+     "latin": "Ihdinā aṣ-ṣirāṭa al-mustaqīm.",
+     "source": "Q.S Al-Fatihah: 6",
+     "explanation": "Percayalah bahwa dengan memohon petunjuk Allah, kita akan selalu diarahkan ke jalan yang benar dan penuh berkah."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa sedih dan hancur karena berbagai masalah, namun aku tahu setiap kesulitan pasti ada hikmahnya.",
+     "quote": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+     "translation": "Maka sesungguhnya bersama kesulitan ada kemudahan.",
+     "latin": "Fa inna ma‘al-‘usri yusra.",
+     "source": "Q.S Al-Inshirah: 6",
+     "explanation": "Percayalah bahwa setiap ujian dan kesulitan membawa pelajaran dan kemudahan, asalkan kita mau bersabar dan terus berusaha."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa lelah dan tidak berdaya menghadapi masalah, tetapi aku tahu kekuasaan Allah selalu lebih besar.",
+     "quote": "إِنَّ اللَّهَ عَزِيزٌ حَكِيمٌ",
+     "translation": "Sesungguhnya Allah Maha Perkasa lagi Maha Bijaksana.",
+     "latin": "Inna Allāha ‘azīzun ḥakīm.",
+     "source": "Q.S Ali 'Imran: 26",
+     "explanation": "Percayalah bahwa kebijaksanaan dan kekuasaan Allah melampaui segala kesulitan yang kita hadapi. Dia selalu menyediakan jalan keluar yang terbaik bagi hamba-Nya."
+   },
+   {
+     "title": "Percayalah Karena...",
+     "me": "Aku merasa terpuruk dan putus asa, tapi aku tahu bahwa dengan mendekatkan diri kepada Allah, aku akan menemukan keberuntungan sejati.",
+     "quote": "قَدْ أَفْلَحَ مَن تَزَكَّىٰ",
+     "translation": "Sungguh beruntung orang yang mensucikan dirinya.",
+     "latin": "Qad aflaha man tazakkā.",
+     "source": "Q.S At-Tin: 4",
+     "explanation": "Percayalah bahwa dengan membersihkan hati dan mendekatkan diri kepada Allah, kita akan mendapatkan keberuntungan dan kesuksesan dalam hidup."
    }
   ]
 }

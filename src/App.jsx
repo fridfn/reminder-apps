@@ -14,7 +14,7 @@ import ProtectedRoute from '@/protectedRoute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  AOS.init({ duration: '1000', mirror: true, once: false});
+  AOS.init({ duration: '700', mirror: true, once: false});
   
   return (
     <>

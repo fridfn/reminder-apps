@@ -33,7 +33,13 @@ const ButtonPagination = ({ endpoint, func, props, values }) => {
     of={title}
     render={(items, index) => (
      <div className='box-button' key={index}>
-      <div className='items' onClick={() => func(index === 0 ? 'next' : 'prev')}>
+      <div className='items' onClick={() => {
+        if (values === 'surah') {
+         func(index === 0 ? 'next' : 'prev')
+        } else {
+         handleNext(endpoints, values)
+        }
+       }}>
        <button className='button'>{items}</button>
        <ion-icon class="small" name={icons[index]}></ion-icon>
       </div>

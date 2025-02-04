@@ -69,7 +69,7 @@ const ReminderPages = () => {
         endpoint='/hadits.json'
         func={handleGenerateReminder} 
         props={button_reminder} 
-        values='reminder'
+        values='hadist'
        />
       </div>
    </div>
