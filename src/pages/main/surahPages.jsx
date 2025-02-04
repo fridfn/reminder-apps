@@ -64,7 +64,6 @@ const SurahPages = () => {
     setAyat(resultAyat)
     setSurah(resultSurah)
    }
-   AOS.refresh();
    handlerFetchData()
   }, [])
   
@@ -78,13 +77,13 @@ const SurahPages = () => {
       <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} />) : (<p>loading</p>
       )}
     </div>
-    <div className='section-reminder' id='wrapper-button-pagination'>
+    <div data-info={'Pages : ' + currentPage} className='section-reminder' id='wrapper-button-pagination number-pages'>
       <ButtonPagination
        endpoint={'/motivasi.json'} 
        func={handleButtonSurah}
        props={BUTTON}
        values='surah'
-     />
+      />
     </div>
    </div>
   )

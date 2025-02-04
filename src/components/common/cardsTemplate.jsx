@@ -1,10 +1,11 @@
 import React from 'react';
 import EachUtils from '@/utils/eachUtils';
+import { useNavigate } from 'react-router-dom'
 import Image from '@/components/common/image';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
 
 const setDataInfo = ({ index, classes }) => {
- return classes[index] || classes 
+ return classes[index] || classes;
 };
 
 const removeHtmlTags = (text) => {
@@ -54,21 +55,37 @@ export const AyatList = ({ ayats, surah, attr, classes }) => {
          {convertToArabicNumbers(ayat.nomor)}
         </p>
        </div>
-      <p>{ayat.id}</p>
-      <p dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.tr)}}/>
+      <p 
+       className={setDataInfo({ index: 1, classes: classes })}
+       dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.tr)}}/>
+       
+      <div className='box-text'>
+       <p
+        className={setDataInfo({ index: 1, classes: classes })}
+        data-info={setDataInfo({ index: 2, classes: attr })}>
+        {ayat.id}
+       </p>
+      </div>
      </div>
    )}/>
   )
  }
 
-export const Surah = ({surah, attr, classes }) => {
+export const Surah = ({ surah, attr, classes }) => {
+  const navigate = useNavigate();
+  
+  const handleOpenSurah = ( surah ) => {
+   navigate(`/home/surah/${surah.nomor}`, { state: { isSurah: surah } });
+  }
+  
   return (
    <EachUtils of={surah}
     render={(surah, index) => (
      <div 
       key={index}
-      className='box-surah'
       data-aos="zoom-in"
+      className='box-surah'
+      onClick={() => handleOpenSurah(surah)}
       data-aos-delay={`${(index + 1) * 350 }`}>
      <div className="ribbon ribbon-surah">&nbsp;&nbsp;{surah.urut}&nbsp;&nbsp;</div>
       <div className='wrapper-surah'>

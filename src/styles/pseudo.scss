@@ -46,7 +46,7 @@
  animation: $sparkle_effect 4s ease infinite;
 }
 
-.container-reminder .wrapper #wrapped-reminder .box:before, .box-motivasi-cards .box-text:before {
+.container-reminder .wrapper #wrapped-reminder .box:before, .box-motivasi-cards .box-text:before, {
  left: 0;
  top: -25px;
  position: absolute;
@@ -54,9 +54,24 @@
  content: attr(data-info);
 }
 
+.section-reminder:before {
+ top: 40px;
+ right: 15px;
+ width: 70px;
+ font-size: 13px;
+ position: absolute;
+ content: attr(data-info);
+ color: $primary-color-icons;
+ font-family: 'Russo One', serif;
+}
+
 .box-motivasi-cards .box-text:before {
  font-size: 13px;
  text-transform: capitalize;
+}
+
+.box-ayat .box-text:before {
+ display: none;
 }
 
 .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2):after, .container-reminder .wrapper .wrapper-text .text-arti:nth-child(2), .reminder .wrapper-reminder:after, .box-text:after {
@@ -77,8 +92,9 @@
  top: -40px;
 }
 
-.box-motivasi-cards .nm-txt:before, .box-motivasi-cards .text-arti:before {
+.box-motivasi-cards .nm-txt:before, .box-motivasi-cards .text-arti:before, #wrapper-button-pagination #number-pages:before, .box-ayat .text-arti:before {
  content: attr(data-info);
+ position: relative;
 }
 
 .box-motivasi-cards .text-arti:nth-child(3) {

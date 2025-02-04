@@ -123,8 +123,8 @@
 .header-cards .title {
  font-size: 25px;
  font-weight: 600;
+ font-family: serif;
  text-transform: capitalize;
- font-family: "Russon one", serif;
 }
 
 .header-sec {
@@ -566,7 +566,7 @@
  background-color: $secondary-color-cards;
 }
 
-.container-bubble .box-text, .box-motivasi-cards .box-text {
+.container-bubble .box-text, .box-motivasi-cards .box-text, .box-ayat .box-text {
  width: 100%;
  line-height: 14px;
  padding: 8px 12px;
@@ -590,6 +590,13 @@
  font-size: 15px;
  font-weight: 500;
  flex-direction: column;
+}
+
+.box-ayat .box-text {
+ padding-left: 0;
+ text-align: start;
+ background-color: transparent;
+ box-shadow: 0 0 0 0 transparent;
 }
 
 .container-bubble .box-image {
@@ -644,9 +651,13 @@
  border-top: 2px ridge $primary-color-text;
 }
 
-.box-ayat {
- border: 2px solid blue;
+#wrapper-ayat .box-ayat {
+ gap: 20px;
  width: 100%;
+ display: flex;
+ padding-bottom: 10px;
+ flex-direction: column;
+ border-bottom: 2px ridge $primary-color-text;
 }
 
 .box-ayat .wrapper-ayat {
@@ -660,25 +671,38 @@
 
 .box-ayat .wrapper-ayat .text-arab {
  max-width: 87%;
- font-size: 26px;
+ font-size: 28px;
  text-align: end;
  font-weight: 600;
+ line-height: 40px;
+}
+
+.box-ayat .text-arti {
+ font-size: 14px;
+ font-weight: 400;
 }
 
 .box-ayat .wrapper-ayat #number-ayat {
- position: static;
+ top: 0;
+ left: 0;
  width: 30px;
  height: 30px;
  display: flex;
- margin-top: 5px;
+ position: absolute;
  text-align: center;
  align-items: center;
- border-radius: 50px;
+ border-radius: 10px;
  justify-content: center;
- border: 2px solid $primary-color-text;
+ 
+--s: 35px;
+ width: var(--s); 
+ aspect-ratio: 1;
+ background-color: $primary-color-icons;
+ --g:/calc(var(--s)*0.276) calc(var(--s)*0.276) radial-gradient(50% 50%,#000 99%,#0000 101%) no-repeat;
+ mask: calc(50% + var(--s)*0.208) calc(50% + var(--s)*0.252) var(--g),calc(50% + var(--s)*-0.114) calc(50% + var(--s)*0.306) var(--g),calc(50% + var(--s)*-0.322) calc(50% + var(--s)*0.055) var(--g),calc(50% + var(--s)*-0.208) calc(50% + var(--s)*-0.252) var(--g),calc(50% + var(--s)*0.114) calc(50% + var(--s)*-0.306) var(--g),calc(50% + var(--s)*0.322) calc(50% + var(--s)*-0.055) var(--g),radial-gradient(calc(var(--s)*0.403),#000 99%,#0000 101%) subtract,calc(50% + var(--s)*0.084) calc(50% + var(--s)*0.499) var(--g),calc(50% + var(--s)*-0.39) calc(50% + var(--s)*0.322) var(--g),calc(50% + var(--s)*-0.474) calc(50% + var(--s)*-0.176) var(--g),calc(50% + var(--s)*-0.084) calc(50% + var(--s)*-0.499) var(--g),calc(50% + var(--s)*0.39) calc(50% + var(--s)*-0.322) var(--g),calc(50% + var(--s)*0.474) calc(50% + var(--s)*0.176) var(--g);
 }
 
-#wrapper-surah {
+#wrapper-surah, #wrapper-ayat {
  gap: 25px;
  display: flex;
  height: 65dvh;
@@ -687,6 +711,10 @@
  overflow-x: hidden;
  position: relative;
  flex-direction: column;
+}
+
+#wrapper-ayat {
+ gap: 50px;
 }
 
 #wrapper-button-pagination {

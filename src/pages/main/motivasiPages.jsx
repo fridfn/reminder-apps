@@ -30,7 +30,6 @@ const MotivasiPages = () => {
   
   const selectedValues = [motivasi.quote,  motivasi.latin, motivasi.translation, motivasi.source, motivasi.explanation]
   
-  
   useEffect(() => {
    const handlerFetchData = async () => {
     const data = await fetchData('/motivasi.json')

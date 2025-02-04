@@ -3,7 +3,6 @@ import Image from '@/components/common/image';
 
 const Reminder = ({ hadits, riwayat }) => {
   const { name, number, id } = riwayat;
-  console.log(riwayat)
   const fullHaditsRef = useRef([]);
   
   const handlerFullHadits = () => {
