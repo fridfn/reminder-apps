@@ -22,7 +22,6 @@ const AyatPages = () => {
   const [animate, setAnimate] = useState(false)
   const [currentAyat, setCurrentAyat] = useState(1);
   
-  
   const ayatPerList = 20;
   const totalAyatList = Math.ceil(ayat.length / ayatPerList);
   const lastIndexAyat = currentAyat * ayatPerList;
@@ -42,9 +41,17 @@ const AyatPages = () => {
     }
     handlerFetchData()
    } else {
-    navigate('/home/surah');
+    navigate('/home/surah/');
    }
   }, [])
+  
+  useEffect(() => {
+   if (ayat) {
+    setTimeout(() => {
+     setLoading(false);
+    }, 1000)
+   }
+  }, [currentAyat])
   
   const handleButtonSurah = (type) => {
    AOS.refresh()
@@ -65,16 +72,16 @@ const AyatPages = () => {
    }
   }
   
-  
   return (
    <div className='container' id='ayat-pages'>
     <Sidebar active='surah' />
     <Navbar />
-    <Header title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`} quote={`Arti : ${isSurah.arti}`} />
+    <Header title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`} quote={`Arti : ${isSurah.arti}`} icons='arrow-back' action='surah' />
     <div className='section-reminder' id='wrapper-ayat'>
-      <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} />
+      {!loading ? (
+      <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} pages={currentAyat} />) : (<p>Loading</p>)}
     </div>
-    <div data-info={'Pages : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
+    <div data-info={'Lembar : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination
        endpoint={'/motivasi.json'} 
        func={handleButtonSurah}

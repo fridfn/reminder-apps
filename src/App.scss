@@ -532,7 +532,8 @@
  word-break: break-word;
 }
 
-#wrapper-content-reminder, #wrapper-motivasi {
+#wrapper-content-reminder, #wrapper-motivasi, 
+#wrapper-main-content {
  height: 75dvh;
  overflow-y: scroll;
  overflow-x: hidden;
@@ -540,13 +541,16 @@
 }
 
 #wrapper-motivasi {
- gap: 20px;
- overflow-y: scroll;
+ gap: 0px;
 }
 
-#wrapper-motivasi .bg-txt, .md-txt {
- letter-spacing: 1.5px;
+#wrapper-main-content {
+ gap: 20px;
+}
+
+#wrapper-main-content .bg-txt, .md-txt {
  opacity: .8;
+ letter-spacing: 1.5px;
  font-family: 'Russo One', serif;
 }
 

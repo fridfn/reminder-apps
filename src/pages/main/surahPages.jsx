@@ -8,12 +8,15 @@ import fetchData from '@/utils/fetchData';
 import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
 import ButtonPagination from '@/components/common/buttonPagination';
+import { useLocation } from 'react-router-dom';
 import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
 import { FixedSizeList as List } from 'react-window';
 
 const SurahPages = () => {
-  const userData = getUser();
+  const userData = getUser()
+  const location = useLocation()
   const [ayat, setAyat] = useState([])
+  const { pages } = location.state || {}
   const [surah, setSurah] = useState([])
   const [image, setImage] = useState('')
   const [loading, setLoading] = useState(true);
@@ -61,8 +64,10 @@ const SurahPages = () => {
    const handlerFetchData = async () => {
     const resultAyat = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/surat/1')
     const resultSurah = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/data')
+    
     setAyat(resultAyat)
     setSurah(resultSurah)
+    pages ? setCurrentPage(pages) : null;
    }
    handlerFetchData()
   }, [])
@@ -74,10 +79,10 @@ const SurahPages = () => {
     <Header title={`${userData?.nama?.split(' ')[0]}, Surah - Surah Al Qur'an`} quote='Selalu sempatkan sedikit waktu untuk tadarus setiap harinya ya.' />
     <div className='section-reminder' id='wrapper-surah'>
      {!loading ? (
-      <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} />) : (<p>loading</p>
+      <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} />) : (<p>loading</p>
       )}
     </div>
-    <div data-info={'Pages : ' + currentPage} className='section-reminder' id='wrapper-button-pagination number-pages'>
+    <div data-info={!loading ? `${'Halaman : ' + currentPage}` : 'Halaman : ?'} className='section-reminder' id='wrapper-button-pagination number-pages'>
       <ButtonPagination
        endpoint={'/motivasi.json'} 
        func={handleButtonSurah}

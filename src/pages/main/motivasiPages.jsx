@@ -66,7 +66,7 @@ const MotivasiPages = () => {
     <Sidebar active='motivasi' />
     <Navbar />
     <Header size={setFontSize(motivasi?.title?.length)} title={title} quote='Tetap semangat ya, aku tahu kamu pasti bisa melewatinya. Semangatt' />
-    <div className='section-reminder' id='wrapper-motivasi'>
+    <div className='section-reminder' id='wrapper-main-content'>
      <div id='tops-reminder'></div>
      <BubbleMessage message={motivasi.me} />
      <span>

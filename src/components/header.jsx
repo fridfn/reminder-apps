@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import property from '@/property'
 import generateRandomValue from '@/utils/generateRandomValue'
 
-const Header = ({ size, title, quote }) => {
+const Header = ({ size, title, quote, icons, action }) => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { pages } = location.state || {}
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
   const [motivation, setMotivation] = useState('')
   
   useEffect(() => {
+   console.log({pages}, 'get un jeader')
    const motivation = property.pages.home.data.motivation
    const randomMotivation = generateRandomValue(motivation)
    setMotivation(randomMotivation)
-  }, [])
+  }, []);
+  
+  const handleAction = (action) => {
+   switch(action) {
+    case 'surah':
+     navigate('/home/surah', { state: { pages: pages }})
+    break;
+   default:
+   console.log('please set action')
+   }
+  }
   
   return (
    <div className='header'>
@@ -25,8 +40,8 @@ const Header = ({ size, title, quote }) => {
        {motivation ? (
        <p className='text'>{!quote ? motivation : quote}</p>) : (null)}
      </div>
-     <div className='box-notification'>
-       <ion-icon name='options' class='icons'></ion-icon>
+     <div className='box-notification' onClick={() => handleAction(action)}>
+       <ion-icon name={icons || 'options'} class='icons'></ion-icon>
      </div>
    </div>
   )

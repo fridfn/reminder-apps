@@ -38,7 +38,9 @@ const MotivasiCards = ({ data, title, attr, classes }) => {
   )
 }
 
-export const AyatList = ({ ayats, surah, attr, classes }) => {
+export const AyatList = ({ ayats, attr, classes }) => {
+  let regex = /بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ/g;
+  
   return (
    <EachUtils of={ayats}
     render={(ayat, index) => (
@@ -47,7 +49,8 @@ export const AyatList = ({ ayats, surah, attr, classes }) => {
         <p 
          className={setDataInfo({ index: 0, classes: classes })}
          data-info={setDataInfo({ index: 0, classes: attr })}>
-          {ayat.ar}
+          {ayats.id == 'bismi  awz,' ?
+           regex : ayat.ar.replace(regex, '')}
          </p>
         <p
          id='number-ayat'
@@ -57,7 +60,7 @@ export const AyatList = ({ ayats, surah, attr, classes }) => {
        </div>
       <p 
        className={setDataInfo({ index: 1, classes: classes })}
-       dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.tr)}}/>
+        dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.tr)}}/>
        
       <div className='box-text'>
        <p
@@ -71,15 +74,14 @@ export const AyatList = ({ ayats, surah, attr, classes }) => {
   )
  }
 
-export const Surah = ({ surah, attr, classes }) => {
+export const Surah = ({ surah, attr, classes, pages }) => {
   const navigate = useNavigate();
-  
   const handleOpenSurah = ( surah ) => {
-   navigate(`/home/surah/${surah.nomor}`, { state: { isSurah: surah } });
+   navigate(`/home/surah/${surah.nomor}`, { state: { isSurah: surah, pages: pages } });
   }
   
   return (
-   <EachUtils of={surah}
+  <EachUtils of={surah}
     render={(surah, index) => (
      <div 
       key={index}
