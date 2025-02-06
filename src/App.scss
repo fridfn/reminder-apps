@@ -102,6 +102,10 @@
  font-weight: 500;
 }
 
+.text {
+ color: $primary-color-text;
+}
+
 .header .box-notification {
  top: 0;
  right: -35px;
@@ -232,8 +236,8 @@
  padding: 15px;
  text-align: center;
  border-radius: 10px;
- scrollbar-color: transparent transparent;
  background-color: $secondary-color-cards;
+ scrollbar-color: transparent transparent;
 }
 
 .wrapper-reminder {
@@ -261,6 +265,12 @@
  font-weight: 600;
 }
 
+.section-cards, #wrapper-ayat {
+ scrollbar-color: $primary-color-text #000000;
+}
+.section-reminder {
+ scrollbar-color: transparent #000000;
+}
 .section-cards {
  display: flex;
  flex-shrink: 0;
@@ -272,7 +282,6 @@
  padding-right: 100px;
  padding-bottom: 25px;
  scroll-snap-type: x mandatory;
- scrollbar-color: $primary-color-text #000000;
 }
 
 .pages-loading {
@@ -537,7 +546,6 @@
  height: 75dvh;
  overflow-y: scroll;
  overflow-x: hidden;
- scrollbar-color: transparent transparent;
 }
 
 #wrapper-motivasi {
@@ -742,6 +750,19 @@
 .box-surah .wrapper-surah {
  display: flex;
  flex-direction: row-reverse;
+}
+
+#surah-pages #wrapper-surah {
+ margin: 10px 0;
+ position: relative;
+}
+
+#wrapper-box-category .container-button {
+ top: 0;
+ gap: 20px;
+ z-index: 10;
+ position: static;
+ justify-content: start;
 }
 
 .box-surah .text-asma {

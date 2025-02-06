@@ -1,20 +1,20 @@
 {
   "name": "Reminders Apps",
   "short_name": "Reminder",
-  "description": "an encyclopedia website about dinosaurs and provides information about prehistoric times",
-  "start_url": "/",
+  "description": "reminder app",
+  "start_url": "/home/surah",
   "display": "standalone",
-  "background_color": "#05210a",
-  "theme_color": "#0b2810",
+  "background_color": "#202848",
+  "theme_color": "#202848",
   "icons": [
     {
-      "src": "/src/assets/dinosaurus.jpg",
-      "sizes": "192x192",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/src/assets/dinosaurus.jpg",
-      "sizes": "512x512",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png"
     }
   ]

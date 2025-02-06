@@ -77,6 +77,14 @@ const SurahPages = () => {
     <Sidebar active='surah' />
     <Navbar />
     <Header title={`${userData?.nama?.split(' ')[0]}, Surah - Surah Al Qur'an`} quote='Selalu sempatkan sedikit waktu untuk tadarus setiap harinya ya.' />
+    <div className='section-reminder' id='wrapper-box-category'>
+     <ButtonPagination
+      endpoint={'/motivasi.json'} 
+      func={handleButtonSurah}
+      props={{title: ["Al - Qur'an", 'lita'], icons: null }}
+      values='surah'
+     />
+     </div>
     <div className='section-reminder' id='wrapper-surah'>
      {!loading ? (
       <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} />) : (<p>loading</p>

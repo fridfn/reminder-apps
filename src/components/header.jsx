@@ -13,7 +13,6 @@ const Header = ({ size, title, quote, icons, action }) => {
   const [motivation, setMotivation] = useState('')
   
   useEffect(() => {
-   console.log({pages}, 'get un jeader')
    const motivation = property.pages.home.data.motivation
    const randomMotivation = generateRandomValue(motivation)
    setMotivation(randomMotivation)

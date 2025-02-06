@@ -102,7 +102,9 @@
 }
 
 .box-motivasi-cards .box-text.text-arti:before {
- top: -25px;
+ margin-top: 20px;
+ position: absolute;
+ color: $primary-color-text;
 }
 
 //// SECTION JAVASCRIPT ACTIVE MODE ////
