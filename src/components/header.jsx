@@ -23,21 +23,22 @@ const Header = ({ size, title, quote, icons, action }) => {
     case 'surah':
      navigate('/home/surah', { state: { pages: pages }})
     break;
-   default:
-   console.log('please set action')
+    default:
+     console.log('please set action')
    }
   }
   
   return (
    <div className='header'>
      <div className='header-cards'>
-       <p 
-        className='md-txt title'
-        style={size && {fontSize: size + 'px'}}>
-        {title}
-       </p>
-       {motivation ? (
-       <p className='text'>{!quote ? motivation : quote}</p>) : (null)}
+      <p 
+       className='md-txt title'
+       style={size && {fontSize: size + 'px'}}>
+       {title}
+      </p>
+      {motivation ? (
+      <p className='text'>{!quote ? motivation : quote}</p>) :
+      (null)}
      </div>
      <div className='box-notification' onClick={() => handleAction(action)}>
        <ion-icon name={icons || 'options'} class='icons'></ion-icon>

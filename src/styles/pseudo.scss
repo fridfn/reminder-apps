@@ -92,7 +92,7 @@
  top: -40px;
 }
 
-.box-motivasi-cards .nm-txt:before, .box-motivasi-cards .text-arti:before, #wrapper-button-pagination #number-pages:before, .box-ayat .text-arti:before {
+.box-motivasi-cards .nm-txt:before, .box-motivasi-cards .text-arti:before, #wrapper-button-pagination #number-pages:before, .box-ayat .text-arti:before, #wrapper-surah-pendek .box-text .text-arti:before {
  content: attr(data-info);
  position: relative;
 }
@@ -105,6 +105,13 @@
  margin-top: 20px;
  position: absolute;
  color: $primary-color-text;
+}
+
+#wrapper-surah-pendek .box-text:before {
+ display: none;
+}
+#wrapper-surah-pendek .box-text:after {
+ top: 91%;
 }
 
 //// SECTION JAVASCRIPT ACTIVE MODE ////

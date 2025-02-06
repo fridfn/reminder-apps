@@ -19,11 +19,12 @@ const SurahPages = () => {
   const { pages } = location.state || {}
   const [surah, setSurah] = useState([])
   const [image, setImage] = useState('')
-  const [visible, setVisible] = useState('surah_pendek')
+  const [visible, setVisible] = useState('al_quran')
   const [surahPendek, setSurahPendek] = useState([]);
   const [loading, setLoading] = useState(true);
   let [currentPage, setCurrentPage] = useState(1)
   const [animate, setAnimate] = useState(false)
+  const [reminder, setReminder] = useState('Selalu sempatkan sedikit waktu untuk tadarus setiap harinya ya.')
   
   const ATTRIBUTE = property.pages.surah.data.attribute;
   const CLASSES = property.pages.surah.data.classes;
@@ -55,11 +56,13 @@ const SurahPages = () => {
      break;
      case 'al_quran':
       setVisible('al_quran')
+      setReminder('Selalu sempatkan sedikit waktu untuk tadarus setiap harinya ya.')
      break;
      case 'surah_pendek':
       setVisible('surah_pendek')
+      setReminder('Jangan lupa untuk berdoa ya di setiap hal yang ingin kamu lakukan.')
       if (currentPage > 8) {
-       setCurrentPage(currentPage - totalPagesSurahPendek)
+       setCurrentPage(1);
       }
      break;
      default:
@@ -84,7 +87,7 @@ const SurahPages = () => {
     setAyat(resultAyat)
     setSurah(resultSurah)
     setSurahPendek(resultSurahPendek)
-    console.log(surahPendek)
+    console.log(resultSurahPendek)
     pages ? setCurrentPage(pages) : null;
    }
    handlerFetchData()
@@ -94,10 +97,10 @@ const SurahPages = () => {
    <div className='container' id='surah-pages'>
     <Sidebar active='surah' />
     <Navbar />
-    <Header title={`${userData?.nama?.split(' ')[0]}, Surah - Surah Al Qur'an`} quote='Selalu sempatkan sedikit waktu untuk tadarus setiap harinya ya.' />
+    <Header title={`${userData?.nama?.split(' ')[0]}, Surah - Surah Al Qur'an`} quote={reminder} />
     <div className='section-reminder' id='wrapper-box-category'>
      <ButtonPagination
-      endpoint={'/motivasi.json'} 
+      endpoint={'/motivasi.json'}
       func={handleButtonSurah}
       props={{title: ["Al - Qur'an", 'Surah Pendek'], icons: null }}
       values='alquran'

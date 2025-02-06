@@ -663,7 +663,7 @@
  border-top: 2px ridge $primary-color-text;
 }
 
-#wrapper-ayat .box-ayat {
+#wrapper-ayat .box-ayat, #wrapper-surah-pendek .box-text {
  gap: 20px;
  width: 100%;
  display: flex;
@@ -681,7 +681,7 @@
  flex-direction: row-reverse;
 }
 
-.box-ayat .wrapper-ayat .text-arab {
+.box-ayat .wrapper-ayat .text-arab, #wrapper-surah-pendek .text-arab {
  max-width: 87%;
  font-size: 28px;
  text-align: end;
@@ -689,7 +689,7 @@
  line-height: 40px;
 }
 
-.box-ayat .text-arti {
+.box-ayat .text-arti, #wrapper-surah-pendek .text-arti {
  font-size: 14px;
  font-weight: 400;
 }
@@ -804,12 +804,28 @@
  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
 }
 
-#wrapper-surah-pendek .wrapper-surah {
- align-items: start;
- gap: 10px;
+#wrapper-surah-pendek {
+ gap: 30px;
+ padding: 0;
+ flex-direction: column;
+ background-color: transparent;
 }
 
 #wrapper-surah-pendek .wrapper-surah {
+ gap: 10px;
+ flex-shrink: 0;
+ align-items: center;
+ position: relative;
+ justify-content: start;
+}
+
+#wrapper-surah-pendek .wrapper-surah .text-surah {
+ font-size: 15px;
+ width: 68%;
+}
+
+#wrapper-surah-pendek .wrapper-surah {
+ width: 100%;
  font-size: 15px;
  font-family: 'Russo One', serif;
 }
