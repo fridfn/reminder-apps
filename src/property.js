@@ -127,6 +127,7 @@ const props = {
       2: 'text text-info',
       3: 'text text-surah',
       4: 'text text-asma',
+      5: 'text text-surah-pendek',
      }
     }
    }

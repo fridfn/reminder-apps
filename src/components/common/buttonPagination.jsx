@@ -36,6 +36,8 @@ const ButtonPagination = ({ endpoint, func, props, values }) => {
       <div className='items' onClick={() => {
         if (values === 'surah') {
          func(index === 0 ? 'next' : 'prev')
+        } else if (values === 'alquran') {
+         func(index === 0 ? 'al_quran' : 'surah_pendek')
         } else {
          handleNext(endpoints, values)
         }

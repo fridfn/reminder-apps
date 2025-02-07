@@ -116,4 +116,31 @@ export const Surah = ({ surah, attr, classes, pages }) => {
   )
 }
 
+export const SurahPendek = ({ surah, attr, classes }) => {
+ //console.log(surah, attr, classes)
+  return (
+   <EachUtils
+    of={surah}
+    render={(surah, index) => (
+     <div
+      key={index}
+      className='box-surah'
+      id='wrapper-surah-pendek'>
+      <div className='wrapper-surah'>
+       <p 
+        className={setDataInfo({ index: 3, classes: classes })}>
+        {surah.doa}
+       </p>
+       <p
+        id='number-surah'
+        className={setDataInfo({ index: 1, classes: classes })}>
+        {convertToArabicNumbers(surah.id)}
+       </p>
+      </div>
+     </div>
+    )
+   }/>
+  )
+}
+
 export default MotivasiCards;

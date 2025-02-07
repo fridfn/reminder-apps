@@ -803,3 +803,13 @@
  background-color: $primary-color-image;
  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
 }
+
+#wrapper-surah-pendek .wrapper-surah {
+ align-items: start;
+ gap: 10px;
+}
+
+#wrapper-surah-pendek .wrapper-surah {
+ font-size: 15px;
+ font-family: 'Russo One', serif;
+}

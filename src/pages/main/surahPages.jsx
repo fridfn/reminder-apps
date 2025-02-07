@@ -9,7 +9,7 @@ import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
 import ButtonPagination from '@/components/common/buttonPagination';
 import { useLocation } from 'react-router-dom';
-import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
+import MotivasiCards, { AyatList, Surah, SurahPendek } from '@/components/common/cardsTemplate';
 import { FixedSizeList as List } from 'react-window';
 
 const SurahPages = () => {
@@ -19,8 +19,10 @@ const SurahPages = () => {
   const { pages } = location.state || {}
   const [surah, setSurah] = useState([])
   const [image, setImage] = useState('')
+  const [visible, setVisible] = useState('surah_pendek')
+  const [surahPendek, setSurahPendek] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1)
+  let [currentPage, setCurrentPage] = useState(1)
   const [animate, setAnimate] = useState(false)
   
   const ATTRIBUTE = property.pages.surah.data.attribute;
@@ -29,22 +31,35 @@ const SurahPages = () => {
   
   const itemsPerPage = 5;
   const totalPages = Math.ceil(surah.length / itemsPerPage);
+  const totalPagesSurahPendek = Math.ceil(surahPendek.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentSurah = surah.slice(indexOfFirstItem, indexOfLastItem);
+  const currentSurahPendek = surahPendek.slice(indexOfFirstItem, indexOfLastItem);
   
   const handleButtonSurah = (type) => {
    AOS.refresh()
    setLoading(true);
+   const setTotalPages = visible === 'surah_pendek' ? totalPagesSurahPendek : totalPages;
+   
    switch (type) {
     case 'next':
-     if (currentPage < totalPages){
+     if (currentPage < setTotalPages) {
        setCurrentPage(currentPage + 1)
       }
      break;
      case 'prev':
       if (currentPage > 1) {
         setCurrentPage(currentPage - 1);
+      }
+     break;
+     case 'al_quran':
+      setVisible('al_quran')
+     break;
+     case 'surah_pendek':
+      setVisible('surah_pendek')
+      if (currentPage > 8) {
+       setCurrentPage(currentPage - totalPagesSurahPendek)
       }
      break;
      default:
@@ -64,9 +79,12 @@ const SurahPages = () => {
    const handlerFetchData = async () => {
     const resultAyat = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/surat/1')
     const resultSurah = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/data')
+    const resultSurahPendek = await fetchData('/surah_pendek.json')
     
     setAyat(resultAyat)
     setSurah(resultSurah)
+    setSurahPendek(resultSurahPendek)
+    console.log(surahPendek)
     pages ? setCurrentPage(pages) : null;
    }
    handlerFetchData()
@@ -81,14 +99,18 @@ const SurahPages = () => {
      <ButtonPagination
       endpoint={'/motivasi.json'} 
       func={handleButtonSurah}
-      props={{title: ["Al - Qur'an", 'lita'], icons: null }}
-      values='surah'
+      props={{title: ["Al - Qur'an", 'Surah Pendek'], icons: null }}
+      values='alquran'
      />
      </div>
     <div className='section-reminder' id='wrapper-surah'>
-     {!loading ? (
-      <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} />) : (<p>loading</p>
-      )}
+     {!loading ?
+      visible === 'al_quran' ? (
+      <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} />)
+      : (
+       <SurahPendek surah={currentSurahPendek} classes={CLASSES} attr={ATTRIBUTE} />
+      ) : (<p>loading</p>)
+     }
     </div>
     <div data-info={!loading ? `${'Halaman : ' + currentPage}` : 'Halaman : ?'} className='section-reminder' id='wrapper-button-pagination number-pages'>
       <ButtonPagination
