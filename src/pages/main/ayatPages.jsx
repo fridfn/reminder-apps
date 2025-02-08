@@ -7,6 +7,7 @@ import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
 import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
+import TextSpeech from '@/utils/textSpeech';
 import ButtonPagination from '@/components/common/buttonPagination';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
@@ -17,6 +18,7 @@ const AyatPages = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [ayat, setAyat] = useState([])
+  const [latin, setLatin] = useState([])
   const { isSurah } = location.state || {}
   const [loading, setLoading] = useState(true);
   const [animate, setAnimate] = useState(false)
@@ -35,27 +37,31 @@ const AyatPages = () => {
   useEffect(() => {
    if (nomor) {
     const handlerFetchData = async () => {
-     const resultAyat = await fetchData(`https://api.npoint.io/99c279bb173a6e28359c/surat/${nomor}`)
+     const resultAyat = await fetchData(`/quran.json`)
+     const resultLatin = await fetchData(`https://api.npoint.io/99c279bb173a6e28359c/surat/${nomor + 1}`)
+     const getAyat = resultAyat[nomor].ayahs;
      
-     setAyat(resultAyat)
+     setAyat(getAyat)
+     setLatin(resultLatin)
+     console.log(`https://api.npoint.io/99c279bb173a6e28359c/surat/${nomor}`)
     }
     handlerFetchData()
    } else {
     navigate('/home/surah/');
    }
-  }, [])
+  }, [nomor])
   
   useEffect(() => {
    if (ayat) {
     setTimeout(() => {
      setLoading(false);
-    }, 1000)
+    }, 300)
    }
-  }, [currentAyat])
+  }, [currentAyat, loading])
   
   const handleButtonSurah = (type) => {
    AOS.refresh()
-   //setLoading(true);
+   setLoading(true);
    switch (type) {
     case 'next':
      if (currentAyat < totalAyatList) {
@@ -79,7 +85,7 @@ const AyatPages = () => {
     <Header title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`} quote={`Arti : ${isSurah.arti}`} icons='arrow-back' action='surah' />
     <div className='section-reminder' id='wrapper-ayat'>
       {!loading ? (
-      <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} pages={currentAyat} />) : (<p>Loading</p>)}
+      <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} pages={currentAyat} latin={latin} />) : (<p>Loading</p>)}
     </div>
     <div data-info={'Lembar : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination
@@ -92,5 +98,4 @@ const AyatPages = () => {
    </div>
   )
 }
-
 export default AyatPages;

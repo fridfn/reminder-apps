@@ -37,7 +37,7 @@ const SurahPages = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentSurah = surah.slice(indexOfFirstItem, indexOfLastItem);
   const currentSurahPendek = surahPendek.slice(indexOfFirstItem, indexOfLastItem);
-  
+ 
   const handleButtonSurah = (type) => {
    AOS.refresh()
    setLoading(true);
@@ -81,13 +81,12 @@ const SurahPages = () => {
   useEffect(() => {
    const handlerFetchData = async () => {
     const resultAyat = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/surat/1')
-    const resultSurah = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/data')
+    const resultSurah = await fetchData('/quran.json')
     const resultSurahPendek = await fetchData('/surah_pendek.json')
     
     setAyat(resultAyat)
     setSurah(resultSurah)
     setSurahPendek(resultSurahPendek)
-    console.log(resultSurahPendek)
     pages ? setCurrentPage(pages) : null;
    }
    handlerFetchData()

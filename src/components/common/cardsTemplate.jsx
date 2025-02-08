@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EachUtils from '@/utils/eachUtils';
+import TextSpeech from '@/utils/textSpeech';
+import useAudioPlayer from '@/utils/audioPlayer';
 import { useNavigate } from 'react-router-dom'
 import Image from '@/components/common/image';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
@@ -38,37 +40,40 @@ const MotivasiCards = ({ data, title, attr, classes }) => {
   )
 }
 
-export const AyatList = ({ ayats, attr, classes }) => {
+export const AyatList = ({ ayats, attr, classes, latin }) => {
+  const { playAudio, stopAudio } = useAudioPlayer();
   let regex = /بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ/g;
+  const allAudio = ayats.map(items => items.audio.alafasy)
   
   return (
    <EachUtils of={ayats}
     render={(ayat, index) => (
-     <div className='box-ayat' key={index}>
+     <div className='box-ayat' key={ayat.number.inSurah}>
       <div className='wrapper-ayat'>
         <p 
          className={setDataInfo({ index: 0, classes: classes })}
          data-info={setDataInfo({ index: 0, classes: attr })}>
-          {ayats.id == 'bismi  awz,' ?
-           regex : ayat.ar.replace(regex, '')}
+          {ayat.arab}
          </p>
         <p
          id='number-ayat'
          className={setDataInfo({ index: 0, classes: classes })}>
-         {convertToArabicNumbers(ayat.nomor)}
+         {convertToArabicNumbers(ayat.number.inSurah)}
         </p>
        </div>
       <p 
        className={setDataInfo({ index: 1, classes: classes })}
-        dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.tr)}}/>
-       
+        dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.translation)}}/>
       <div className='box-text'>
        <p
         className={setDataInfo({ index: 1, classes: classes })}
         data-info={setDataInfo({ index: 2, classes: attr })}>
-        {ayat.id}
+        {ayat.translation}
        </p>
       </div>
+      <button className='player-audio' onClick={() => playAudio(allAudio, index)}>
+       play surah
+      </button>
      </div>
    )}/>
   )
@@ -77,36 +82,44 @@ export const AyatList = ({ ayats, attr, classes }) => {
 export const Surah = ({ surah, attr, classes, pages }) => {
   const navigate = useNavigate();
   const handleOpenSurah = ( surah ) => {
-   navigate(`/home/surah/${surah.nomor}`, { state: { isSurah: surah, pages: pages } });
+   navigate(`/home/surah/${surah.number - 1}`, { state: { isSurah: {
+    nama: surah.name,
+    arti: surah.translation
+   },
+   pages: pages } });
   }
   
   return (
   <EachUtils of={surah}
     render={(surah, index) => (
-     <div 
+     <div
       key={index}
-      data-aos="zoom-in"
+      data-aos='zoom-in'
       className='box-surah'
       onClick={() => handleOpenSurah(surah)}
       data-aos-delay={`${(index + 1) * 350 }`}>
-     <div className="ribbon ribbon-surah">&nbsp;&nbsp;{surah.urut}&nbsp;&nbsp;</div>
+     <div className="ribbon ribbon-surah">&nbsp;&nbsp;Juz {surah.ayahs[index].meta.juz}&nbsp;&nbsp;</div>
       <div className='wrapper-surah'>
        <span className='name-surah'>
         <p 
          className={setDataInfo({ index: 3, classes: classes })}>
-          {surah.nama}
+          {surah.name}
         </p>
         <p 
          className={setDataInfo({ index: 2, classes: classes })}>
-          {surah.type} - {surah.ayat} Ayat
+          {surah.revelation} - {surah.numberOfAyahs} Ayat
         </p>
         </span>
         <p
          id='number-surah'
          className={setDataInfo({ index: 1, classes: classes })}>
-         {convertToArabicNumbers(surah.nomor)}
+         {convertToArabicNumbers(surah.number)}
         </p>
        </div>
+        <p 
+         className={setDataInfo({ index: 1, classes: classes })}>
+          'arab'
+        </p>
        <p 
         className={setDataInfo({ index: 4, classes: classes })}>
          {surah.asma}
