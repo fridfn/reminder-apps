@@ -7,7 +7,7 @@ const useAudioPlayer = () => {
   
   const playAudio = (audio, index) => {
   try {
-   const isAudio = audio[index] || audio;
+    const isAudio = audio[index] || audio;
     
     if (audioInstance) {
      audioInstance.pause();
@@ -19,14 +19,14 @@ const useAudioPlayer = () => {
     player.play();
     
     player.onended = () => {
-     if (index < audioUrl.length - 1) {
+     if (index < audio.length - 1) {
       playAudio(audio, index + 1)
      } else {
       alert('sudah habus')
      }
     }
    } catch (error) {
-     console.error('Audio creation failed:', error);
+    console.error('Audio creation failed:', error);
    }
   }
   

@@ -95,11 +95,12 @@ export const Surah = ({ surah, attr, classes, pages }) => {
      <div
       key={index}
       data-aos='zoom-in'
-      className='box-surah'
-      onClick={() => handleOpenSurah(surah)}
-      data-aos-delay={`${(index + 1) * 350 }`}>
-     <div className="ribbon ribbon-surah">&nbsp;&nbsp;Juz {surah.ayahs[index].meta.juz}&nbsp;&nbsp;</div>
-      <div className='wrapper-surah'>
+      className='box-surah'>
+     <div className="ribbon ribbon-surah">&nbsp;&nbsp;Juz {surah?.ayahs[index]?.meta?.juz}&nbsp;&nbsp;</div>
+      <div 
+       className='wrapper-surah'
+        onClick={() => handleOpenSurah(surah)}
+        data-aos-delay={`${(index + 1) * 350 }`}>
        <span className='name-surah'>
         <p 
          className={setDataInfo({ index: 3, classes: classes })}>
@@ -117,6 +118,7 @@ export const Surah = ({ surah, attr, classes, pages }) => {
         </p>
        </div>
         <p 
+         onClick={() => TextSpeech(`surat ${surah.name}`)}
          className={setDataInfo({ index: 1, classes: classes })}>
           'arab'
         </p>
