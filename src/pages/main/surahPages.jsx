@@ -16,6 +16,7 @@ const SurahPages = () => {
   const userData = getUser()
   const location = useLocation()
   const [ayat, setAyat] = useState([])
+  const [asma, setAsma] = useState([])
   const { pages } = location.state || {}
   const [surah, setSurah] = useState([])
   const [image, setImage] = useState('')
@@ -81,10 +82,12 @@ const SurahPages = () => {
   useEffect(() => {
    const handlerFetchData = async () => {
     const resultAyat = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/surat/1')
+    const resultAsma = await fetchData('https://api.npoint.io/99c279bb173a6e28359c/data');
     const resultSurah = await fetchData('/quran.json')
     const resultSurahPendek = await fetchData('/surah_pendek.json')
     
     setAyat(resultAyat)
+    setAsma(resultAsma)
     setSurah(resultSurah)
     setSurahPendek(resultSurahPendek)
     pages ? setCurrentPage(pages) : null;
@@ -108,7 +111,7 @@ const SurahPages = () => {
     <div className='section-reminder' id='wrapper-surah'>
      {!loading ?
       visible === 'al_quran' ? (
-      <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} />)
+      <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} asma={asma} />)
       : (
        <SurahPendek surah={currentSurahPendek} classes={CLASSES} attr={ATTRIBUTE} />
       ) : (<p>loading</p>)

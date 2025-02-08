@@ -50,11 +50,11 @@ export const AyatList = ({ ayats, attr, classes, latin }) => {
     render={(ayat, index) => (
      <div className='box-ayat' key={ayat.number.inSurah}>
       <div className='wrapper-ayat'>
-        <p 
-         className={setDataInfo({ index: 0, classes: classes })}
-         data-info={setDataInfo({ index: 0, classes: attr })}>
-          {ayat.arab}
-         </p>
+       <p 
+        className={setDataInfo({ index: 0, classes: classes })}
+        data-info={setDataInfo({ index: 0, classes: attr })}>
+         {ayat.arab}
+        </p>
         <p
          id='number-ayat'
          className={setDataInfo({ index: 0, classes: classes })}>
@@ -63,7 +63,7 @@ export const AyatList = ({ ayats, attr, classes, latin }) => {
        </div>
       <p 
        className={setDataInfo({ index: 1, classes: classes })}
-        dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.translation)}}/>
+       dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.translation)}}/>
       <div className='box-text'>
        <p
         className={setDataInfo({ index: 1, classes: classes })}
@@ -79,7 +79,7 @@ export const AyatList = ({ ayats, attr, classes, latin }) => {
   )
  }
 
-export const Surah = ({ surah, attr, classes, pages }) => {
+export const Surah = ({ surah, attr, classes, pages, asma }) => {
   const navigate = useNavigate();
   const handleOpenSurah = ( surah ) => {
    navigate(`/home/surah/${surah.number - 1}`, { state: { isSurah: {
@@ -88,19 +88,19 @@ export const Surah = ({ surah, attr, classes, pages }) => {
    },
    pages: pages } });
   }
-  
+  console.log([asma])
   return (
   <EachUtils of={surah}
     render={(surah, index) => (
      <div
       key={index}
       data-aos='zoom-in'
-      className='box-surah'>
+      className='box-surah'
+      data-aos-delay={`${(index + 1) * 300}`}>
      <div className="ribbon ribbon-surah">&nbsp;&nbsp;Juz {surah?.ayahs[index]?.meta?.juz}&nbsp;&nbsp;</div>
       <div 
        className='wrapper-surah'
-        onClick={() => handleOpenSurah(surah)}
-        data-aos-delay={`${(index + 1) * 350 }`}>
+       onClick={() => handleOpenSurah(surah)}>
        <span className='name-surah'>
         <p 
          className={setDataInfo({ index: 3, classes: classes })}>
@@ -119,8 +119,8 @@ export const Surah = ({ surah, attr, classes, pages }) => {
        </div>
         <p 
          onClick={() => TextSpeech(`surat ${surah.name}`)}
-         className={setDataInfo({ index: 1, classes: classes })}>
-          'arab'
+         className={setDataInfo({ index: 0, classes: classes })}>
+          {asma[index].asma}
         </p>
        <p 
         className={setDataInfo({ index: 4, classes: classes })}>

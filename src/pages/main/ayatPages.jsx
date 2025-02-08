@@ -43,7 +43,6 @@ const AyatPages = () => {
      
      setAyat(getAyat)
      setLatin(resultLatin)
-     console.log(`https://api.npoint.io/99c279bb173a6e28359c/surat/${nomor}`)
     }
     handlerFetchData()
    } else {
