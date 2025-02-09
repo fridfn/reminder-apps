@@ -6,11 +6,11 @@ import Reminder from '@/components/common/reminder';
 import ObserveElement from '@/utils/observeElement'
 
 const Cards = ({ data, detail }) => {
-  const { itemRef } = ObserveElement({
+  const { itemRef, observeItems } = ObserveElement({
    element: '.cards .reminder .full-hadits',
    classes: 'scale'
   });
-  
+  observeItems();
   const { name } = detail;
   const handleMenu = (e) => { e.preventDefault() };
   

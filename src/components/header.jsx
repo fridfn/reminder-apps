@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import property from '@/property'
+import useAudioPlayer from '@/utils/audioPlayer';
 import generateRandomValue from '@/utils/generateRandomValue'
 
-const Header = ({ size, title, quote, icons, action }) => {
+const Header = ({ size, title, quote, icons, action, audio }) => {
   const navigate = useNavigate()
   const location = useLocation()
   const { pages } = location.state || {}
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
+  const { playAudio, currentIndex } = useAudioPlayer()
   const [motivation, setMotivation] = useState('')
   
   useEffect(() => {
@@ -40,8 +42,14 @@ const Header = ({ size, title, quote, icons, action }) => {
       <p className='text'>{!quote ? motivation : quote}</p>) :
       (null)}
      </div>
-     <div className='box-notification' onClick={() => handleAction(action)}>
-       <ion-icon name={icons || 'options'} class='icons'></ion-icon>
+     <div className='box-notification'>
+       <ion-icon 
+        onClick={() => handleAction(action)}
+        name={icons || 'options'} class='icons'></ion-icon>
+       {audio && (
+       <ion-icon 
+        onClick={() => playAudio(audio, 0)}
+        name='volume-medium' class='icons'></ion-icon>)}
      </div>
    </div>
   )

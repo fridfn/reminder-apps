@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react'
 import EachUtils from '@/utils/eachUtils';
 import TextSpeech from '@/utils/textSpeech';
-import useAudioPlayer from '@/utils/audioPlayer';
+import useAudioPlayer from '@/utils/audioPlayer'
 import { useNavigate } from 'react-router-dom'
 import Image from '@/components/common/image';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
@@ -42,23 +42,28 @@ const MotivasiCards = ({ data, title, attr, classes }) => {
 }
 
 export const AyatList = ({ ayats, attr, classes, latin, isSurah }) => {
-  const { itemRef } = ObserveElement({
-   element: '#ayat-pages #wrapper-ayat .box-ayat .wrapper-ayat .text-arti',
+  const { itemRef, observeItems } = ObserveElement({
+   element: '#ayat-pages #wrapper-ayat .box-ayat',
    classes: 'active',
    threshold: 0.9
   });
   
   const { playAudio, stopAudio, currentIndex } = useAudioPlayer();
   const { name, numberOfAyahs, ayahs } = isSurah
-  const allAudio = ayahs?.map(items => items.audio.alafasy)
+  
+  useEffect(() => {
+   if (itemRef.current.length === ayats.length && ayats.length !== 0) {
+    observeItems();
+   }
+  }, [ayats.length])
   
   return (
    <EachUtils of={ayats}
     render={(ayat, index) => (
      <div
-      className={`box-ayat ${currentIndex === index ? 'active': ''}`}
-      key={ayat.number.inSurah}
-      ref={(el) => (itemRef.current[index] = el)}>
+      className={`box-ayat ${currentIndex === ayat.number.inSurah - 1 ? 'in-audio': ''}`}
+      ref={(el) => (itemRef.current[index] = el)}
+      key={ayat.number.inSurah}>
       <div className='wrapper-ayat'>
        <p 
         className={setDataInfo({ index: 0, classes: classes })}
@@ -82,10 +87,15 @@ export const AyatList = ({ ayats, attr, classes, latin, isSurah }) => {
        </p>
       </div>
       <div className='wrapper-button-ayat'>
-       <button className='player-audio' onClick={() => playAudio(ayat.audio.alafasy, index)}>
-       <ion-icon name='mic' class='md-txt'></ion-icon>
-        Putar Ayat
-       </button>
+       <span>
+        <button className='player-audio' onClick={() => playAudio(ayat.audio.alafasy, index)}>
+          <ion-icon name='mic' class='md-txt'></ion-icon>
+          Putar Ayat
+        </button>
+        <button className='player-audio' onClick={() => stopAudio()}>
+          <ion-icon name='mic-off' class='md-txt'></ion-icon>
+        </button>
+       </span>
        <p
         className={setDataInfo({ index: 2, classes: classes })}
         data-info={setDataInfo({ index: 2, classes: attr })}>

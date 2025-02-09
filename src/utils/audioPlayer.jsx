@@ -6,7 +6,7 @@ const useAudioPlayer = () => {
   
   const playAudio = (audio, index) => {
    try {
-    const isAudio = typeof(audio) === 'object' > 0 ? audio[index] : audio;
+    const isAudio = typeof(audio) === 'object' ? audio[index] : audio;
     
     if (audioInstance) {
      audioInstance.pause();

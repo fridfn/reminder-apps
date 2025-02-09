@@ -1,5 +1,7 @@
 import AOS from 'aos';
 import React, { useEffect, useState } from 'react';
+import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import property from '@/property';
 import getUser from '@/hooks/getUser';
 import Header from '@/components/header';
@@ -9,8 +11,6 @@ import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
 import TextSpeech from '@/utils/textSpeech';
 import ButtonPagination from '@/components/common/buttonPagination';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
 
 const AyatPages = () => {
   const userData = getUser()
@@ -34,6 +34,7 @@ const AyatPages = () => {
   const ATTRIBUTE = property.pages.surah.data.attribute;
   const CLASSES = property.pages.surah.data.classes;
   const BUTTON = property.pages.surah.button;
+  const allAudio = dataSurah?.ayahs?.map(items => items.audio.alafasy)
   
   useEffect(() => {
    if (nomor) {
@@ -83,8 +84,9 @@ const AyatPages = () => {
    <div className='container' id='ayat-pages'>
     <Sidebar active='surah' />
     <Navbar />
-    <Header title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`} quote={`Arti : ${isSurah.arti}`} icons='arrow-back' action='surah' />
-    <div className='section-reminder' id='wrapper-ayat'>
+    <Header title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`} quote={`Arti : ${isSurah.arti}`} icons='arrow-back' action='surah' audio={allAudio} />
+    <div
+     className='section-reminder' id='wrapper-ayat'>
       {!loading ? (
       <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} pages={currentAyat} latin={currentListLatin} isSurah={dataSurah} />) : (<p>Loading</p>)}
     </div>
