@@ -13,15 +13,15 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
 
 const AyatPages = () => {
-  const userData = getUser();
-  const { nomor } = useParams();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const userData = getUser()
+  const { nomor } = useParams()
+  const navigate = useNavigate()
+  const location = useLocation()
   const [ayat, setAyat] = useState([])
   const [latin, setLatin] = useState([])
   const { isSurah } = location.state || {}
-  const [loading, setLoading] = useState(true);
-  const [animate, setAnimate] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [dataSurah, setDataSurah] = useState([])
   const [currentAyat, setCurrentAyat] = useState(1);
   
   const ayatPerList = 20;
@@ -29,6 +29,7 @@ const AyatPages = () => {
   const lastIndexAyat = currentAyat * ayatPerList;
   const firstIndexAyat = lastIndexAyat - ayatPerList;
   const currentListAyat = ayat.slice(firstIndexAyat, lastIndexAyat);
+  const currentListLatin = latin.slice(firstIndexAyat, lastIndexAyat);
   
   const ATTRIBUTE = property.pages.surah.data.attribute;
   const CLASSES = property.pages.surah.data.classes;
@@ -38,11 +39,12 @@ const AyatPages = () => {
    if (nomor) {
     const handlerFetchData = async () => {
      const resultAyat = await fetchData(`/quran.json`)
-     const resultLatin = await fetchData(`https://api.npoint.io/99c279bb173a6e28359c/surat/${nomor + 1}`)
+     const resultLatin = await fetchData(`https://api.npoint.io/99c279bb173a6e28359c/surat/${Number(nomor) + 1}`)
      const getAyat = resultAyat[nomor].ayahs;
      
      setAyat(getAyat)
      setLatin(resultLatin)
+     setDataSurah(resultAyat[nomor])
     }
     handlerFetchData()
    } else {
@@ -84,7 +86,7 @@ const AyatPages = () => {
     <Header title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`} quote={`Arti : ${isSurah.arti}`} icons='arrow-back' action='surah' />
     <div className='section-reminder' id='wrapper-ayat'>
       {!loading ? (
-      <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} pages={currentAyat} latin={latin} />) : (<p>Loading</p>)}
+      <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} pages={currentAyat} latin={currentListLatin} isSurah={dataSurah} />) : (<p>Loading</p>)}
     </div>
     <div data-info={'Lembar : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination

@@ -526,7 +526,7 @@
  z-index: 10;
 }
 
-.container-reminder .wrapper .wrapper-text .text-arab {
+.container-reminder .wrapper .wrapper-text .text-arab, .box-surah .text-arab {
  font-size: 18px;
  text-align: end;
  font-weight: 600;
@@ -757,17 +757,17 @@
  position: relative;
 }
 
+#wrapper-surah .box-surah {
+ display: flex;
+ justify-content: space-between;
+}
+
 #wrapper-box-category .container-button {
  top: 0;
  gap: 20px;
  z-index: 10;
  position: static;
  justify-content: start;
-}
-
-.box-surah .text-asma {
- font-size: 18px;
- font-weight: 800;
 }
 
 .box-surah .wrapper-surah .name-surah {
@@ -777,7 +777,7 @@
  justify-content: center;
 }
 
-.box-surah .wrapper-surah .name-surah .text-surah {
+.box-surah .wrapper-surah .name-surah .text-surah, .wrapper-button-ayat .text-info {
  font-size: 15px;
  font-family: 'Russo One', serif;
 }
@@ -828,4 +828,24 @@
  width: 100%;
  font-size: 15px;
  font-family: 'Russo One', serif;
+}
+
+.player-audio {
+ width: 110px;
+ display: flex;
+ border-radius: 5px;
+ align-items: center;
+ padding: 7px 15px 7px 10px;
+ justify-content: space-around;
+ background-color: $secondary-color-cards;
+}
+
+.wrapper-button-ayat {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.wrapper-button-ayat .text-info {
+ 
 }

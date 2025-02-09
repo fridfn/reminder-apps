@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import EachUtils from '@/utils/eachUtils';
 import TextSpeech from '@/utils/textSpeech';
 import useAudioPlayer from '@/utils/audioPlayer';
 import { useNavigate } from 'react-router-dom'
 import Image from '@/components/common/image';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
+import ObserveElement from '@/utils/observeElement'
 
 const setDataInfo = ({ index, classes }) => {
  return classes[index] || classes;
@@ -40,15 +41,24 @@ const MotivasiCards = ({ data, title, attr, classes }) => {
   )
 }
 
-export const AyatList = ({ ayats, attr, classes, latin }) => {
-  const { playAudio, stopAudio } = useAudioPlayer();
-  let regex = /بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ/g;
-  const allAudio = ayats.map(items => items.audio.alafasy)
+export const AyatList = ({ ayats, attr, classes, latin, isSurah }) => {
+  const { itemRef } = ObserveElement({
+   element: '#ayat-pages #wrapper-ayat .box-ayat .wrapper-ayat .text-arti',
+   classes: 'active',
+   threshold: 0.9
+  });
+  
+  const { playAudio, stopAudio, currentIndex } = useAudioPlayer();
+  const { name, numberOfAyahs, ayahs } = isSurah
+  const allAudio = ayahs?.map(items => items.audio.alafasy)
   
   return (
    <EachUtils of={ayats}
     render={(ayat, index) => (
-     <div className='box-ayat' key={ayat.number.inSurah}>
+     <div
+      className={`box-ayat ${currentIndex === index ? 'active': ''}`}
+      key={ayat.number.inSurah}
+      ref={(el) => (itemRef.current[index] = el)}>
       <div className='wrapper-ayat'>
        <p 
         className={setDataInfo({ index: 0, classes: classes })}
@@ -63,7 +73,7 @@ export const AyatList = ({ ayats, attr, classes, latin }) => {
        </div>
       <p 
        className={setDataInfo({ index: 1, classes: classes })}
-       dangerouslySetInnerHTML={{ __html: removeHtmlTags(ayat.translation)}}/>
+       dangerouslySetInnerHTML={{ __html: removeHtmlTags(latin[index].tr)}}/>
       <div className='box-text'>
        <p
         className={setDataInfo({ index: 1, classes: classes })}
@@ -71,9 +81,17 @@ export const AyatList = ({ ayats, attr, classes, latin }) => {
         {ayat.translation}
        </p>
       </div>
-      <button className='player-audio' onClick={() => playAudio(allAudio, index)}>
-       play surah
-      </button>
+      <div className='wrapper-button-ayat'>
+       <button className='player-audio' onClick={() => playAudio(ayat.audio.alafasy, index)}>
+       <ion-icon name='mic' class='md-txt'></ion-icon>
+        Putar Ayat
+       </button>
+       <p
+        className={setDataInfo({ index: 2, classes: classes })}
+        data-info={setDataInfo({ index: 2, classes: attr })}>
+        {`${name} ${ayat.number.inSurah} : ${numberOfAyahs}`}
+       </p>
+      </div>
      </div>
    )}/>
   )
@@ -88,7 +106,7 @@ export const Surah = ({ surah, attr, classes, pages, asma }) => {
    },
    pages: pages } });
   }
-  console.log([asma])
+  
   return (
   <EachUtils of={surah}
     render={(surah, index) => (
@@ -97,7 +115,7 @@ export const Surah = ({ surah, attr, classes, pages, asma }) => {
       data-aos='zoom-in'
       className='box-surah'
       data-aos-delay={`${(index + 1) * 300}`}>
-     <div className="ribbon ribbon-surah">&nbsp;&nbsp;Juz {surah?.ayahs[index]?.meta?.juz}&nbsp;&nbsp;</div>
+      <div className="ribbon ribbon-surah">&nbsp;&nbsp;Juz {surah?.ayahs[index]?.meta?.juz}&nbsp;&nbsp;</div>
       <div 
        className='wrapper-surah'
        onClick={() => handleOpenSurah(surah)}>
@@ -117,14 +135,10 @@ export const Surah = ({ surah, attr, classes, pages, asma }) => {
          {convertToArabicNumbers(surah.number)}
         </p>
        </div>
-        <p 
-         onClick={() => TextSpeech(`surat ${surah.name}`)}
-         className={setDataInfo({ index: 0, classes: classes })}>
-          {asma[index].asma}
-        </p>
        <p 
-        className={setDataInfo({ index: 4, classes: classes })}>
-         {surah.asma}
+        onClick={() => TextSpeech(`surat ${surah.name}`)}
+        className={setDataInfo({ index: 0, classes: classes })}>
+         {asma[index].asma}
        </p>
      </div>
    )}/>
@@ -132,7 +146,7 @@ export const Surah = ({ surah, attr, classes, pages, asma }) => {
 }
 
 export const SurahPendek = ({ surah, attr, classes }) => {
- //console.log(surah, attr, classes)
+ 
   return (
    <EachUtils
     of={surah}
@@ -168,8 +182,7 @@ export const SurahPendek = ({ surah, attr, classes }) => {
        </p>
       </div>
      </div>
-    )
-   }/>
+   )}/>
   )
 }
 

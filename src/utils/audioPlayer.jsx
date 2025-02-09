@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const useAudioPlayer = () => {
-  const [audioUrl, setAudioUrl] = useState(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [audioInstance, setAudioInstance] = useState(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
   
   const playAudio = (audio, index) => {
-  try {
-    const isAudio = audio[index] || audio;
+   try {
+    const isAudio = typeof(audio) === 'object' > 0 ? audio[index] : audio;
     
     if (audioInstance) {
      audioInstance.pause();
@@ -16,13 +15,14 @@ const useAudioPlayer = () => {
     
     const player = new Audio(isAudio);
     setAudioInstance(player);
+    setCurrentIndex(index)
     player.play();
     
     player.onended = () => {
-     if (index < audio.length - 1) {
+     if (index < audio.length - 1 && typeof(audio) === 'object') {
       playAudio(audio, index + 1)
      } else {
-      alert('sudah habus')
+      console.log('selesai')
      }
     }
    } catch (error) {
@@ -40,6 +40,7 @@ const useAudioPlayer = () => {
   return {
     playAudio,
     stopAudio,
+    currentIndex,
   };
 }
  

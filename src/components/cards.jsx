@@ -3,9 +3,14 @@ import property from '@/property';
 import generateRandomValue from '@/utils/generateRandomValue';
 import motivasiCore from '/public/quote';
 import Reminder from '@/components/common/reminder';
+import ObserveElement from '@/utils/observeElement'
 
 const Cards = ({ data, detail }) => {
-  const itemRef = useRef([]);
+  const { itemRef } = ObserveElement({
+   element: '.cards .reminder .full-hadits',
+   classes: 'scale'
+  });
+  
   const { name } = detail;
   const handleMenu = (e) => { e.preventDefault() };
   
@@ -21,34 +26,6 @@ const Cards = ({ data, detail }) => {
     </div>
    )
   }
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('scale');
-          } else {
-            entry.target.classList.remove('scale');
-            const unactivePreviewHadits = entry.target.querySelector('.cards .reminder .full-hadits')
-            unactivePreviewHadits.classList.remove('active')
-          }
-        });
-      },
-      {
-        threshold: 0.7,
-      }
-    );
-    itemRef.current.forEach((item) => {
-      if (item) observer.observe(item);
-    });
-
-    return () => {
-      itemRef.current.forEach((item) => {
-        if (item) observer.unobserve(item);
-      });
-    };
-  }, []);
   
   const images = property.pages.home.data.image
   

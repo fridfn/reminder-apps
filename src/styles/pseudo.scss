@@ -141,3 +141,16 @@
 .component-images.active {
  animation: $scale_effect_small .400s linear;
 }
+
+#wrapper-ayat .box-ayat .box-text:after {
+ opacity: 0;
+ display: none;
+}
+
+#wrapper-ayat .box-ayat.active .box-text:after {
+ opacity: 1;
+ display: block;
+ animation-delay: 0s;
+ transition-delay: opacity 2s;
+ transition: opacity 2s linear;
+}

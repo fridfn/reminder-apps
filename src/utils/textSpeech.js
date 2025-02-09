@@ -3,7 +3,7 @@ const TextSpeech = (text) => {
    let utterance = new SpeechSynthesisUtterance(text);
    const voices = window.speechSynthesis.getVoices();
    
-   utterance.rate = 1;    // kecepatan suara
+   utterance.rate = .9;    // kecepatan suara
    utterance.pitch = 1;   // nada suara
    utterance.volume = 1;  // volume suara
    setTimeout(() => {
