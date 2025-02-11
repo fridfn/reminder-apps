@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import property from '@/property'
-import useAudioPlayer from '@/utils/audioPlayer';
 import generateRandomValue from '@/utils/generateRandomValue'
+import useAudioPlayer from '@/utils/audioPlayer'
 
-const Header = ({ size, title, quote, icons, action, audio }) => {
+const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }) => {
   const navigate = useNavigate()
   const location = useLocation()
   const { pages } = location.state || {}
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
-  const { playAudio, currentIndex } = useAudioPlayer()
   const [motivation, setMotivation] = useState('')
   
   useEffect(() => {
@@ -46,9 +45,9 @@ const Header = ({ size, title, quote, icons, action, audio }) => {
        <ion-icon 
         onClick={() => handleAction(action)}
         name={icons || 'options'} class='icons'></ion-icon>
-       {audio && (
+       {onPlayAudio && (
        <ion-icon 
-        onClick={() => playAudio(audio, 0)}
+        onClick={() => onPlayAudio(currentIndex)}
         name='volume-medium' class='icons'></ion-icon>)}
      </div>
    </div>

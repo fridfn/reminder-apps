@@ -41,14 +41,14 @@ const MotivasiCards = ({ data, title, attr, classes }) => {
   )
 }
 
-export const AyatList = ({ ayats, attr, classes, latin, isSurah }) => {
+export const AyatList = ({ ayats, attr, classes, latin, isSurah, currentIndex }) => {
   const { itemRef, observeItems } = ObserveElement({
    element: '#ayat-pages #wrapper-ayat .box-ayat',
    classes: 'active',
    threshold: 0.9
   });
   
-  const { playAudio, stopAudio, currentIndex } = useAudioPlayer();
+  const { playAudio, stopAudio } = useAudioPlayer();
   const { name, numberOfAyahs, ayahs } = isSurah
   
   useEffect(() => {

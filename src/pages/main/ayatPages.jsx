@@ -11,6 +11,7 @@ import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
 import TextSpeech from '@/utils/textSpeech';
 import ButtonPagination from '@/components/common/buttonPagination';
+import useAudioPlayer from '@/utils/audioPlayer'
 
 const AyatPages = () => {
   const userData = getUser()
@@ -23,6 +24,7 @@ const AyatPages = () => {
   const [loading, setLoading] = useState(true)
   const [dataSurah, setDataSurah] = useState([])
   const [currentAyat, setCurrentAyat] = useState(1);
+  const { playAudio, stopAudio, currentIndex } = useAudioPlayer();
   
   const ayatPerList = 20;
   const totalAyatList = Math.ceil(ayat.length / ayatPerList);
@@ -34,7 +36,6 @@ const AyatPages = () => {
   const ATTRIBUTE = property.pages.surah.data.attribute;
   const CLASSES = property.pages.surah.data.classes;
   const BUTTON = property.pages.surah.button;
-  const allAudio = dataSurah?.ayahs?.map(items => items.audio.alafasy)
   
   useEffect(() => {
    if (nomor) {
@@ -61,6 +62,12 @@ const AyatPages = () => {
    }
   }, [currentAyat, loading])
   
+  const handlePlayAudio = (index) => {
+    const allAudio = dataSurah?.ayahs?.map(items => items.audio.alafasy);
+     console.log('Memainkan audio pada indeks:', index);
+    playAudio(allAudio, index);
+  };
+  
   const handleButtonSurah = (type) => {
    AOS.refresh()
    setLoading(true);
@@ -84,21 +91,37 @@ const AyatPages = () => {
    <div className='container' id='ayat-pages'>
     <Sidebar active='surah' />
     <Navbar />
-    <Header title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`} quote={`Arti : ${isSurah.arti}`} icons='arrow-back' action='surah' audio={allAudio} />
+    <Header
+     action='surah'
+     icons='arrow-back'
+     currentIndex={currentIndex}
+     onPlayAudio={handlePlayAudio}
+     quote={`Arti : ${isSurah.arti}`}
+     title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`}
+    />
     <div
-     className='section-reminder' id='wrapper-ayat'>
-      {!loading ? (
-      <AyatList ayats={currentListAyat} attr={ATTRIBUTE} classes={CLASSES} pages={currentAyat} latin={currentListLatin} isSurah={dataSurah} />) : (<p>Loading</p>)}
+    className='section-reminder' id='wrapper-ayat'>
+     {!loading ? (
+     <AyatList
+      attr={ATTRIBUTE}
+      classes={CLASSES}
+      pages={currentAyat}
+      isSurah={dataSurah}
+      ayats={currentListAyat}
+      latin={currentListLatin}
+      currentIndex={currentIndex}
+     />) : (<p>Loading</p>)}
     </div>
     <div data-info={'Lembar : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination
-       endpoint={'/motivasi.json'} 
-       func={handleButtonSurah}
-       props={BUTTON}
        values='surah'
+       props={BUTTON}
+       func={handleButtonSurah}
+       endpoint={'/motivasi.json'} 
       />
     </div>
    </div>
   )
 }
+
 export default AyatPages;

@@ -89,7 +89,7 @@ const props = {
    motivasi: {
     button: {
      title: ['Selanjutnya', 'Filter'],
-     icons: ['arrow-forward-circle', 'list']
+     icons: ['arrow-forward-circle', 'arrow-back-circle']
     },
     data: {
      attribute: {
@@ -111,7 +111,7 @@ const props = {
    surah: {
     button: {
      title: ['Selanjutnya', 'Sebelumnya'],
-     icons: ['arrow-forward-circle', 'list']
+     icons: ['arrow-forward-circle', 'arrow-back-circle']
     },
     data: {
      attribute: {

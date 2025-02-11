@@ -4,16 +4,16 @@
   "description": "reminder app develop by farid fathoni n",
   "start_url": "/home/surah",
   "display": "standalone",
-  "background_color": "#202848",
+  "background_color": "#d9d9e8",
   "theme_color": "#202848",
   "icons": [
     {
-      "src": "/favicon-32x32.png",
+      "src": "/icon-app.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/favicon-32x32.png",
+      "src": "/icon-app.png",
       "sizes": "32x32",
       "type": "image/png"
     }

@@ -4,10 +4,10 @@ $secondary-color-cards: #2F3E6D;
 $primary-color-icons: #7787BE;
 $secondary-color-text: #D9D9E8;
 $primary-color-shadow: #8eaaffc1;
-$primary-color-border: #a97525;
+$primary-color-border: #995bff;
 $secondary-color-icons: #7787BE;
-$primary-color-background: #202848;
 $primary-color-image: #7787BE;
+$primary-color-background: #202848;
 
 
 @keyframes scale_effect {
@@ -221,8 +221,19 @@ $primary-color-image: #7787BE;
   }
 }
 
-$scale-effect: scale_effect;
+@keyframes border-effect {
+ 0%, 100% {
+  border-image: linear-gradient(to bottom left, rgb(29,29,29,.1), $primary-color-border, rgb(29,29,29,.1)) 30;
+ } 50% {
+  border-image: linear-gradient(to bottom right, rgb(29,29,29,.1), $primary-color-border, rgb(29,29,29,.1)) 30;
+ } 100% {
+  border-image: linear-gradient(to bottom left, rgb(29,29,29,.1), $primary-color-border, rgb(29,29,29,.1)) 30;
+ }
+}
+
 $zoomIn: zoomIn;
+$scale-effect: scale_effect;
+$border-effect: border-effect;
 $sparkle-effect: sparkle_effect;
 $scale-effect-small: scale_effect_small;
 $background-pattern: radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 0    75%,var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), radial-gradient(var(--_g) 0    75%,var(--_c)) 0 0/var(--_s), repeating-conic-gradient(var(--c1) 0 25%,#0000 0 50%) 0 0/var(--_s), radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c1);

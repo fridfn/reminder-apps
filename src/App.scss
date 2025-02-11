@@ -115,7 +115,6 @@
  position: absolute;
  border-radius: 5px;
  flex-direction: column;
- box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.258);
 }
 
 .header .icons {
@@ -700,8 +699,6 @@
 .box-ayat .wrapper-ayat #number-ayat {
  top: 0;
  left: 0;
- width: 30px;
- height: 30px;
  display: flex;
  position: absolute;
  text-align: center;
@@ -839,6 +836,7 @@
  padding: 7px 10px;
  border-radius: 5px;
  align-items: center;
+ transition: all .120s ease;
  justify-content: space-around;
  background-color: $secondary-color-cards;
 }
@@ -849,11 +847,12 @@
  align-items: center;
  justify-content: space-between;
 }
-/*
-#ayat-pages #wrapper-ayat .box-ayat.active {
- border: 2px solid blue;
+
+.box-ayat.in-audio .wrapper-ayat #number-ayat {
+ background-color: $primary-color-border; 
+} 
+
+.box-ayat.in-audio {
+ border-image: linear-gradient(80deg, rgb(29,29,29,.1), $primary-color-border, rgb(29,29,29,.1)) 30;
+ animation: $border-effect 2s linear infinite;
 }
-*/
-/* .box-ayat.in-audio { */
-/*  border: 2px solid red; */
-/* } */

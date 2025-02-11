@@ -6,7 +6,15 @@ const useAudioPlayer = () => {
   
   const playAudio = (audio, index) => {
    try {
-    const isAudio = typeof(audio) === 'object' ? audio[index] : audio;
+    const isObject = typeof(audio) === 'object'
+    const isAudio = isObject ? audio[index] : audio;
+    const viewElement = document.querySelector('.in-audio .wrapper-button-ayat');
+    
+    isObject && viewElement ? viewElement.scrollIntoView({ behavior: 'smooth' }) : null;
+    
+    if (!viewElement) {
+     console.log('element viewElement tidak terlihat')
+    }
     
     if (audioInstance) {
      audioInstance.pause();
@@ -22,11 +30,11 @@ const useAudioPlayer = () => {
      if (index < audio.length - 1 && typeof(audio) === 'object') {
       playAudio(audio, index + 1)
      } else {
-      console.log('selesai')
+      setCurrentIndex(0)
      }
-    }
-   } catch (error) {
-    console.error('Audio creation failed:', error);
+    } 
+   } catch (err) {
+    console.log(err, 'gagal memutar audio')
    }
   }
   
