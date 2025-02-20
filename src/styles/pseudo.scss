@@ -13,7 +13,7 @@
 }
 
 .wrapper-form form .wrapper input:focus {
- border: 2px solid $primary-color-text;
+ border-bottom: 2px solid $primary-color-text;
 }
 
 .wrapper-form form button:hover {
@@ -46,12 +46,20 @@
  animation: $sparkle_effect 4s ease infinite;
 }
 
-.container-reminder .wrapper #wrapped-reminder .box:before, .box-motivasi-cards .box-text:before, {
+.container-reminder .wrapper #wrapped-reminder .box:before, .box-motivasi-cards .box-text:before, .box-content .wrapper-button-input:before {
  left: 0;
  top: -25px;
  position: absolute;
  animation-name: none;
  content: attr(data-info);
+}
+
+.box-content .wrapper-button-input:before {
+ left: 70%;
+ opacity: .9;
+ width: 120px;
+ font-size: 12px;
+ font-family: 'Russo One', serif;
 }
 
 .section-reminder:before {
@@ -114,8 +122,54 @@
  top: 91%;
 }
 
-//// SECTION JAVASCRIPT ACTIVE MODE ////
+.container-selected-activity:before, .container-personal .box-content .box-input:before {
+ content: attr(data-info);
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ z-index: 200;
+ font-size: 13px;
+ font-weight: 500;
+}
 
+.container-personal .box-content .box-input:before {
+ top: -15px;
+ content: 'Tuliskan deskripsi.';
+}
+
+.box-activity.active:before {
+ top: -20px;
+ content: '';
+ width: 15px;
+ height: 200%;
+ position: absolute;
+ transform: rotate(30deg);
+ animation: bling 2s linear infinite;
+ background-color: hsla(0,0%,63.1%,0.311);
+}
+
+.box-content .wrapper-button-input .container-button-input:nth-child(1) {
+ width: 65px;
+ position: relative;
+}
+.box-content .wrapper-button-input .container-button-input:nth-child(1) .button-submit {
+ height: 100%;
+ display: flex;
+ align-items: center;
+ border: 2px solid #e9d37f;
+}
+.box-content .wrapper-button-input .container-button-input:nth-child(1) .button-submit ion-icon {
+ color: #e9d37f;
+ font-size: 30px;
+ position: absolute;
+}
+
+//// SECTION JAVASCRIPT ACTIVE MODE ////
+//// SECTION JAVASCRIPT ACTIVE MODE ////
+//// SECTION JAVASCRIPT ACTIVE MODE ////
+//// SECTION JAVASCRIPT ACTIVE MODE ////
+//// SECTION JAVASCRIPT ACTIVE MODE ////
+//// SECTION JAVASCRIPT ACTIVE MODE ////
 
 .full-hadits.active {
  width: 260px;
@@ -154,3 +208,9 @@
  transition-delay: opacity 2s;
  transition: opacity 2s linear;
 }
+
+.box-content .button-submit.disabled {
+ opacity: .6;
+}
+
+@keyframes bling { 0% { left: -20%; } 100% { left: 120%; } }

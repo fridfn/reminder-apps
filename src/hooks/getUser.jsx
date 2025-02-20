@@ -10,7 +10,7 @@ const getUser = () => {
     const userJSON = localStorage.getItem('user')
     const user = JSON.parse(userJSON)
     
-   if (dataLogin) {
+    if (dataLogin) {
      localStorage.setItem('user', JSON.stringify(dataLogin))
      setUserData(dataLogin)
     } else {

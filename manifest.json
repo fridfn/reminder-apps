@@ -2,7 +2,7 @@
   "name": "Reminders Apps",
   "short_name": "Reminder",
   "description": "reminder app develop by farid fathoni n",
-  "start_url": "/home/surah",
+  "start_url": "/home/hadits",
   "display": "standalone",
   "background_color": "#d9d9e8",
   "theme_color": "#202848",

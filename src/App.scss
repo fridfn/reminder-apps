@@ -1,5 +1,5 @@
 @use '@/styles/variable.scss' as *;
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Caveat+Brush&family=Ephesis&family=Frijole&family=Pattaya&family=Russo+One&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Bungee&family=Caveat+Brush&family=Ephesis&family=Frijole&family=Pattaya&family=Reenie+Beanie&family=Russo+One&family=Sigmar&display=swap');
 
 #root {
  width: 100%;
@@ -97,9 +97,10 @@
  margin-bottom: 10px;
 }
 
-.header .text {
- font-size: 12px;
+.header .text, .container-personal .header .header-cards .text {
+ font-size: 13px;
  font-weight: 500;
+ font-family: Helvetica;
 }
 
 .text {
@@ -127,9 +128,11 @@
 }
 
 .header-cards .title {
+ color: inherit;
  font-size: 25px;
  font-weight: 600;
  font-family: serif;
+ font-family: inherit;
  text-transform: capitalize;
 }
 
@@ -292,26 +295,96 @@
  display: flex;
  align-items: center;
  flex-direction: column;
+ background-color: #051749;
  justify-content: space-between;
 }
 
 .component-images {
  width: 100%;
+ bottom: -10px;
  position: absolute;
  object-fit: contain;
- bottom: -10px;
 }
 
-.wrapper-lantern .component-images {
- z-index: -1;
- width: 90px;
- height: 130px;
+.heading-login {
+ width: 100%;
+ z-index: 10;
+ height: 30%;
+ display: flex;
+ position: relative;
+ align-items: start;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.heading-login .wrapper-text {
+ gap: 15px;
+ width: 70%;
+ display: flex;
+ position: relative;
+ padding-bottom: 25px;
+ flex-direction: column;
+}
+
+.heading-login .wrapper-text .text-greting {
+ font-size: 24px;
+ font-family: 'Russo One', serif;
+ --r: 60px; /* control the radius */
+ padding: 10px 15px;
+ padding-inline: .5em;
+ color: #e9d37f;
+  border-bottom: var(--r) solid #0000;
+  border-radius: var(--r)/0 var(--r) calc(2*var(--r)) 0;
+  mask: 
+    radial-gradient(var(--r) at 100% 100%,#0000 98%,#000 101%)
+      0 100%/var(--r) 100% no-repeat,
+    conic-gradient(#000 0 0) padding-box;
+  background: #002d6e border-box;
+  width: fit-content;
+}
+
+.heading-login .wrapper-text .text-description {
+ bottom: 15px;
+ font-size: 13px;
+ font-weight: 500;
+ padding: 7px 5px;
+ text-indent: 20px;
+ position: absolute;
+ border-radius: 10px;
+ margin-inline-start: 20px;
+ backdrop-filter: blur(2px);
+}
+
+.container-form .component-images {
+ width: cover;
+ opacity: .7;
+ z-index: 1;
+ bottom: 0;
+ position: fixed;
+}
+
+.container-form {
+ gap: 30px;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ position: relative;
+ align-items: center;
+ flex-direction: column;
+ justify-content: start;
+ padding: 30px 0px 0 0px;
+}
+
+.pages-loading > .component-images {
+ z-index: 9;
+ opacity: 1;
+ height: 280px;
 }
 
 .wrapper-form, .wrapper-form form {
- gap: 15px;
- width: 250px;
- height: 300px;
+ gap: 10px;
+ width: auto;
+ z-index: 10;
  display: flex;
  align-items: center;
  flex-direction: column;
@@ -323,15 +396,19 @@
 }
 
 .wrapper-form form .wrapper {
- gap: 5px;
+ gap: 8px;
  display: flex;
  font-size: 15px;
  flex-direction: column;
+}
+.wrapper-form form .wrapper label {
+ color: #e9d37f;
 }
 
 .wrapper-form form .wrapper [name='email'] {
  text-transform: none;
 }
+
 .wrapper-form form .wrapper [name='kelas'] {
  text-transform: uppercase;
 }
@@ -340,41 +417,41 @@
  width: 250px;
  outline: none;
  font-weight: 600;
- border-radius: 20px;
+ border-radius: 10px;
  min-inline-size: 7ch;
  field-sizing: content;
  text-transform: capitalize;
+ backdrop-filter: blur(2px);
+ background-color: transparent;
  border: 2px solid transparent;
- background-color: $primary-color-cards;
+ border-bottom: 2px solid $primary-color-text;
 }
 
 .wrapper-form form .wrapper input, .wrapper-form form .button {
  transition: all .3s ease-in-out;
- box-shadow: .8px 2px 2px $primary-color-shadow;
 }
 
 .wrapper-form form .button, .wrapper-form form .wrapper label, .text-login-form, .name-apps .text, .full-hadits .text, .button {
  font-weight: 600;
 }
 
-.text-login-form {
- font-size: 50px;
- margin-top: 120px;
- margin-bottom: 30px;
- letter-spacing: 2px;
- color: $secondary-color-text;
- font-family: 'Pattaya', serif;
+.name-apps {
+ bottom: 0;
+ z-index: 10;
+ width: 100%;
+ position: absolute;
 }
 
 .name-apps .copyright {
- font-size: 13px;
+ font-size: 10px;
  text-align: center;
- margin: 5px 0 20px 0;
+ margin: 5px 0 5px 0;
  color: $primary-color-text;
 }
 
 .name-apps .text {
- font-size: 17px;
+ font-size: 14px;
+ margin-top: 20px;
  text-align: center;
  color: $secondary-color-text;
 }
@@ -392,8 +469,8 @@
  place-items: center;
  border-radius: 20px;
  text-decoration: none;
- border: 1px solid transparent;
- background-color: $secondary-color-cards;
+ backdrop-filter: blur(2px);
+ border: 2px solid $primary-color-text;
 }
 
 .content-first {
@@ -404,7 +481,6 @@
  border-radius: 10px;
  padding: 10px 15px;
  padding-right: 30px;
-// border: 2px solid white;
  background-color: $secondary-color-cards;
 }
 
@@ -528,7 +604,7 @@
  z-index: 10;
 }
 
-.container-reminder .wrapper .wrapper-text .text-arab, .box-surah .text-arab {
+.box-surah .text-arab {
  font-size: 18px;
  text-align: end;
  font-weight: 600;
@@ -643,7 +719,6 @@
 }
 
 .box-motivasi-cards #title-motivasi {
- border: 2px solid blue;
  top: -17px;
  left: -5px;
  padding: 7px 14px;
@@ -653,9 +728,10 @@
  border: 5px solid $primary-color-background;
 }
 
-.box-motivasi-cards .text-arab {
+.box-motivasi-cards .text-arab, 
+.container-reminder .wrapper .wrapper-text .text-arab {
  text-align: end;
- font-size: 20px;
+ font-size: 22px;
  font-weight: 800;
 }
 
@@ -696,7 +772,7 @@
  font-weight: 400;
 }
 
-.box-ayat .wrapper-ayat #number-ayat {
+.box-ayat .wrapper-ayat #number-ayat, .box-activity .name #number-surah {
  top: 0;
  left: 0;
  display: flex;
@@ -855,4 +931,161 @@
 .box-ayat.in-audio {
  border-image: linear-gradient(80deg, rgb(29,29,29,.1), $primary-color-border, rgb(29,29,29,.1)) 30;
  animation: $border-effect 2s linear infinite;
+}
+
+.container-personal {
+ display: flex;
+ width: 100%;
+ height: 100dvh;
+ align-items: start;
+ justify-content: center;
+ background-color: #051749;
+}
+
+.container-personal .component-images {
+ position: absolute;
+ width: cover;
+ opacity: .5;
+ left: 0;
+}
+
+.container-personal .box-content {
+ gap: 20px;
+ height: auto;
+ height: 100%;
+ display: flex;
+ position: relative;
+ flex-direction: column;
+}
+
+.container-personal section {
+ gap: 30px;
+ height: 100%;
+ z-index: 10;
+ display: flex;
+ flex-direction: column;
+ padding: 30px 20px 10px 20px;
+}
+
+.container-personal section .component-images {
+ opacity: .5;
+}
+
+.container-personal .header {
+ width: 100%;
+}
+
+.container-personal section .header .header-cards {
+ gap: 10px;
+ display: flex;
+ flex-direction: column;
+ color: $primary-color-text;
+ font-family: 'Russo One', serif;
+}
+
+.box-input {
+ z-index: 11;
+ height: 75dvh;
+ position: relative;
+ justify-content: space-between;
+}
+
+.container-personal section .box-input  {
+ height: auto;
+}
+.container-personal section .box-input form .input {
+ width: 100%;
+ outline: none;
+ padding: 7px 0;
+ font-size: 16px;
+ font-weight: bold;
+ border: 0px solid;
+ overflow-y: hidden;
+  min-height: auto;
+ max-height: 100px;
+ margin-bottom: 70px;
+ background-color: transparent;
+ font-family: 'Russo One', serif;
+ border-bottom: 2px solid $primary-color-text;
+}
+
+.box-content .wrapper-button-input {
+ gap: 20px;
+ z-index: 25;
+ width: 100%;
+ bottom: 20px;
+ display: flex;
+ position: absolute;
+}
+
+.box-content .wrapper-button-input .container-button-input {
+ width: 100%;
+}
+
+.box-content .wrapper-button-input .container-button-input .button-submit {
+ width: 100%;
+ padding: 10px;
+ font-size: 16px;
+ border-radius: 15px;
+ backdrop-filter: blur(2px);
+ font-family: 'Russo One', serif;
+ border: 2px solid $primary-color-text;
+}
+
+.container-activity, .container-selected-activity {
+ display: flex;
+ height: 17dvh;
+ padding: 0 5px 10px 5px;
+ gap: 10px 15px;
+ flex-wrap: wrap;
+ overflow: scroll;
+ position: relative;
+ justify-content: space-between;
+}
+
+.container-selected-activity {
+ height: auto;
+ min-height: 50px;
+ align-items: start;
+ position: relative;
+ padding-bottom: 45px;
+ justify-content: start;
+}
+
+.box-activity {
+ gap: 10px;
+ display: flex;
+ font-size: 14px;
+ font-weight: 600;
+ max-height: 30px;
+ overflow: hidden;
+ padding: 7px 10px;
+ border-radius: 8px;
+ position: relative;
+ align-items: center;
+ padding-inline: 13px;
+ transition: all .6s linear;
+ flex-direction: row-reverse;
+ background-color: $primary-color-cards;
+ box-shadow: 2px 2px 0px 0px $primary-color-icons;
+}
+
+.box-activity .name {
+ display: flex;
+ gap: 10px;
+}
+
+.box-activity .name #number-surah {
+ transform: scale(.7);
+}
+
+.container-personal #select-surah .container-activity {
+ height: 20dvh;
+ padding-bottom: 10px;
+}
+
+.container-personal #select-surah .container-activity .box-activity {
+ width: 100%;
+ padding: 17px 15px;
+ align-items: center;
 }

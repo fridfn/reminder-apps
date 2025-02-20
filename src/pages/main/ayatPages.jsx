@@ -64,8 +64,8 @@ const AyatPages = () => {
   
   const handlePlayAudio = (index) => {
     const allAudio = dataSurah?.ayahs?.map(items => items.audio.alafasy);
-     console.log('Memainkan audio pada indeks:', index);
-    playAudio(allAudio, index);
+    
+    index === 'stop' ? stopAudio() : playAudio(allAudio, index);
   };
   
   const handleButtonSurah = (type) => {

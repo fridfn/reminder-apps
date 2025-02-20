@@ -10,6 +10,7 @@ import AyatPages from '@/pages/main/ayatPages';
 import MotivasiPages from '@/pages/main/motivasiPages';
 import Loading from '@/pages/loading';
 import NotFound from '@/pages/notFound';
+import Personal from '@/pages/personal';
 import React, { useState } from 'react';
 import ProtectedRoute from '@/protectedRoute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -30,7 +31,7 @@ function App() {
             <Route path='/home/reminder' element={<ReminderPages />} />
             <Route path='/home/motivasi' element={<MotivasiPages />} />
           </Route>
-          <Route path='/login' element={<Loading />} />
+          <Route path='/login' element={<Personal />} />
           <Route path='*' element={ <NotFound/>} />
         </Routes>
       </Router>

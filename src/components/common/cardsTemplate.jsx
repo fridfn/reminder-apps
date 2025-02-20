@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState, Navigate } from 'react'
 import EachUtils from '@/utils/eachUtils';
 import TextSpeech from '@/utils/textSpeech';
 import useAudioPlayer from '@/utils/audioPlayer'
@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import Image from '@/components/common/image';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
 import ObserveElement from '@/utils/observeElement'
+import ComponentImages from '@/components/common/componentImages'
 
 const setDataInfo = ({ index, classes }) => {
  return classes[index] || classes;

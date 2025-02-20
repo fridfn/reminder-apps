@@ -1,6 +1,8 @@
-import lantern from '@/assets/ornament/lantern_2.webp';
+import lantern from '@/assets/ornament/lanterns.webp';
+import background_mosque from '@/assets/ornament/background-mosque.jpg';
+import background_candle from '@/assets/ornament/background-candle.jpg';
+import background_cloud from '@/assets/ornament/background-cloud.jpg';
 import ornament from '@/assets/ornament/ornaments.webp';
-import border from '@/assets/ornament/border.webp';
 import kids from '@/assets/ornament/kid_muslim.webp';
 import muslimWoman1 from '@/assets/muslim_woman_1.webp';
 import muslimWoman2 from '@/assets/muslim_woman_2.webp';
@@ -10,25 +12,25 @@ import muslimWoman5 from '@/assets/muslim_woman_5.webp';
 
 const props = {
   pages: {
-   index: {
+   login: {
     images: {
-     ornament: {
-      image: ornament,
-      position: 'right',
+     background_cloud: {
+      image: background_cloud,
+      position: 'left',
        space: ['0'],
-       top: ['0']
+       bottom: ['0']
      },
-     border: {
-      image: border,
-      position: 'right',
-       space: ['70'],
-       top: ['300']
+     lantern: {
+      image: lantern,
+      position: 'left',
+       space: ['140'],
+       top: ['-20']
      },
-     kids: {
-      image: kids,
-      position: 'right',
-       space: ['110'],
-       top: ['250']
+     background_mosque: {
+      image: background_mosque,
+      position: 'left',
+       space: ['0'],
+       bottom: ['0']
      },
     }
    },
@@ -88,7 +90,7 @@ const props = {
    },
    motivasi: {
     button: {
-     title: ['Selanjutnya', 'Filter'],
+     title: ['Selanjutnya', 'Buka Surah'],
      icons: ['arrow-forward-circle', 'arrow-back-circle']
     },
     data: {
@@ -110,7 +112,7 @@ const props = {
    },
    surah: {
     button: {
-     title: ['Selanjutnya', 'Sebelumnya'],
+     title: ['Selanjutnya', 'sebelumnya'],
      icons: ['arrow-forward-circle', 'arrow-back-circle']
     },
     data: {
@@ -131,6 +133,150 @@ const props = {
      }
     }
    }
+  },
+  datas: {
+   activity: [
+    '🚴‍♀️ Bersepeda',
+    '🍳 Memasak',
+    '💌 Chatting',
+    '🙍 Ngelamun',
+    '💤 Tidur',
+    '🍽️ Makan',
+    '📚 Membaca Buku',
+    '👨‍💻 Coding',
+    '🎬 Menonton Film',
+    '📸 Fotografi',
+    '🏊‍♂️ Berenang',
+    '🏃‍♂️ Jogging',
+    '🌱 Berkebun',
+    '👩‍❤️‍👨 Nonton Drakor',
+    '🎧 Mendengarkan Musik',
+    '🧵 Menjahit',
+    '🎨 Melukis',
+    '🎸 Bermain Gitar',
+    '✍️ Menulis',
+    '🖍️ Menggambar',
+    '🧶 Menyulam',
+    '🎹 Bermain Piano',
+    '🎣 Memancing',
+    '⚽ Bermain Sepak Bola',
+    '🏀 Basket',
+    '⛰️ Mendaki Gunung',
+    '🏸 Bermain Bulutangkis',
+    '🧑‍🎨 Membuat Kerajinan',
+    '🧘‍♂️ Yoga',
+    '🛹 Bermain Skateboard',
+    '♟️ Main Catur',
+    '💃 Menari',
+    '🎾 Bermain Tenis',
+    '🏐 Bermain Voli',
+    '📒 Membaca Novel',
+    '📝 Menulis',
+    '🥁 Main Drum',
+    '🗣️ Belajar Bahasa',
+    '🎤 Menyanyi',
+    '🎮 Bermain Game',
+    '🧶 Merajut',
+    '🍰 Membuat Kue',
+    '🎞️ Mengedit Video',
+    '🎻 Bermain Biola',
+    '🛍️ Belanja',
+    '🧩 Menyusun Puzzle',
+    '🏕️ Berkemah',
+    '🐾 Memelihara Hewan',
+    '🧘 Melakukan Meditasi',
+    '🥾 Mendaki',
+    '🎭 Menonton Teater',
+    '🤿 Menyelam',
+    '🏄‍♂️ Berselancar',
+    '📹 Membuat Vlog',
+    '⛸️ Bermain Sepatu Roda',
+    '🏸 Bermain Badminton',
+    '💪 Melakukan Crossfit',
+    '🎨 Melukis Kaca',
+    '🎧 Menonton Podcast',
+    '⚽ Bermain Futsal',
+    '🔨 Memahat Kayu',
+    '🏌️‍♂️ Bermain Golf',
+    '📮 Mengumpulkan Prangko',
+    '📒 Membuat Scrapbook',
+    '🧵 Menjahit Pakaian',
+    '🏋️‍♂️ Berolahraga',
+    '🥏 Bermain Frisbee',
+    '🧱 Menyusun Lego',
+    '🧩 Bermain Rubik',
+    '🎮 Bermain E-Sport',
+    '🛼 Bermain Rollerblade',
+    '🏓 Bermain Tenis Meja',
+    '📖 Membaca Komik',
+    '🧍‍♂️ Action Figure',
+    '🪙 Mengumpulkan Koin',
+    '⛵ Bermain Kapal Layar',
+    '🎤 Bernyanyi',
+    '🧵 Menyulam Manik-Manik',
+    '🎶 Menonton Opera',
+    '🏛️ Mengunjungi Museum',
+    '🏁 Menonton Balapan',
+    '🎙️ Membuat Podcast',
+    '🎸 Konser Musik',
+    '📝 Menulis Puisi',
+    '🐦 Mengamati Burung',
+    '📺 Menonton Kartun',
+    '📖 Menulis Cerita',
+    '🎨 Melukis Kain',
+    '🗿 Membuat Patung',
+    '🥎 Bermain Softball',
+    '🌱 Membuat Taman',
+    '🍂 Membuat Kompos',
+    '📷 Belajar Fotografi',
+    '🎥 Membuat Video TikTok',
+    '🍳 Mencoba Resep Baru',
+    '🔫 Bermain Airsoft Gun',
+    '🎯 Bermain Paintball',
+    '🏃‍♂️ Lomba Lari',
+    '🏐 Bermain Petanque',
+    '♻️ Mendaur Ulang Barang Bekas',
+    '🐟 Memelihara Ikan',
+    '🏔️ Mendaki Bukit',
+    '🏓 Bermain Pingpong',
+    '📜 Menyusun Origami',
+    '🪁 Bermain Layang-Layang',
+    '🎨 Membuat Keramik',
+    '🏒 Bermain Hoki',
+    '✍️ Menulis Blog',
+    '💃 Menari Salsa',
+    '🎼 Bermain Harmonica',
+    '🔔 Bermain Kendama',
+    '🎤 Menonton Stand-Up Comedy',
+    '🃏 Bermain Kartu',
+    '🧵 Menjahit Kain Perca',
+    '🎬 Membuat Video Animasi',
+    '📐 Membuat Model 3D',
+    '🥁 Bermain Kendang',
+    '🎲 Bermain Ludo',
+    '🧼 Membuat Sabun',
+    '⚾ Bermain Bola Kasti',
+    '🥋 Berlatih Bela Diri',
+    '📓 Menulis Jurnal',
+    '⚽ Bermain Sepak Bola',
+    '🏃‍♀️ Lomba Maraton',
+    '🏹 Bermain Panahan',
+    '💎 Menyusun Batu Akik',
+    '🎩 Menonton Sulap',
+    '🎧 Musik Elektronik',
+    '📖 Membaca Novel',
+    '🌿 Membuat Terarium',
+    '👜 Menjahit Tas Kain',
+    '🖥️ Belajar Seni Digital',
+    '🖼️ Menyusun Mozaik',
+    '🎱 Bermain Biliard',
+    '🎮 Kompetisi E-Sport',
+    '📚 Menulis Resensi Buku',
+    '🤽‍♂️ Bermain Polo Air',
+    '📜 Berpetulang',
+    '🦊 Belajar Origami',
+    '🧿 Bermain Kelereng',
+   ]
   },
   component: {
    sidebar: {

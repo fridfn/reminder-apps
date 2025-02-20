@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import property from '@/property';
 import generateRandomValue from '@/utils/generateRandomValue';
-import motivasiCore from '/public/quote';
 import Reminder from '@/components/common/reminder';
 import ObserveElement from '@/utils/observeElement'
 
@@ -10,7 +9,7 @@ const Cards = ({ data, detail }) => {
    element: '.cards .reminder .full-hadits',
    classes: 'scale'
   });
-  observeItems();
+  
   const { name } = detail;
   const handleMenu = (e) => { e.preventDefault() };
   
@@ -28,12 +27,14 @@ const Cards = ({ data, detail }) => {
   }
   
   const images = property.pages.home.data.image
+  useEffect(() => {
+   observeItems();
+  }, [itemRef])
   
   return (
    <>
     {data.map((item, index) => {
      const randomImage = generateRandomValue(images);
-     const randomQuote = generateRandomValue(motivasiCore);
      
      const { id, arab, number } = item;
      let cleanHadits = id.replace(/^.*?(Rasulullah shallallahu 'alaihi wasallam)/i, (match, p1) => {
