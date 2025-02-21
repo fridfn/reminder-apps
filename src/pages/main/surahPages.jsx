@@ -1,5 +1,4 @@
 import AOS from 'aos';
-import React, { useEffect, useState } from 'react';
 import property from '@/property';
 import getUser from '@/hooks/getUser';
 import Header from '@/components/header';
@@ -7,6 +6,7 @@ import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
 import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
+import React, { useEffect, useState } from 'react';
 import ButtonPagination from '@/components/common/buttonPagination';
 import { useLocation } from 'react-router-dom';
 import MotivasiCards, { AyatList, Surah, SurahPendek } from '@/components/common/cardsTemplate';
@@ -106,8 +106,11 @@ const SurahPages = () => {
    <div className='container' id='surah-pages'>
     <Sidebar active='surah' />
     <Navbar />
-    <Header title={`${userData?.nama?.split(' ')[0]}, ${reminder.title}`} quote={reminder.quote} />
     <div className='section-reminder' id='wrapper-box-category'>
+     <Header 
+      title={`${userData?.nama?.split(' ')[0]}, ${reminder.title}`} 
+      quote={reminder.quote}
+     />
      <ButtonPagination
       endpoint={'/motivasi.json'}
       func={handleButtonSurah}

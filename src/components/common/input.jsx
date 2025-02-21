@@ -1,11 +1,11 @@
 import getUser from '@/hooks/getUser'
 import { useNavigate } from 'react-router-dom'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const Input = ({ set, functions, index, trigger, redirect }) => {
+const Input = ({ set, functions, index, trigger, redirect, minLength, attribute }) => {
   const userData = getUser()
   const navigate = useNavigate()
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({ values: '' })
   
   const autoResize = (e) => {
    const textarea = e.target;
@@ -24,9 +24,9 @@ const Input = ({ set, functions, index, trigger, redirect }) => {
     userData[set] = formData.values;
     localStorage.setItem('user', JSON.stringify(userData))
     
-    console.log({redirect})
     if (redirect) {
-     navigate('/home/hadits')
+     const { routes, isRedirect } = redirect;
+     navigate(routes)
      localStorage.setItem('TOKEN', 'king farid 👑')
     }
    }
@@ -42,11 +42,15 @@ const Input = ({ set, functions, index, trigger, redirect }) => {
   }
   
   return (
-   <div className='box-input'>
-    <form id='custom-input' onSubmit={(e) => handleSubmit(e, 'next')}>
-     <textarea required rows="1" cols="30" type='text' wrap='soft' name='values' minLength='10' className='input' placeholder='....'
+   <div 
+    data-info={attribute}
+    className='box-input'>
+    <form
+     id='custom-input'
+     onSubmit={(e) => handleSubmit(e, 'next')}>
+     <textarea required rows="1" cols="30" type='text' wrap='soft' name='values' minLength={minLength} className='input' placeholder='....'
       onInput={autoResize}
-      value={formData.values || 'farid fathoni nugroho'}
+      value={formData.values || userData?.[set] || ''}
       onChange={handleChange}
      ></textarea>
     </form>

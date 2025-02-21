@@ -1,10 +1,11 @@
 $primary-color-text: #FCFEF9;
 $primary-color-cards: #273767;
+$third-color-text: #eed989;
 $secondary-color-cards: #2F3E6D;
 $primary-color-icons: #7787BE;
 $secondary-color-text: #D9D9E8;
 $primary-color-shadow: #8eaaffc1;
-$primary-color-border: #995bff;
+$primary-color-border: #eed989;
 $secondary-color-icons: #7787BE;
 $primary-color-image: #7787BE;
 $third-color-cards: #2f4dc6;
@@ -249,7 +250,10 @@ $secondary-color-background: #465689;
  }
 }
 
+@keyframes bling { 0% { left: -20%; } 100% { left: 120%; } }
+
 $zoomIn: zoomIn;
+$bling-effect: bling;
 $scale-effect: scale_effect;
 $border-effect: border-effect;
 $sparkle-effect: sparkle_effect;

@@ -122,7 +122,7 @@
  top: 91%;
 }
 
-.container-selected-activity:before, .container-personal .box-content .box-input:before {
+.container-selected-activity:before, .container-personal .box-content .box-input:before, .container-personal .box-content .box-input:after {
  content: attr(data-info);
  position: absolute;
  bottom: 0;
@@ -132,20 +132,14 @@
  font-weight: 500;
 }
 
-.container-personal .box-content .box-input:before {
+.container-personal .box-content .box-input:before, .container-personal .box-content .box-input:after {
  top: -15px;
  content: 'Tuliskan deskripsi.';
 }
 
-.box-activity.active:before {
- top: -20px;
- content: '';
- width: 15px;
- height: 200%;
- position: absolute;
- transform: rotate(30deg);
- animation: bling 2s linear infinite;
- background-color: hsla(0,0%,63.1%,0.311);
+.container-personal .box-content .box-input:after {
+ content: attr(data-info);
+ left: 80%;
 }
 
 .box-content .wrapper-button-input .container-button-input:nth-child(1) {
@@ -156,10 +150,10 @@
  height: 100%;
  display: flex;
  align-items: center;
- border: 2px solid #e9d37f;
+ border: 2px solid $third-color-text;
 }
 .box-content .wrapper-button-input .container-button-input:nth-child(1) .button-submit ion-icon {
- color: #e9d37f;
+ color: $third-color-text;
  font-size: 30px;
  position: absolute;
 }
@@ -213,4 +207,33 @@
  opacity: .6;
 }
 
-@keyframes bling { 0% { left: -20%; } 100% { left: 120%; } }
+.box-activity.active .name #number-surah {
+ color: $primary-color-background;
+ background-color: $third-color-text;
+}
+.box-activity.active, .box-activity.isSelected {
+ box-shadow: 2px 2px 2px 0px $third-color-text;
+}
+.box-activity.active .name, .box-activity.isSelected .name {
+ color: $third-color-text;
+}
+.box-activity.active:before {
+ top: -20px;
+ content: '';
+ width: 15px;
+ height: 200%;
+ position: absolute;
+ transform: rotate(30deg);
+ animation: $bling-effect 2s linear infinite;
+ background-color: hsla(0,0%,63.1%,0.311);
+}
+
+.box-ayat.in-audio .wrapper-ayat #number-ayat {
+ background-color: $primary-color-border; 
+ color: $primary-color-background;
+} 
+
+.box-ayat.in-audio {
+ border-image: linear-gradient(80deg, rgb(29,29,29,.1), $primary-color-border, rgb(29,29,29,.1)) 30;
+ animation: $border-effect 2s linear infinite;
+}

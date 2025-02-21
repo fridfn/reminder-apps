@@ -20,6 +20,9 @@ function App() {
   
   return (
     <>
+     <div className='info'>
+       MAAF WEB INI TIDAK TERSEDIA DALAM VERSI DESKTOP !!!
+     </div>
       <Router>
         <Routes>
           <Route element={<ProtectedRoute/>}>

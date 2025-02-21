@@ -8,9 +8,10 @@ const getUser = () => {
   
   useEffect(() => {
     const userJSON = localStorage.getItem('user')
+    const isToken = localStorage.getItem('TOKEN')
     const user = JSON.parse(userJSON)
     
-    if (dataLogin) {
+    if (dataLogin && !isToken) {
      localStorage.setItem('user', JSON.stringify(dataLogin))
      setUserData(dataLogin)
     } else {

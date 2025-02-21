@@ -91,6 +91,7 @@ const AyatPages = () => {
    <div className='container' id='ayat-pages'>
     <Sidebar active='surah' />
     <Navbar />
+    <div className='section-reminder'>
     <Header
      action='surah'
      icons='arrow-back'
@@ -99,6 +100,7 @@ const AyatPages = () => {
      quote={`Arti : ${isSurah.arti}`}
      title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`}
     />
+    </div>
     <div
     className='section-reminder' id='wrapper-ayat'>
      {!loading ? (

@@ -1,7 +1,7 @@
 import ComponentImages from '@/components/common/componentImages'
 import Reac, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { pagesMotivation, pagesPersonalize, pagesFavorite, pagesLogin } from '@/components/common/layoutsPages'
+import { pagesMotivation, pagesPersonalize, pagesPersonality, pagesFavorite, pagesLogin } from '@/components/common/layoutsPages'
 import Loader, { LoaderDots } from '@/components/loader'
 
 const Personal = () => {
@@ -28,30 +28,51 @@ const Personal = () => {
   const pagesList = {
    0: {
     pages: pagesLogin,
-    handle: handlePagesNext
+    handle: handlePagesNext,
+    background: 'background_cloud'
    },
    1: {
     pages: pagesMotivation,
-    handle: handlePagesNext
+    handle: handlePagesNext,
+    background: 'background_mosque'
    },
    2: {
     pages: pagesPersonalize,
-    handle: handlePagesNext
+    handle: handlePagesNext,
+    background: 'background_mosque'
    },
-   3: { 
+   3: {
+    pages: pagesPersonality,
+    handle: handlePagesNext,
+    background: 'background_mosque'
+   },
+   4: { 
     pages: pagesFavorite,
-    handle: handlePagesNext
+    handle: handlePagesNext,
+    background: 'background_mosque'
    }
   }
   
   const CurrentPagesComponent = pagesList[currentPage]?.pages;
   const CurrentFuncComponent = pagesList[currentPage]?.handle;
+  const CurrentBackgroundComponent = pagesList[currentPage]?.background;
   
   return (
    <div className='container-personal'>
-    {!isLoading && CurrentPagesComponent ? ( <CurrentPagesComponent functions={CurrentFuncComponent} index={currentPage} />) : (<Loader />)}
+    <span>
+      <ComponentImages pages='login' getting='images' img='lantern' />
+    </span>
     {!isLoading && CurrentPagesComponent ? (
-    <ComponentImages pages='login' getting='images' img='background_mosque' />) : (null)}
+      <CurrentPagesComponent 
+      functions={CurrentFuncComponent}
+      index={currentPage}
+    />) : (<Loader />)}
+    {!isLoading && CurrentPagesComponent ? (
+      <ComponentImages 
+      pages='login'
+      getting='images'
+      img={CurrentBackgroundComponent}
+    />) : (null)}
    </div>
   )
 }

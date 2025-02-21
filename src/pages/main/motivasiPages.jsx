@@ -65,16 +65,18 @@ const MotivasiPages = () => {
    <div className='container' id='motivasi-pages'>
     <Sidebar active='motivasi' />
     <Navbar />
-    <Header size={setFontSize(motivasi?.title?.length)} title={title} quote='Tetap semangat ya, aku tahu kamu pasti bisa melewatinya. Semangatt' />
-    <div className='section-reminder' id='wrapper-main-content'>
-     <div id='tops-reminder'></div>
-     <BubbleMessage message={motivasi.me} />
-     <span>
-       <p className='bg-txt'>Tapi...</p>
-       <p className='md-txt' style={{textTransform: 'capitalize'}}>{userData.nama?.split(' ')[0]}, harus ingat ayat ini</p>
-     </span>
-     <MotivasiCards data={selectedValues} title={"Allah SWT Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
-    </div>
+    <div className='section-reminder'>
+     <Header size={setFontSize(motivasi?.title?.length)} title={title} quote='Tetap semangat ya, aku tahu kamu pasti bisa melewatinya. Semangatt' />
+     <div className='wrapper' id='wrapper-surah'>
+       <div id='tops-reminder'></div>
+       <BubbleMessage message={motivasi.me} />
+       <span>
+         <p className='bg-txt' style={{fontFamily: "'Russo One', serif"}}>Tapi...</p>
+         <p className='md-txt' style={{textTransform: 'capitalize'}}>{userData.nama?.split(' ')[0]}, harus ingat ayat ini</p>
+       </span>
+       <MotivasiCards data={selectedValues} title={"Allah SWT Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
+      </div>
+     </div>
      <div className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination
        endpoint={'/motivasi.json'} 

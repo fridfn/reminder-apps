@@ -11,7 +11,6 @@ import { Surah } from '@/components/common/cardsTemplate'
 import ComponentImages from '@/components/common/componentImages'
 import React, { useEffect, useState } from 'react'
 
-
 const handleClick = (props) => {
   const { items, selectedItems, limitNumber, setSelectedItems } = props;
   const nameItems = items.target.getAttribute('info')
@@ -54,7 +53,7 @@ const ItemsActivity = ({ datas, selectedItems, setSelectedItems, limitNumber }) 
 
 const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber, info }) => {
   return (
-   <div className='container-selected-activity' data-info={`${info} ${selectedItems.length}/${limitNumber} terpilih.`}>
+   <div className='container-selected-activity' data-info={info}>
     <EachUtils
      of={datas}
      render={(selected, index) => {
@@ -90,7 +89,13 @@ export const pagesMotivation = ({ functions, index }) => {
      title={`Welcome to Reminder App, ${nama?.split(' ')[0]}`}
     />
     <div className='box-content'>
-     <Input set='janji' functions={functions} index={index} trigger={valueTrigger}/>
+     <Input 
+      set='janji' 
+      index={index} 
+      minLength={40}
+      functions={functions}
+      trigger={valueTrigger}
+     />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
       <InputButton 
        trigger='back'
@@ -98,9 +103,9 @@ export const pagesMotivation = ({ functions, index }) => {
        setTrigger={setValueTrigger}
        title="<ion-icon name='arrow-back'></ion-icon>" />
       <InputButton 
+       disable={false}
        form='custom-input' 
        title='Selanjutnya' 
-       disable={false}
        setTrigger={setValueTrigger} />
      </div>
     </div>
@@ -139,7 +144,7 @@ export const pagesPersonalize = ({ functions, index }) => {
       selectedItems={selectedItems}
       limitNumber={limitSelectedItems}
       setSelectedItems={setSelectedItems}
-      info='Pilihlah kegiatan di bawah ini yang relevan untuk kamu lakukan atau sukai'
+      info='Pilihlah kegiatan di bawah ini yang relevan untuk kamu lakukan atau sukai.'
      />
      {!loading ? (<ItemsActivity 
       datas={listOfActivity} 
@@ -151,7 +156,81 @@ export const pagesPersonalize = ({ functions, index }) => {
          <LoaderDots />
        </div>
       )}
-     <Input set='hobby' functions={functions} index={index} trigger={valueTrigger} />
+     <Input 
+      set='hobby' 
+      index={index}
+      minLength={40}
+      functions={functions} 
+      trigger={valueTrigger}
+     />
+     <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
+      <InputButton 
+       trigger='back'
+       form='custom-input'
+       setTrigger={setValueTrigger}
+       title="<ion-icon name='arrow-back'></ion-icon>" />
+      <InputButton 
+       form='custom-input' 
+       title='Selanjutnya' 
+       disable={disableButton}
+       setTrigger={setValueTrigger} />
+     </div>
+    </div>
+   </section>
+  )
+}
+
+export const pagesPersonality = ({ functions, index }) => {
+  const userData = getUser();
+  const { nama, email, kelas } = userData
+  const [loading, setLoading] = useState(true)
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [valueTrigger, setValueTrigger] = useState('')
+  const limitSelectedItems = 1;
+  const listOfPersonality = property.datas.personality
+  const disableButton = selectedItems.length < limitSelectedItems;
+  
+  useEffect(() => {
+   if (limitSelectedItems) {
+    setTimeout(() => {
+     setLoading(false);
+    }, 1000)
+   }
+  }, [])
+  
+  return (
+   <section data-aos='fade-left'>
+    <ComponentImages pages='login' getting='images' img='lantern' />
+    <Header 
+     quote='Bagaimana dengan personality kamu?'
+     title={`${nama?.split(' ')[0]}, Lets personalize your experience`}
+    />
+    <div className='box-content'>
+     <SelectedActivity
+      datas={selectedItems}
+      selectedItems={selectedItems}
+      limitNumber={limitSelectedItems}
+      setSelectedItems={setSelectedItems}
+      info='Manakah kepribadian di bawah ini yang relate menggambarkan kepribadian diri kamu.'
+     />
+     {!loading ? (<ItemsActivity 
+      datas={listOfPersonality} 
+      selectedItems={selectedItems}
+      limitNumber={limitSelectedItems}
+      setSelectedItems={setSelectedItems}
+     />) : (
+       <div className='container-activity'>
+         <LoaderDots />
+       </div>
+      )}
+     <Input 
+      index={index}
+      minLength={40}
+      set='personality' 
+      functions={functions} 
+      trigger={valueTrigger}
+      attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
+     />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
       <InputButton 
        trigger='back'
@@ -220,8 +299,6 @@ export const pagesFavorite = ({ functions, index }) => {
    handlerFetchData()
   }, [])
   
-  console.log({redirect})
-  
   return (
    <section data-aos='fade-left'>
     <ComponentImages pages='login' getting='images' img='lantern' />
@@ -235,7 +312,7 @@ export const pagesFavorite = ({ functions, index }) => {
        selectedItems={selectedItems}
        limitNumber={limitSelectedItems}
        setSelectedItems={setSelectedItems}
-       info="Dibawah ini adalah list dari surah surah Al - Qur'an lengkap"
+       info="Dibawah ini adalah list dari surah surah Al - Qur'an lengkap."
       />
       {!loading ? (<ItemsActivity 
        datas={dataArraySurah} 
@@ -250,9 +327,11 @@ export const pagesFavorite = ({ functions, index }) => {
      <Input 
       set='surat' 
       index={index} 
+      minLength={30}
       redirect={redirect}
       functions={functions}
-      trigger={valueTrigger} />
+      trigger={valueTrigger}
+     />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
       <InputButton 
        trigger='back'
@@ -261,7 +340,7 @@ export const pagesFavorite = ({ functions, index }) => {
        title="<ion-icon name='arrow-back'></ion-icon>" />
       <InputButton 
        trigger={{
-        redirect: '/home/odos',
+        routes: '/home/odos',
         isRedirect: true
        }}
        form='custom-input' 
@@ -276,7 +355,8 @@ export const pagesFavorite = ({ functions, index }) => {
 }
 
 export const pagesLogin = ({ functions }) => {
-  const navigate = useNavigate();
+  const userData = getUser()
+  const navigate = useNavigate()
   const [ formData, setFormData ] = useState({
    nama: '',
    kelas: '',
@@ -304,7 +384,6 @@ export const pagesLogin = ({ functions }) => {
   
   return (
    <div className='pages-loading'>
-     <ComponentImages pages='login' getting='images' img='lantern' />
     <div className='container-form'>
     <div className='heading-login'>
      <div className='wrapper-text'>
@@ -312,7 +391,6 @@ export const pagesLogin = ({ functions }) => {
      <p className='text-description'>Sebuah web apps yang di kembangkan untuk pengembangan diri untuk menjadi pribadi yang lebih baik.</p>
      </div>
     </div>
-     <ComponentImages pages='login' getting='images' img='background_cloud' />
      <div className='wrapper-form'>
        <form onSubmit={handleSubmit}>
         <div className='wrapper'>
@@ -324,7 +402,7 @@ export const pagesLogin = ({ functions }) => {
            name='nama'
            tabIndex='1'
            minLength='4'
-           value={formData.nama || 'yulita rohana syahrani'}
+           value={formData.nama || userData?.nama || ''}
            onChange={handleChange}
          />
         </div>
@@ -337,7 +415,7 @@ export const pagesLogin = ({ functions }) => {
            name='kelas'
            tabIndex='2'
            minLength='4'
-           value={formData.kelas || 'akuntansi'}
+           value={formData.kelas || userData?.kelas || ''}
            onChange={handleChange}
          />
         </div>
@@ -350,7 +428,7 @@ export const pagesLogin = ({ functions }) => {
            name='email'
            tabIndex='3'
            minLength='10'
-           value={formData.email || 'faridfathonin@gmail.id'}
+           value={formData.email || userData?.email || ''}
            onChange={handleChange}
          />
         </div>

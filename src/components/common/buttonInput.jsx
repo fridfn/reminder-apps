@@ -10,7 +10,7 @@ const ButtonInput = ({ form, title, disable = false, setTrigger, trigger, setRed
      type='submit'
      onClick={() => {
       setTrigger(trigger)
-      setRedirect(trigger)
+      setRedirect ? setRedirect(trigger) : null;
      }}
      dangerouslySetInnerHTML={{ __html: title }}/>
    </div>

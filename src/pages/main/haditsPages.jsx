@@ -5,6 +5,7 @@ import Header from '@/components/header'
 import fetchData from '@/utils/fetchData'
 import Sidebar from '@/components/sidebar'
 import { useLocation } from 'react-router-dom'
+import { LoaderDots } from '@/components/loader'
 import React, { useState, useEffect } from 'react'
 
 const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-180`
@@ -29,15 +30,15 @@ const HaditsPages = () => {
   return (
    <div className='container'>
     <Sidebar active='hadits'/>
+    <section className='section-reminder'>
     <Header title={`Hello, ${nama}`} />
-    <section className='section-cards'>
-    {getUsers.nama ? (
-      hadiths && hadiths.length > 0 ? (
-       <Cards data={hadiths} detail={dataHadits} />
-      ) : (
-       <p>loading</p>
-     )
-    ): (null)}
+     <div className='section-cards'>
+     {getUsers.nama ? (
+       hadiths && hadiths.length > 0 ? (
+        <Cards data={hadiths} detail={dataHadits} />
+       ) : ( <LoaderDots /> )
+     ): (null)}
+     </div>
     </section>
     <Navbar />
    </div>

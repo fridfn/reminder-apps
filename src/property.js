@@ -276,6 +276,48 @@ const props = {
     '📜 Berpetulang',
     '🦊 Belajar Origami',
     '🧿 Bermain Kelereng',
+   ],
+   personality: [
+    "🧘‍♂️ Sabar",
+   "🔥 Mengendalikan emosi",
+   "🌈 Berpikir positif",
+   "🤝 Peduli pada orang lain",
+   "🚶‍♂️ Konsisten",
+   "📚 Belajar hal baru",
+   "🎯 Fokus pada tujuan",
+   "🛐 Bersyukur",
+   "💡 Kreatif",
+   "🚀 Berani mencoba",
+   "🔍 Jeli terhadap detail",
+   "🧠 Berpikir kritis",
+   "⏳ Disiplin",
+   "🤝 Jujur",
+   "🙇‍♂️ Rendah hati",
+   "💖 Empati",
+   "🏆 Meningkatkan kualitas diri",
+   "⏱️ Tepat waktu",
+   "🌍 Beradaptasi",
+   "👥 Berteman baik",
+   "📖 Membaca lebih banyak",
+   "🫂 Memahami orang lain",
+   "⌛ Menghargai waktu",
+   "💪 Menjaga kesehatan",
+   "📘 Selalu belajar",
+   "😌 Mengendalikan ego",
+   "🔗 Konsisten",
+   "🧭 Berpikir jangka panjang",
+   "🔧 Memperbaiki kesalahan",
+   "🎁 Berbagi kebahagiaan",
+   "🗣️ Bersikap terbuka",
+   "❤️ Mengasihi sesama",
+   "👨‍👩‍👧 Menjaga hubungan baik",
+   "🦉 Bertindak bijak",
+   "🤝 Menjalin kerja sama",
+   "🙅‍♂️ Mengurangi keluhan",
+   "💪 Memiliki tekad kuat",
+   "⚖️ Menjaga keseimbangan hidup",
+   "🙌 Menolong orang lain",
+   "🏅 Meningkatkan kesabaran"
    ]
   },
   component: {
@@ -300,7 +342,6 @@ const props = {
    }
   }
 }
-
 
 
 export default props
