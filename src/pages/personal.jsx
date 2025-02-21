@@ -16,7 +16,7 @@ const Personal = () => {
   
   useEffect(() => {
     if (isLoading) {
-     const randomTimer = Math.floor(Math.random() * (4500 - 2000 + 1)) + 2000;
+     const randomTimer = Math.floor(Math.random() * (2500 - 2000 + 1)) + 2000;
       const timer = setTimeout(() => {
         setIsLoading(false);
       }, randomTimer);

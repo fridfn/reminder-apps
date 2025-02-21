@@ -13,7 +13,7 @@ import MotivasiCards, { AyatList, Surah, SurahPendek } from '@/components/common
 import { FixedSizeList as List } from 'react-window';
 
 const SurahPages = () => {
-  const userData = getUser()
+  const { userData } = getUser()
   const location = useLocation()
   const [ayat, setAyat] = useState([])
   const [asma, setAsma] = useState([])

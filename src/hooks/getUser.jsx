@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 const getUser = () => {
   const location = useLocation()
   const [userData, setUserData] = useState([])
-  const { dataLogin } = location.state || {}
+  const { dataLogin } = location.state || {} 
   
   useEffect(() => {
     const userJSON = localStorage.getItem('user')

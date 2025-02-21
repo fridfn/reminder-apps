@@ -11,7 +11,7 @@ import property from '@/property'
 import getUser from '@/hooks/getUser'
 
 const ReminderPages = () => {
-  const userData = getUser()
+  const { userData } = getUser()
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])

@@ -19,7 +19,7 @@ const setFontSize = (length) => {
 }
 
 const MotivasiPages = () => {
-  const userData = getUser();
+  const { userData } = getUser();
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [motivasi, setMotivasi] = useState([])

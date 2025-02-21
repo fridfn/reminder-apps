@@ -11,12 +11,10 @@ import React, { useState, useEffect } from 'react'
 const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-180`
 
 const HaditsPages = () => {
-  const getUsers = getUser()
+  const { userData } = getUser()
   const location = useLocation()
   const [ dataHadits, setDataHadits ] = useState([])
-  const [ userData, setUserData ] = useState({})
-  
-  const { nama } = getUsers
+  const { nama } = userData
   const { id, name, hadiths } = dataHadits
   
   useEffect(() => {
@@ -33,7 +31,7 @@ const HaditsPages = () => {
     <section className='section-reminder'>
     <Header title={`Hello, ${nama}`} />
      <div className='section-cards'>
-     {getUsers.nama ? (
+     {userData.nama ? (
        hadiths && hadiths.length > 0 ? (
         <Cards data={hadiths} detail={dataHadits} />
        ) : ( <LoaderDots /> )

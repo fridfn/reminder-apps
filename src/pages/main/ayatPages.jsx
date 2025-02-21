@@ -14,8 +14,8 @@ import ButtonPagination from '@/components/common/buttonPagination';
 import useAudioPlayer from '@/utils/audioPlayer'
 
 const AyatPages = () => {
-  const userData = getUser()
   const { nomor } = useParams()
+  const { userData } = getUser()
   const navigate = useNavigate()
   const location = useLocation()
   const [ayat, setAyat] = useState([])

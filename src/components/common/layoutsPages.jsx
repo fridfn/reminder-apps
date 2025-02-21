@@ -162,6 +162,7 @@ export const pagesPersonalize = ({ functions, index }) => {
       minLength={40}
       functions={functions} 
       trigger={valueTrigger}
+      attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
      />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
       <InputButton 
