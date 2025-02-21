@@ -64,8 +64,8 @@ const Personal = () => {
     </span>
     {!isLoading && CurrentPagesComponent ? (
       <CurrentPagesComponent 
-      functions={CurrentFuncComponent}
       index={currentPage}
+      functions={CurrentFuncComponent}
     />) : (<Loader />)}
     {!isLoading && CurrentPagesComponent ? (
       <ComponentImages 

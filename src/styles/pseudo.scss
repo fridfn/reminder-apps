@@ -138,8 +138,10 @@
 }
 
 .container-personal .box-content .box-input:after {
+ left: 77%;
+ width: 78px;
+ text-align: end;
  content: attr(data-info);
- left: 80%;
 }
 
 .box-content .wrapper-button-input .container-button-input:nth-child(1) {

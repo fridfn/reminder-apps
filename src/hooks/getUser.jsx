@@ -18,7 +18,7 @@ const getUser = () => {
      setUserData(user)
     }
   }, [dataLogin])
-  return userData
+  return { userData, dataLogin }
 }
 
 export default getUser

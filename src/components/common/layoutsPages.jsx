@@ -163,7 +163,7 @@ export const pagesPersonalize = ({ functions, index }) => {
       functions={functions} 
       trigger={valueTrigger}
      />
-     <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
+     <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
       <InputButton 
        trigger='back'
        form='custom-input'
@@ -231,7 +231,7 @@ export const pagesPersonality = ({ functions, index }) => {
       trigger={valueTrigger}
       attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
      />
-     <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
+     <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
       <InputButton 
        trigger='back'
        form='custom-input'
@@ -332,7 +332,7 @@ export const pagesFavorite = ({ functions, index }) => {
       functions={functions}
       trigger={valueTrigger}
      />
-     <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
+     <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
       <InputButton 
        trigger='back'
        form='custom-input'
