@@ -27,7 +27,7 @@ const ItemsActivity = ({ datas, selectedItems, setSelectedItems, limitNumber }) 
    <div className='container-activity' data-aos='zoom-in'>
     <EachUtils 
      of={datas}
-     render={(nama, index) => {
+     render={(nama = 'user', index) => {
       const removeHtmlTags = (text) => { return text.replace(/<\/?[^>]+(>|$)/g, "").trimStart() }
       const cleanNama = removeHtmlTags(nama)
       const isActive = selectedItems.includes(cleanNama)
@@ -78,7 +78,7 @@ const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber,
 
 export const pagesMotivation = ({ functions, index }) => {
   const userData = getUser();
-  const { nama, email, kelas } = userData
+  const { nama = 'user', email, kelas } = userData
   const [valueTrigger, setValueTrigger] = useState('')
   
   return (
@@ -90,11 +90,11 @@ export const pagesMotivation = ({ functions, index }) => {
     />
     <div className='box-content'>
      <Input 
-      set='janji' 
       index={index} 
       minLength={40}
       functions={functions}
       trigger={valueTrigger}
+      propData={{ SET: 'janji', DATAS: 'tidak ada' }}
      />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 3`}>
       <InputButton 
@@ -115,7 +115,7 @@ export const pagesMotivation = ({ functions, index }) => {
 
 export const pagesPersonalize = ({ functions, index }) => {
   const userData = getUser();
-  const { nama, email, kelas } = userData
+  const { nama = 'user', email, kelas } = userData
   const [loading, setLoading] = useState(true)
   const [selectedItems, setSelectedItems] = useState([]);
   const [valueTrigger, setValueTrigger] = useState('')
@@ -156,13 +156,13 @@ export const pagesPersonalize = ({ functions, index }) => {
          <LoaderDots />
        </div>
       )}
-     <Input 
-      set='hobby' 
+     <Input
       index={index}
       minLength={40}
       functions={functions} 
       trigger={valueTrigger}
       attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
+      propData={{ SET: 'hobby', DATAS: selectedItems }}
      />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
       <InputButton 
@@ -183,7 +183,7 @@ export const pagesPersonalize = ({ functions, index }) => {
 
 export const pagesPersonality = ({ functions, index }) => {
   const userData = getUser();
-  const { nama, email, kelas } = userData
+  const { nama = 'user', email, kelas } = userData
   const [loading, setLoading] = useState(true)
   const [selectedItems, setSelectedItems] = useState([]);
   const [valueTrigger, setValueTrigger] = useState('')
@@ -227,22 +227,24 @@ export const pagesPersonality = ({ functions, index }) => {
      <Input 
       index={index}
       minLength={40}
-      set='personality' 
       functions={functions} 
       trigger={valueTrigger}
       attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
+      propData={{ SET: 'personality', DATAS: selectedItems }}
      />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
       <InputButton 
        trigger='back'
        form='custom-input'
        setTrigger={setValueTrigger}
-       title="<ion-icon name='arrow-back'></ion-icon>" />
+       title="<ion-icon name='arrow-back'></ion-icon>"
+      />
       <InputButton 
        form='custom-input' 
        title='Selanjutnya' 
        disable={disableButton}
-       setTrigger={setValueTrigger} />
+       setTrigger={setValueTrigger}
+      />
      </div>
     </div>
    </section>
@@ -251,7 +253,7 @@ export const pagesPersonality = ({ functions, index }) => {
 
 export const pagesFavorite = ({ functions, index }) => {
   const userData = getUser();
-  const { nama, email, kelas } = userData
+  const { nama = 'user', email, kelas } = userData
   const [selectedItems, setSelectedItems] = useState([]);
   const [valueTrigger, setValueTrigger] = useState('')
   const [redirect, setRedirect] = useState({
@@ -325,13 +327,13 @@ export const pagesFavorite = ({ functions, index }) => {
          <LoaderDots />
        </div>
        )}
-     <Input 
-      set='surat' 
+     <Input
       index={index} 
       minLength={30}
       redirect={redirect}
       functions={functions}
       trigger={valueTrigger}
+      propData={{ SET: 'surat', DATAS: selectedItems }}
      />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
       <InputButton 
@@ -375,13 +377,17 @@ export const pagesLogin = ({ functions }) => {
   
   const handleSubmit = () => {
    functions(1)
-   navigate('/login', { state: { dataLogin: formData } });
+   navigate('/login', {
+    state: { 
+     dataLogin: formData
+    }
+   });
   }
-  // 
-//   const isAuthenticated = localStorage.getItem('user');
-//   if (isAuthenticated) {
-//    return <Navigate to='/home' />;
-//   }
+  
+  const isAuthenticated = localStorage.getItem('user');
+  if (isAuthenticated) {
+   return <Navigate to='/home' />;
+  }
   
   return (
    <div className='pages-loading'>

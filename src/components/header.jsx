@@ -24,7 +24,11 @@ const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }
   const handleAction = (action) => {
    switch(action) {
     case 'surah':
-     navigate('/home/surah', { state: { pages: pages }})
+     navigate('/home/surah', {
+       state: {
+        pages: pages
+       }
+     })
     break;
     default:
      console.log('please set action')
@@ -35,8 +39,7 @@ const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }
    <div className='header'>
      <div className='header-cards'>
       <p 
-       className='md-txt title'
-       style={size && {fontSize: size + 'px'}}>
+       className='title'>
        {title}
       </p>
       {motivation ? (

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Sidebar from '@/components/sidebar'
 import { ReminderSec, ReminderThird } from '@/components/common/reminder'
+import property from '@/property'
+import getUser from '@/hooks/getUser'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import fetchData from '@/utils/fetchData'
 import generateRandomValue from '@/utils/generateRandomValue'
 import ButtonPagination from '@/components/common/buttonPagination'
 import muslimWoman5 from '@/assets/muslim_woman_5.webp'
-import property from '@/property'
-import getUser from '@/hooks/getUser'
 
 const ReminderPages = () => {
   const { userData } = getUser()
@@ -63,15 +63,15 @@ const ReminderPages = () => {
        <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
       </div>
      </section>) : (null)
-    ) : (null)}
-       <div className='section-reminder' id='wrapper-button-pagination'>
-       <ButtonPagination 
-        endpoint='/hadits.json'
-        func={handleGenerateReminder} 
-        props={button_reminder} 
-        values='hadist'
-       />
-      </div>
+     ) : (null)}
+     <div className='section-reminder' id='wrapper-button-pagination'>
+     <ButtonPagination 
+      endpoint='/hadits.json'
+      func={handleGenerateReminder} 
+      props={button_reminder} 
+      values='hadist'
+     />
+    </div>
    </div>
   )
 }

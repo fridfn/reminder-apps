@@ -98,10 +98,11 @@
  margin-bottom: 10px;
 }
 
-.header .text, .container-personal .header .header-cards .text {
+.header .text, .container-personal .header .header-cards .text, .container-personal .header .header-cards .title {
  font-size: 13px;
  font-weight: 500;
  font-family: Helvetica;
+ color: $secondary-color-text;
 }
 
 .text {
@@ -125,16 +126,17 @@
 }
 
 .header-cards {
- color: $primary-color-text;
+ color: $secondary-color-text;
 }
 
 .header-cards .title {
  color: inherit;
- font-size: 25px;
+ font-size: 26px;
  font-weight: 600;
- max-height: 60px;
+ max-height: 64px;
  overflow-y: hidden;
  font-family: inherit;
+ letter-spacing: 1.5px;
  text-transform: capitalize;
 }
 
@@ -652,7 +654,7 @@
  gap: 20px;
 }
 
-#wrapper-main-content .bg-txt, .md-txt {
+span .bg-txt, .md-txt {
  opacity: .8;
  letter-spacing: 1.5px;
  font-family: 'Russo One', serif;
@@ -660,7 +662,7 @@
 
 #motivasi-pages .header .header-cards .title {
  width: 95%;
- font-size: 22px;
+ font-size: 24px;
  text-transform: capitalize;
 }
 
@@ -981,8 +983,13 @@
  opacity: .5;
 }
 
-.container-personal .header {
+.container-personal section .header, .container-personal section .header .header-cards {
  width: 100%;
+}
+.container-personal section .header .header-cards .title {
+ width: 100%;
+ font-size: 25px;
+ font-family: 'Russo One', serif;
 }
 
 .container-personal section .header .header-cards {

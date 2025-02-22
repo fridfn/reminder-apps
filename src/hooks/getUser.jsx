@@ -5,7 +5,6 @@ const getUser = () => {
   const location = useLocation()
   const [userData, setUserData] = useState([])
   const { dataLogin } = location.state || {} 
-  
   useEffect(() => {
     const userJSON = localStorage.getItem('user')
     const isToken = localStorage.getItem('TOKEN')

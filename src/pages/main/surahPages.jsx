@@ -114,7 +114,7 @@ const SurahPages = () => {
      <ButtonPagination
       endpoint={'/motivasi.json'}
       func={handleButtonSurah}
-      props={{title: ["Al - Qur'an", 'Surah Pendek'], icons: null }}
+      props={{title: ["Al - Qur'an", 'Surah Pendek'], icons: ['book', 'book'] }}
       values='alquran'
      />
      </div>
