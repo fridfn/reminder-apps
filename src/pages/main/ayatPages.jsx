@@ -10,6 +10,7 @@ import fetchData from '@/utils/fetchData';
 import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
 import TextSpeech from '@/utils/textSpeech';
+import { LoaderDots } from '@/components/loader'
 import ButtonPagination from '@/components/common/buttonPagination';
 import useAudioPlayer from '@/utils/audioPlayer'
 
@@ -62,6 +63,25 @@ const AyatPages = () => {
    }
   }, [currentAyat, loading])
   
+  const scrollableDivRef = useRef(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+
+    // Tambahkan listener untuk scroll pada div scrollable
+    const handleScroll = () => {
+      AOS.refresh(); // Memanggil refresh setiap kali user scroll di div
+    };
+
+    const scrollableDiv = scrollableDivRef.current;
+    scrollableDiv.addEventListener('scroll', handleScroll);
+
+    // Bersihkan event listener saat komponen di-unmount
+    return () => {
+      scrollableDiv.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   const handlePlayAudio = (index) => {
     const allAudio = dataSurah?.ayahs?.map(items => items.audio.alafasy);
     
@@ -112,7 +132,7 @@ const AyatPages = () => {
       ayats={currentListAyat}
       latin={currentListLatin}
       currentIndex={currentIndex}
-     />) : (<p>Loading</p>)}
+     />) : (<LoaderDots />)}
     </div>
     <div data-info={'Lembar : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination

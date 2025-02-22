@@ -1,12 +1,13 @@
-import AOS from 'aos';
 import property from '@/property';
 import getUser from '@/hooks/getUser';
 import Header from '@/components/header';
+import Navbar from '@/components/navbar';
 import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
 import Sidebar from '@/components/sidebar';
-import Navbar from '@/components/navbar';
-import React, { useEffect, useState } from 'react';
+import { useAOS } from '@/utils/observeElement'
+import { LoaderDots } from '@/components/loader'
+import React, { useEffect, useState, useRef } from 'react';
 import ButtonPagination from '@/components/common/buttonPagination';
 import { useLocation } from 'react-router-dom';
 import MotivasiCards, { AyatList, Surah, SurahPendek } from '@/components/common/cardsTemplate';
@@ -22,6 +23,7 @@ const SurahPages = () => {
   const [image, setImage] = useState('')
   const [visible, setVisible] = useState('al_quran')
   const [surahPendek, setSurahPendek] = useState([]);
+  const scrollableDivRef = useAOS({ duration: 700 })
   const [loading, setLoading] = useState(true);
   let [currentPage, setCurrentPage] = useState(1)
   const [animate, setAnimate] = useState(false)
@@ -43,7 +45,6 @@ const SurahPages = () => {
   const currentSurahPendek = surahPendek.slice(indexOfFirstItem, indexOfLastItem);
  
   const handleButtonSurah = (type) => {
-   AOS.refresh()
    setLoading(true);
    const setTotalPages = visible === 'surah_pendek' ? totalPagesSurahPendek : totalPages;
    
@@ -118,13 +119,13 @@ const SurahPages = () => {
       values='alquran'
      />
      </div>
-    <div className='section-reminder' id='wrapper-surah'>
+    <div ref={scrollableDivRef} className='section-reminder' id='wrapper-surah'>
      {!loading ?
       visible === 'al_quran' ? (
       <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} asma={asma} />)
       : (
        <SurahPendek surah={currentSurahPendek} classes={CLASSES} attr={ATTRIBUTE} />
-      ) : (<p>loading</p>)
+      ) : (<LoaderDots />)
      }
     </div>
     <div data-info={!loading ? `${'Halaman : ' + currentPage}` : 'Halaman : ?'} className='section-reminder' id='wrapper-button-pagination number-pages'>

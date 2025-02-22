@@ -157,13 +157,13 @@ export const Surah = ({ surah, attr, classes, pages, asma }) => {
 }
 
 export const SurahPendek = ({ surah, attr, classes }) => {
- 
   return (
    <EachUtils
     of={surah}
     render={(surah, index) => (
      <div
       key={index}
+      data-aos='zoom-in'
       className='box-surah'
       id='wrapper-surah-pendek'>
       <div className='wrapper-surah'>
