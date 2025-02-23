@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import property from '@/property';
