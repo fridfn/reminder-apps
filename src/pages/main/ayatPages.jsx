@@ -68,17 +68,15 @@ const AyatPages = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
 
-    // Tambahkan listener untuk scroll pada div scrollable
     const handleScroll = () => {
-      AOS.refresh(); // Memanggil refresh setiap kali user scroll di div
+      AOS.refresh();
     };
 
-    const scrollableDiv = scrollableDivRef.current;
-    scrollableDiv.addEventListener('scroll', handleScroll);
-
-    // Bersihkan event listener saat komponen di-unmount
+    const scrollableDiv = scrollableDivRef?.current;
+    scrollableDiv?.addEventListener('scroll', handleScroll);
+    
     return () => {
-      scrollableDiv.removeEventListener('scroll', handleScroll);
+      scrollableDiv?.removeEventListener('scroll', handleScroll);
     };
   }, []);
   
@@ -122,6 +120,7 @@ const AyatPages = () => {
     />
     </div>
     <div
+    ref={scrollableDivRef}
     className='section-reminder' id='wrapper-ayat'>
      {!loading ? (
      <AyatList

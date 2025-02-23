@@ -62,6 +62,8 @@ export const AyatList = ({ ayats, attr, classes, latin, isSurah, currentIndex })
    <EachUtils of={ayats}
     render={(ayat, index) => (
      <div
+      data-aos='zoom-in'
+      data-aos-duration='500'
       className={`box-ayat ${currentIndex === ayat.number.inSurah - 1 ? 'in-audio': ''}`}
       ref={(el) => (itemRef.current[index] = el)}
       key={ayat.number.inSurah}>
