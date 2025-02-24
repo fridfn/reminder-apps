@@ -14,6 +14,7 @@ const HaditsPages = () => {
   const { userData } = getUser()
   const location = useLocation()
   const [ dataHadits, setDataHadits ] = useState([])
+  
   const { nama } = userData
   const { id, name, hadiths } = dataHadits
   
@@ -31,7 +32,6 @@ const HaditsPages = () => {
     <section className='section-reminder'>
     <Header title={`Hello, ${nama}`} />
      <div className='section-cards'>
-     <img style={{zIndex: '20', position: 'absolute', top: '20px'}} src="https://render.gitanimals.org/lines/fridfn?pet-id=671615300271345171" width="600" height="150"/>
      {userData.nama ? (
        hadiths && hadiths.length > 0 ? (
         <Cards data={hadiths} detail={dataHadits} />
