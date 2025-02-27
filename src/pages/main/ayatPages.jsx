@@ -108,15 +108,15 @@ const AyatPages = () => {
   return (
    <div className='container' id='ayat-pages'>
     <Sidebar active='surah' />
-    <Navbar />
+    <Navbar active='home' />
     <div className='section-reminder'>
     <Header
      action='surah'
      icons='arrow-back'
      currentIndex={currentIndex}
      onPlayAudio={handlePlayAudio}
-     quote={`Arti : ${isSurah.arti}`}
-     title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah.nama}`}
+     quote={`Arti : ${isSurah?.arti}`}
+     title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah?.nama}`}
     />
     </div>
     <div

@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Sidebar = ({ active }) => {
   const navigate = useNavigate();
-  const { title } = props.component.sidebar.button;
   const path = props.component.sidebar.path;
+  const { title } = props.component.sidebar.button;
   
   return (
    <>

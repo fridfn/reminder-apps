@@ -45,7 +45,7 @@ export const ReminderSec = ({ inti, image, animate }) => {
   
   if (inti) {
    if (inti.length >= 45) {
-     fSize = '15px';
+     fSize = '14px';
    } else if (inti.length >= 30) {
      fSize = '18px';
    } else if (inti.length > 20) {
@@ -59,8 +59,10 @@ export const ReminderSec = ({ inti, image, animate }) => {
    <div className='container-reminder'>
     <div className='wrapper'>
      <div className='content-first'>
-      <div className='wrapper-text' id='parent-inti-reminder'>
-        <p className='text' style={{fontSize: fSize }}>{inti}</p>
+      <div
+       className='wrapper-text'
+       id='parent-inti-reminder'>
+        <p className='text box-text' style={{fontSize: fSize }}>{inti}</p>
        </div>
        <div className='box-image'>
         <Image image={image} animate={animate} />

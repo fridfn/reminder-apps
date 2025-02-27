@@ -64,7 +64,7 @@ const MotivasiPages = () => {
   return (
    <div className='container' id='motivasi-pages'>
     <Sidebar active='motivasi' />
-    <Navbar />
+    <Navbar active='home' />
     <div className='section-reminder'>
      <Header size={setFontSize(motivasi?.title?.length)} title={title} quote='Tetap semangat ya, aku tahu kamu pasti bisa melewatinya. Semangatt' />
      <div className='wrapper' id='wrapper-surah'>

@@ -42,7 +42,7 @@ const ButtonPagination = ({ endpoint, func, props, values }) => {
          handleNext(endpoints, values)
         }
        }}>
-       <button className='button'>{items}</button>
+      <button className='button'>{items}</button>
        {icons ? (
        <ion-icon class="small" name={icons[index]}></ion-icon>) : (null)}
       </div>
