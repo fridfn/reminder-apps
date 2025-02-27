@@ -2,19 +2,22 @@ import React from 'react';
 import property from '@/property';
 import EachUtils from '@/utils/eachUtils';
 
-const Navbar = () => {
-  const button = property.component.navbar.button.icons;
+const Navbar = ({ active }) => {
+  const { title, icons } = property.component.navbar.button;
   
   return (
     <div className='navbar'>
      <div className='wrapper'>
       <EachUtils
-       of={button}
-       render={(items, index) => (
-        <div className='items' key={index}>
-         <ion-icon class="icons bg-txt" name={items}></ion-icon>
+       of={icons}
+       render={(items, index) => {
+       const isActive = active && items == active
+       
+       return (
+        <div className="items" key={index}>
+         <ion-icon class={`icons bg-txt ${isActive ? 'active': ''}`} name={items}></ion-icon>
         </div>
-       )}/>
+       )}}/>
      </div>
     </div>
   )

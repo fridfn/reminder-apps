@@ -1,0 +1,99 @@
+{
+  "odos": [
+   {
+    "title": "Menyebarkan Salam",
+    "arab": "أَفْشُوا السَّلَامَ بَيْنَكُمْ",
+    "latin": "Afsyus-salaama baynakum",
+    "translation": "Sebarkanlah salam di antara kalian.",
+    "source": "H.R. Muslim",
+    "explanation": "Rasulullah ﷺ menganjurkan kita untuk menyebarkan salam, karena salam adalah doa keselamatan dan perdamaian di antara sesama muslim."
+  },
+  {
+    "title": "Memulai dengan Tangan Kanan",
+    "arab": "كَانَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يُحِبُّ التَّيَامُنَ",
+    "latin": "Kaana an-nabiyyu ṣalla Allahu 'alayhi wa sallama yuhibbut tayamun",
+    "translation": "Rasulullah ﷺ suka memulai dari sebelah kanan.",
+    "source": "H.R. Bukhari",
+    "explanation": "Dalam kegiatan sehari-hari seperti makan, minum, dan memakai pakaian, Rasulullah ﷺ selalu memulai dari sisi kanan sebagai bentuk penghormatan dan adab yang baik."
+  },
+  {
+    "title": "Mengucapkan Bismillah",
+    "arab": "كُلُّ أَمْرٍ ذِي بَالٍ لَا يُبْدَأُ فِيهِ بِبِسْمِ اللَّهِ فَهُوَ أَقْطَعُ",
+    "latin": "Kullu amrin dhi baalin laa yubda'u fihi bi bismillah fahuwa aqta'",
+    "translation": "Setiap urusan penting yang tidak dimulai dengan Bismillah, maka terputuslah berkahnya.",
+    "source": "H.R. Abu Dawud",
+    "explanation": "Selalu mengucapkan 'Bismillah' sebelum memulai segala aktivitas akan membawa berkah dalam apa yang kita lakukan."
+  },
+  {
+    "title": "Berdoa Keluar Rumah",
+    "arab": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+    "latin": "Bismillahi, tawakkaltu 'alallah, wa laa hawla wa laa quwwata illa billah",
+    "translation": "Dengan nama Allah, aku bertawakkal kepada Allah, dan tidak ada daya serta kekuatan kecuali dengan-Nya.",
+    "source": "H.R. Tirmidzi",
+    "explanation": "Saat keluar rumah, berdoa ini untuk meminta perlindungan dan pertolongan dari Allah dalam segala aktivitas di luar rumah."
+  },
+  {
+    "title": "Tersenyum kepada Sesama",
+    "arab": "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ صَدَقَةٌ",
+    "latin": "Tabassumuka fi wajhi akhika sadaqah",
+    "translation": "Tersenyummu di hadapan saudaramu adalah sedekah.",
+    "source": "H.R. Tirmidzi",
+    "explanation": "Tersenyum adalah amalan ringan yang dianggap sebagai sedekah, mencerminkan akhlak yang baik dan membawa kebahagiaan kepada orang lain."
+  },
+  {
+    "title": "Menjaga Kebersihan",
+    "arab": "إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ",
+    "latin": "Inna Allah jameelun yuhibbul jamaal",
+    "translation": "Sesungguhnya Allah itu indah dan mencintai keindahan.",
+    "source": "H.R. Muslim",
+    "explanation": "Rasulullah ﷺ mengajarkan pentingnya menjaga kebersihan, baik fisik maupun lingkungan, karena kebersihan adalah sebagian dari iman."
+  },
+  {
+    "title": "Mengucapkan Alhamdulillah Setelah Bersin",
+    "arab": "إِذَا عَطَسَ أَحَدُكُمْ فَلْيَقُلِ الْحَمْدُ لِلَّهِ",
+    "latin": "Idza ‘atasa ahadukum falyakul alhamdulillah",
+    "translation": "Apabila salah seorang di antara kalian bersin, hendaklah ia mengucapkan Alhamdulillah.",
+    "source": "H.R. Bukhari",
+    "explanation": "Mengucapkan 'Alhamdulillah' setelah bersin adalah bentuk syukur atas nikmat yang Allah berikan."
+  },
+  {
+    "title": "Memakai Pakaian dari Sebelah Kanan",
+    "arab": "إِذَا لَبِسَ أَحَدُكُمْ فَلْيَبْدَأْ بِيَمِينِهِ",
+    "latin": "Idza labisa ahadukum falyabda' biyaminihi",
+    "translation": "Apabila salah seorang di antara kalian mengenakan pakaian, hendaklah ia memulainya dari sebelah kanan.",
+    "source": "H.R. Tirmidzi",
+    "explanation": "Memakai pakaian dimulai dari sisi kanan adalah adab yang diajarkan Rasulullah ﷺ sebagai bagian dari sunnah yang penuh berkah."
+  },
+  {
+    "title": "Berdoa Sebelum Tidur",
+    "arab": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+    "latin": "Bismika Allahumma amutu wa ahya",
+    "translation": "Dengan nama-Mu ya Allah, aku mati dan aku hidup.",
+    "source": "H.R. Bukhari",
+    "explanation": "Berdoa sebelum tidur adalah sunnah Rasulullah ﷺ, menyerahkan diri kepada Allah sebelum beristirahat."
+  },
+  {
+    "title": "Menyikat Gigi dengan Siwak",
+    "arab": "لَوْلَا أَنْ أَشُقَّ عَلَى أُمَّتِي لَأَمَرْتُهُمْ بِالسِّوَاكِ",
+    "latin": "Law laa an asyuqqa ‘alaa ummati la amartuhum bis-siwaak",
+    "translation": "Seandainya tidak memberatkan umatku, niscaya aku perintahkan mereka bersiwak setiap waktu.",
+    "source": "H.R. Bukhari",
+    "explanation": "Bersiwak atau menyikat gigi adalah sunnah yang sangat dianjurkan untuk menjaga kebersihan mulut dan kesehatan gigi."
+  },
+  {
+    "title": "Berbuat Baik kepada Tetangga",
+    "arab": "مَا زَالَ جِبْرِيلُ يُوصِينِي بِالْجَارِ حَتَّى ظَنَنْتُ أَنَّهُ سَيُوَرِّثُهُ",
+    "latin": "Ma zaala Jibriilu yusiinii bil-jaari hatta dzannantu annahu sayuwarrituhu",
+    "translation": "Jibril selalu berpesan kepadaku untuk berbuat baik kepada tetangga, hingga aku mengira bahwa tetangga akan diberi hak waris.",
+    "source": "H.R. Bukhari dan Muslim",
+    "explanation": "Rasulullah ﷺ sangat menganjurkan untuk berbuat baik kepada tetangga sebagai bagian dari membangun kehidupan sosial yang harmonis."
+  },
+  {
+    "title": "Memperbanyak Dzikir",
+    "arab": "مَثَلُ الَّذِي يَذْكُرُ رَبَّهُ وَالَّذِي لَا يَذْكُرُ رَبَّهُ، مَثَلُ الْحَيِّ وَالْمَيِّتِ",
+    "latin": "Mathalu alladzi yadzkuru rabbahu walladzi la yadzkuru rabbahu, mathalu al-hayyi wal-mayyit",
+    "translation": "Perumpamaan orang yang berdzikir dengan yang tidak berdzikir kepada Rabbnya seperti orang yang hidup dengan yang mati.",
+    "source": "H.R. Bukhari",
+    "explanation": "Memperbanyak dzikir menghidupkan hati dan menjaga hubungan dengan Allah, serta menjauhkan diri dari kelalaian."
+  }]
+}

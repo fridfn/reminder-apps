@@ -39,7 +39,7 @@ const HaditsPages = () => {
      ): (null)}
      </div>
     </section>
-    <Navbar />
+    <Navbar active='home' />
    </div>
   )
 }

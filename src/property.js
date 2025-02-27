@@ -132,7 +132,29 @@ const props = {
       5: 'text text-surah-pendek',
      }
     }
-   }
+   },
+   odos: {
+    button: {
+     title: ['Selanjutnya', 'Buka Surah'],
+     icons: ['arrow-forward-circle', 'arrow-back-circle']
+    },
+    data: {
+     attribute: {
+      0: ' ',
+      1: ' ',
+      2: 'Artinya : ',
+      3: 'Sumber : ',
+      4: 'Maksud dan inti dari surah yang di sebutkan diatas adalah :',
+     },
+     classes: {
+      0: 'text text-arab',
+      1: 'text text-arti',
+      2: 'text box-text text-arti',
+      3: 'text nm-txt',
+      4: 'text box-text',
+     }
+    }
+   },
   },
   datas: {
    activity: [
@@ -336,8 +358,8 @@ const props = {
    },
    navbar: {
     button: {
-     icons: ['person', 'home', 'globe', 'settings'],
-     title: ['hadits', 'reminder', 'surah', 'odos']
+     icons: ['home', 'person', 'mail', 'settings'],
+     title: ['home', 'person', 'mail', 'settings']
     }
    }
   }

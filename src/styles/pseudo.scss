@@ -180,12 +180,18 @@
 }
 
 .is-active-page.active {
+ background-color: $third-color-text;
  animation: $scale_effect .4s linear;
 }
 
 .sidebar nav .text.active {
  margin-right: 10px;
+ color: $third-color-text;
  transition: all .3s linear;
+}
+
+.navbar .wrapper .items .icons.active {
+ color: $third-color-text;
 }
 
 .component-images.active {

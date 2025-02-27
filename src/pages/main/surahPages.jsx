@@ -106,7 +106,7 @@ const SurahPages = () => {
   return (
    <div className='container' id='surah-pages'>
     <Sidebar active='surah' />
-    <Navbar />
+    <Navbar active='home' />
     <div className='section-reminder' id='wrapper-box-category'>
      <Header 
       title={`${userData?.nama?.split(' ')[0]}, ${reminder.title}`} 

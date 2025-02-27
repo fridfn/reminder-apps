@@ -199,4 +199,66 @@ export const SurahPendek = ({ surah, attr, classes }) => {
   )
 }
 
+export const StackedCards = () => {
+  const [activeCards, setActiveCards] = useState(0)
+  
+  const handleClick = (e, index) => {
+   setActiveCards(index)
+  }
+  
+  const cardsIndex = { 0: 'one', 1: 'two', 2: 'three' }
+  
+  return (
+   <div className="container-stacked-cards">
+   <EachUtils
+     of={['1', '2', '3']}
+     render={(items, index) => (
+      <div 
+       key={index}
+       onClick={(e) => handleClick(e, index)}
+       className={`cards ${activeCards === index ? `view num-${cardsIndex[index]}`: cardsIndex[index]}`}>
+       <div className="content-cards">
+        <p className='md-txt'>{index}Carilah tempat mu di cintai</p>
+       </div>
+      </div>
+     )}/>
+   </div>
+  );
+}
+
+export const CardsDate = ({ data, dates }) => {
+  const today = new Date();
+  const month = today.getMonth();
+  const monthData = ['Januari', 'Februari', 'Maret', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+  
+  const addDays = (date, days) => {
+    let result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  };
+  
+  const next7Days = [...Array(7)].map((_, index) => {
+    let futureDate = addDays(today, index);
+    return {
+      day: futureDate.toLocaleString('id-ID', { weekday: 'long' }),
+      date: futureDate.getDate().toString().padStart(2, '0')
+    };
+  });
+  
+  return (
+    <div className='container-cards-date'>
+      <span>
+        <p className='name-day'>{next7Days[0].day},</p>
+        <p className='name-day'>{monthData[month]}</p>
+      </span>
+      <div className='wrapper'>
+       <div className='date-items'>
+        <p className='date'>{next7Days[0].date}</p>
+       </div>
+      </div>
+    </div>
+  )
+}
+
+
 export default MotivasiCards;

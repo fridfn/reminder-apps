@@ -27,7 +27,7 @@ const useAudioPlayer = () => {
         if (index < audio.length - 1 && typeof(audio) === 'object') {
           playAudio(audio, index + 1);
         } else {
-          setCurrentIndex(0);
+          setCurrentIndex(audio.length - 1);
         }
       };
     } catch (err) {

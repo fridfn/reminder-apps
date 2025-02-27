@@ -296,6 +296,10 @@
  transform: scale(1.1);
 }
 
+#wrapper-content-reminder .container-loader {
+ margin-top: 15%;
+}
+
 .pages-loading {
  width: 100%;
  height: 100dvh;
@@ -576,7 +580,7 @@
  font-family: 'Russo One', serif;
 }
 
-.container-reminder .wrapper, .cards .reminder, .cards .box-cards {
+.container-reminder #wrapper-reminder, .cards .reminder, .cards .box-cards {
  display: flex;
  border-radius: 10px;
  justify-content: end;
@@ -654,7 +658,7 @@
  gap: 20px;
 }
 
-span .bg-txt, .md-txt {
+span .bg-txt, .md-txt, span .nm-txt {
  opacity: .8;
  letter-spacing: 1.5px;
  font-family: 'Russo One', serif;
@@ -676,7 +680,7 @@ span .bg-txt, .md-txt {
  background-color: $secondary-color-cards;
 }
 
-.container-bubble .box-text, .box-motivasi-cards .box-text, .box-ayat .box-text {
+.container-bubble .box-text, .box-motivasi-cards .box-text, .box-ayat .box-text, .wrapper-text .box-text {
  width: 100%;
  line-height: 14px;
  padding: 8px 12px;
@@ -685,6 +689,16 @@ span .bg-txt, .md-txt {
  color: $primary-color-text;
  background-color: $primary-color-cards;
  box-shadow: inset 0px 1px 6px 2px $primary-color-background;
+}
+
+.wrapper-text .box-text {
+ display: flex;
+ min-height: 80px;
+ max-height: 80px;
+ padding: 8px 10px;
+ text-align: start;
+ line-height: 17px;
+ align-items: center;
 }
 
 .container-bubble .box-text span {
@@ -721,7 +735,7 @@ span .bg-txt, .md-txt {
  left: -5px;
 }
 
-.container-reminder .wrapper #wrapped-reminder  .box, .reminder .wrapper-reminder {
+.container-reminder .wrapper #wrapped-reminder .box, .reminder #wrapped-reminder {
  border-radius: 15px;
  box-shadow: inset 0px 1px 6px 2px $primary-color-background;
 }
@@ -854,10 +868,7 @@ span .bg-txt, .md-txt {
  position: relative;
 }
 
-#surah-pages #wrapper-surah .container-loader {
- margin-left: 5%;
-}
-#ayat-pages #wrapper-ayat .container-loader {
+#surah-pages #wrapper-surah .container-loader, #ayat-pages #wrapper-ayat .container-loader,  #wrapper-content-reminder .container-loader {
  margin-left: 5%;
 }
 
@@ -1114,4 +1125,111 @@ span .bg-txt, .md-txt {
  width: 100%;
  padding: 17px 15px;
  align-items: center;
+}
+
+.container-stacked-cards {
+ position: relative;
+ height: 200px;
+ display: flex;
+ gap: 20px;
+ padding: 15px 0;
+ overflow-y: hidden;
+ align-items: start;
+ flex-direction: column;
+ justify-content: start;
+}
+
+.container-stacked-cards .cards {
+ position: relative;
+ z-index: 5;
+ top: -120px;
+ width: 100%;
+ scroll-snap-align: center;
+ transition: all .3s linear;
+}
+
+.container-stacked-cards .cards:nth-child(1), .container-stacked-cards .cards:nth-child(3) {
+ z-index: 1;
+ top: -5px;
+ transform: scale(.9);
+}
+
+.container-stacked-cards .cards:nth-child(3) {
+ top: -235px;
+}
+
+.container-stacked-cards .cards .content-cards:is(:hover) {
+ backdrop-filter: blur(2px);
+}
+
+.container-stacked-cards .cards.view {
+ z-index: 20;
+ transform: scale(1);
+}
+
+.container-stacked-cards .cards.view:nth-child(1) {
+ top: 20px;
+}
+
+.container-stacked-cards .cards.two {
+ top: -140px;
+ transform: scale(.9);
+}
+
+.container-stacked-cards .cards.num-three {
+ top: -260px;
+}
+
+.container-stacked-cards:has(.cards.view.num-three) .cards.two {
+  top: -90px;
+  border: 2px solid green;
+}
+
+.container-stacked-cards .cards.view .content-cards {
+ border: 2px solid blue;
+}
+
+.container-stacked-cards .cards .content-cards {
+ border: 2px solid white;
+ display: flex;
+ padding: 10px;
+ min-height: 120px;
+ max-height: 150px;
+ text-align: center;
+ align-items: center;
+ border-radius: 10px;
+ flex-direction: row-reverse;
+ background-color: $secondary-color-cards;
+}
+
+.container-stacked-cards .cards.active .content-cards {
+ border: 2px solid red;
+}
+
+.container-stacked-cards .cards .content-cards ion-icon {
+ font-size: 65px;
+}
+
+.container-cards-date, .container-cards-date .wrapper, .container-cards-date .date-items {
+ gap: 10px;
+ width: 100%;
+ padding: 3px;
+ display: flex;
+ border-radius: 10px;
+ flex-direction: row;
+ justify-content: space-between;
+ background-color: $primary-color-cards;
+}
+
+.container-cards-date {
+ gap: 5px;
+ flex-direction: column;
+}
+
+.container-cards-date .date-items.isDay {
+ background-color: $primary-color-background;
+}
+
+.container-cards-date .date-items.isDay p {
+ color: $third-color-text;
 }
