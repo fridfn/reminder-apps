@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import getUser from '@/hooks/getUser';
-import Sidebar from '@/components/sidebar';
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
+import Sidebar from '@/components/sidebar';
 import BubbleMessage from '@/components/common/cards';
 import MotivasiCards from '@/components/common/cardsTemplate';
 import ButtonPagination from '@/components/common/buttonPagination';
