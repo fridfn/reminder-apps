@@ -17,7 +17,9 @@ const Sidebar = ({ active }) => {
       const isActive = active && items == active;
        
        return (
-        <nav key={index} onClick={() => navigate(path[index])}>
+        <nav 
+         key={index} 
+         onClick={() => navigate(path[index])}>
           <p className={isActive ? 'text active' : 'text'}>{items}</p>
           {isActive ? (
            <div className='is-active-page active'></div>

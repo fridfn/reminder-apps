@@ -1,4 +1,5 @@
 import getUser from '@/hooks/getUser'
+import sendEmail from '@/utils/sendEmail'
 import { useNavigate } from 'react-router-dom'
 import React, { useState, useEffect, useRef } from 'react';
 
@@ -34,6 +35,8 @@ const Input = ({ propData, functions, index, trigger, redirect, minLength, attri
     if (redirect) {
      const { routes, isRedirect } = redirect;
      navigate(routes)
+     sendEmail(userData)
+     
      localStorage.setItem('TOKEN', 'king farid 👑')
     }
    }

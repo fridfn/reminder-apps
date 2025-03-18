@@ -10,7 +10,7 @@
 .sidebar {
  top: 0;
  left: 0;
- z-index: 20;
+ z-index: 21;
  width: 45px;
  height: 85%;
  display: flex;
@@ -98,7 +98,7 @@
  margin-bottom: 10px;
 }
 
-.header .text, .container-personal .header .header-cards .text, .container-personal .header .header-cards .title {
+.header .text, .container-personal .header .header-cards .text, .container-personal .header .header-cards .title, .wrapper .box .description {
  font-size: 13px;
  font-weight: 500;
  font-family: Helvetica;
@@ -1004,7 +1004,7 @@ span .bg-txt, .md-txt, span .nm-txt {
 .container-personal section .header, .container-personal section .header .header-cards {
  width: 100%;
 }
-.container-personal section .header .header-cards .title {
+.container-personal section .header .header-cards .title, .wrapper .box .title {
  width: 100%;
  font-size: 25px;
  font-family: 'Russo One', serif;
@@ -1232,4 +1232,54 @@ span .bg-txt, .md-txt, span .nm-txt {
 
 .container-cards-date .date-items.isDay p {
  color: $third-color-text;
+}
+
+#profile-pages {
+ height: 85dvh;
+}
+
+#profile-pages .content {
+ gap: 10px;
+ height: 100%;
+ display: flex;
+ position: relative;
+ padding: 10px 15px;
+ border-radius: 15px;
+ flex-direction: column;
+ background-color: $primary-color-cards;
+}
+
+#profile-pages .content .component-images {
+ opacity: .7;
+}
+
+#profile-pages .content .section-reminder {
+ padding: 0;
+ width: auto;
+ height: 100%;
+ border: 2px solid blue;
+}
+
+#profile-pages .content .section-reminder .box-description .description {
+ font-size: 13px;
+ padding-top: 20px;
+ position: relative;
+}
+
+#profile-pages .content .section-reminder .box-description .description:before {
+ content: 'Janji :';
+ top: 0px;
+ font-size: 14px;
+ font-weight: 600;
+ position: absolute;
+}
+
+.content .wrapper {
+ height: auto;
+}
+
+.content .wrapper .box {
+ position: relative;
+ padding-bottom: 15px;
+ border-bottom: 3px solid $secondary-color-text;
 }

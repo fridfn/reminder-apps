@@ -22,7 +22,7 @@ const handleClick = (props) => {
   }
  }
 
-const ItemsActivity = ({ datas, selectedItems, setSelectedItems, limitNumber }) => {
+export const ItemsActivity = ({ datas, selectedItems, setSelectedItems, limitNumber }) => {
   return (
    <div className='container-activity' data-aos='zoom-in'>
     <EachUtils 
@@ -51,7 +51,7 @@ const ItemsActivity = ({ datas, selectedItems, setSelectedItems, limitNumber }) 
    )
 }
 
-const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber, info }) => {
+export const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber, info }) => {
   return (
    <div className='container-selected-activity' data-info={info}>
     <EachUtils
@@ -78,7 +78,7 @@ const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber,
 
 export const pagesMotivation = ({ functions, index }) => {
   const userData = getUser();
-  const { nama = 'user', email, kelas } = userData
+  const { nama, email, kelas } = userData?.dataLogin
   const [valueTrigger, setValueTrigger] = useState('')
   
   return (
@@ -91,7 +91,7 @@ export const pagesMotivation = ({ functions, index }) => {
     <div className='box-content'>
      <Input 
       index={index} 
-      minLength={40}
+      minLength={50}
       functions={functions}
       trigger={valueTrigger}
       propData={{ SET: 'janji', DATAS: 'tidak ada' }}
@@ -115,11 +115,11 @@ export const pagesMotivation = ({ functions, index }) => {
 
 export const pagesPersonalize = ({ functions, index }) => {
   const userData = getUser();
-  const { nama = 'user', email, kelas } = userData
+  const { nama, email, kelas } = userData?.dataLogin
   const [loading, setLoading] = useState(true)
   const [selectedItems, setSelectedItems] = useState([]);
   const [valueTrigger, setValueTrigger] = useState('')
-  const limitSelectedItems = 1;
+  const limitSelectedItems = 4;
   const listOfActivity = property.datas.activity
   const disableButton = selectedItems.length < limitSelectedItems;
   
@@ -158,7 +158,7 @@ export const pagesPersonalize = ({ functions, index }) => {
       )}
      <Input
       index={index}
-      minLength={40}
+      minLength={50}
       functions={functions} 
       trigger={valueTrigger}
       attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
@@ -183,11 +183,11 @@ export const pagesPersonalize = ({ functions, index }) => {
 
 export const pagesPersonality = ({ functions, index }) => {
   const userData = getUser();
-  const { nama = 'user', email, kelas } = userData
+  const { nama, email, kelas } = userData?.dataLogin
   const [loading, setLoading] = useState(true)
   const [selectedItems, setSelectedItems] = useState([]);
   const [valueTrigger, setValueTrigger] = useState('')
-  const limitSelectedItems = 1;
+  const limitSelectedItems = 3;
   const listOfPersonality = property.datas.personality
   const disableButton = selectedItems.length < limitSelectedItems;
   
@@ -226,7 +226,7 @@ export const pagesPersonality = ({ functions, index }) => {
       )}
      <Input 
       index={index}
-      minLength={40}
+      minLength={50}
       functions={functions} 
       trigger={valueTrigger}
       attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
@@ -253,14 +253,14 @@ export const pagesPersonality = ({ functions, index }) => {
 
 export const pagesFavorite = ({ functions, index }) => {
   const userData = getUser();
-  const { nama = 'user', email, kelas } = userData
+  const { nama, email, kelas } = userData?.dataLogin
   const [selectedItems, setSelectedItems] = useState([]);
   const [valueTrigger, setValueTrigger] = useState('')
   const [redirect, setRedirect] = useState({
    routes: '',
    isRedirect: false
   })
-  const limitSelectedItems = 1;
+  const limitSelectedItems = 4;
   const listOfActivity = property.datas.activity
   const disableButton = selectedItems.length < limitSelectedItems;
   const ATTRIBUTE = property.pages.surah.data.attribute;
@@ -329,10 +329,11 @@ export const pagesFavorite = ({ functions, index }) => {
        )}
      <Input
       index={index} 
-      minLength={30}
+      minLength={40}
       redirect={redirect}
       functions={functions}
       trigger={valueTrigger}
+      attribute={`${selectedItems.length}/${limitSelectedItems} Terpilih`}
       propData={{ SET: 'surat', DATAS: selectedItems }}
      />
      <div className='wrapper-button-input' data-info={`Langkah ${index} dari 4`}>
@@ -343,7 +344,7 @@ export const pagesFavorite = ({ functions, index }) => {
        title="<ion-icon name='arrow-back'></ion-icon>" />
       <InputButton 
        trigger={{
-        routes: '/home/odos',
+        routes: '/home/hadits',
         isRedirect: true
        }}
        form='custom-input' 
@@ -384,7 +385,7 @@ export const pagesLogin = ({ functions }) => {
    });
   }
   
-  const isAuthenticated = localStorage.getItem('user');
+  const isAuthenticated = localStorage.getItem('TOKEN');
   if (isAuthenticated) {
    return <Navigate to='/home' />;
   }
@@ -422,6 +423,7 @@ export const pagesLogin = ({ functions }) => {
            name='kelas'
            tabIndex='2'
            minLength='4'
+           maxLength='15'
            value={formData.kelas || userData?.kelas || ''}
            onChange={handleChange}
          />

@@ -155,6 +155,16 @@ const props = {
      }
     }
    },
+   profile: {
+    images: {
+     lantern: {
+      image: lantern,
+      position: 'right',
+       space: ['-80'],
+       top: ['0']
+     },
+    },
+   }
   },
   datas: {
    activity: [
@@ -357,6 +367,12 @@ const props = {
     }
    },
    navbar: {
+    path: [
+     '/home',
+     '/profile',
+     '/mail',
+     '/settings'
+    ],
     button: {
      icons: ['home', 'person', 'mail', 'settings'],
      title: ['home', 'person', 'mail', 'settings']

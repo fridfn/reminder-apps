@@ -1,5 +1,5 @@
 import ComponentImages from '@/components/common/componentImages'
-import Reac, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { pagesMotivation, pagesPersonalize, pagesPersonality, pagesFavorite, pagesLogin } from '@/components/common/layoutsPages'
 import Loader, { LoaderDots } from '@/components/loader'
@@ -68,7 +68,7 @@ const Personal = () => {
       functions={CurrentFuncComponent}
     />) : (<Loader />)}
     {!isLoading && CurrentPagesComponent ? (
-      <ComponentImages 
+     <ComponentImages 
       pages='login'
       getting='images'
       img={CurrentBackgroundComponent}
