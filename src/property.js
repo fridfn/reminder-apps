@@ -368,7 +368,7 @@ const props = {
    },
    navbar: {
     path: [
-     '/home',
+     '/home/hadits',
      '/profile',
      '/mail',
      '/settings'

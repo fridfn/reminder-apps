@@ -21,13 +21,13 @@ function sendEmail(params) {
     personality_datas: personality_datas,
     reply_to: 'faridfathonin@gmail.com',
   };
-  
-  emailjs.send('service_u5yrqoi', 'template_xqvannf', templateParams, 'yZzbJwytB-aSDSuZw')
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-    }, (err) => {
-      console.error('FAILED...', err);
-    });
+  // 
+//   emailjs.send('service_u5yrqoi', 'template_xqvannf', templateParams, 'yZzbJwytB-aSDSuZw')
+//     .then((response) => {
+//       console.log('SUCCESS!', response.status, response.text);
+//     }, (err) => {
+//       console.error('FAILED...', err);
+//     });
 }
 
 export default sendEmail;
