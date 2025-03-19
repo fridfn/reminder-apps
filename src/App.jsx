@@ -28,7 +28,7 @@ function App() {
       <Router>
         <Routes>
           <Route element={<ProtectedRoute />}>
-            <Route path='/home' element={<HaditsPages />} />
+            <Route path='/' element={<HaditsPages />} />
             <Route path='/home/hadits' element={<HaditsPages />} />
             <Route path='/home/odos' element={<OdosPages />} />
             <Route path='/home/surah' element={<SurahPages />} />
