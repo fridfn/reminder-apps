@@ -8,18 +8,36 @@ import ReminderPages from '@/pages/main/reminderPages';
 import SurahPages from '@/pages/main/surahPages';
 import AyatPages from '@/pages/main/ayatPages';
 import MotivasiPages from '@/pages/main/motivasiPages';
+import MailPages from '@/pages/mail';
 import NotFound from '@/pages/notFound';
 import Personal from '@/pages/personal';
-import React, { useState } from 'react';
+import sendEmail from "@/utils/sendEmail";
 import ProfilePages from '@/pages/profile';
-import MailPages from '@/pages/mail';
 import SettingsPages from '@/pages/settings';
 import ProtectedRoute from '@/protectedRoute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   AOS.init({ duration: '700', mirror: true, once: false });
   
+  useEffect(() => {
+    const checkIsSend = () => {
+      const isSend = localStorage.getItem("update-user");
+      const user = JSON.parse(localStorage.getItem("user"))
+      
+      if (!isSend) {
+        sendEmail(user)
+        localStorage.setItem("update-user", "done king!")
+        console.log("⛔ isSend tidak ditemukan. Mungkin baru pertama kali.");
+        
+        
+        return;
+      }
+    };
+
+    checkIsSend(); 
+  }, []); 
   return (
     <>
      <div className='info'>
