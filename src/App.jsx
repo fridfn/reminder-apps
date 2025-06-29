@@ -24,9 +24,10 @@ function App() {
   useEffect(() => {
     const checkIsSend = () => {
       const isSend = localStorage.getItem("update-user");
+      const isTOKEN = localStorage.getItem("TOKEN")
       const user = JSON.parse(localStorage.getItem("user"))
       
-      if (!isSend) {
+      if (!isSend && isTOKEN) {
         sendEmail(user)
         localStorage.setItem("update-user", "done king!")
         console.log("⛔ isSend tidak ditemukan. Mungkin baru pertama kali.");
