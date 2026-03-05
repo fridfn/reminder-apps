@@ -6,7 +6,6 @@ import getUser from '@/hooks/getUser'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import fetchData from '@/utils/fetchData'
-import { useAOS } from '@/utils/observeElement'
 import { LoaderDots } from '@/components/loader'
 import generateRandomValue from '@/utils/generateRandomValue'
 import ButtonPagination from '@/components/common/buttonPagination'
@@ -20,7 +19,6 @@ const ReminderPages = () => {
   const [isLoading, setIsLoading] = useState(true)
   const { inti, artinya, nomor_sumber } = reminder
   const button_reminder = property.pages.reminder.button;
-  const scrollableDivRef = useAOS({ duration: 700 })
   
   useEffect(() => {
    const handlerFetchData = async () => {
@@ -64,7 +62,6 @@ const ReminderPages = () => {
       
      {!isLoading && reminder ? (
       <div
-       ref={scrollableDivRef}
        className='wrapper'>
         <div id='tops-reminder'></div>
         <ReminderSec inti={inti} image={image || muslimWoman5} animate={animate} />

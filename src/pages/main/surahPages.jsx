@@ -5,7 +5,6 @@ import Navbar from '@/components/navbar';
 import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
 import Sidebar from '@/components/sidebar';
-import { useAOS } from '@/utils/observeElement'
 import { LoaderDots } from '@/components/loader'
 import React, { useEffect, useState, useRef } from 'react';
 import ButtonPagination from '@/components/common/buttonPagination';
@@ -23,7 +22,6 @@ const SurahPages = () => {
   const [image, setImage] = useState('')
   const [visible, setVisible] = useState('al_quran')
   const [surahPendek, setSurahPendek] = useState([]);
-  const scrollableDivRef = useAOS({ duration: 700 })
   const [loading, setLoading] = useState(true);
   let [currentPage, setCurrentPage] = useState(1)
   const [animate, setAnimate] = useState(false)
@@ -119,7 +117,7 @@ const SurahPages = () => {
       values='alquran'
      />
      </div>
-    <div ref={scrollableDivRef} className='section-reminder' id='wrapper-surah'>
+    <div className='section-reminder' id='wrapper-surah'>
      {!loading ?
       visible === 'al_quran' ? (
       <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} asma={asma} />)

@@ -4,6 +4,7 @@ import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplat
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import property from '@/property';
 import getUser from '@/hooks/getUser';
+import { useAOS } from "@/hooks/useAos";
 import Header from '@/components/header';
 import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
@@ -12,7 +13,7 @@ import Navbar from '@/components/navbar';
 import TextSpeech from '@/utils/textSpeech';
 import { LoaderDots } from '@/components/loader'
 import ButtonPagination from '@/components/common/buttonPagination';
-import useAudioPlayer from '@/utils/audioPlayer'
+import { useAudioPlayer } from "@/context/AudioPlayerContext";
 
 const AyatPages = () => {
   const { nomor } = useParams()
@@ -25,7 +26,8 @@ const AyatPages = () => {
   const [loading, setLoading] = useState(true)
   const [dataSurah, setDataSurah] = useState([])
   const [currentAyat, setCurrentAyat] = useState(1);
-  const { playAudio, stopAudio, currentIndex } = useAudioPlayer();
+  const { playAudio, pauseAudio, nextAudio, currentIndex, stopIfDifferentSurah, currentSurah } = useAudioPlayer();
+  const scrollRef = useAOS({ duration: 1000 });
   
   const ayatPerList = 20;
   const totalAyatList = Math.ceil(ayat.length / ayatPerList);
@@ -63,27 +65,10 @@ const AyatPages = () => {
    }
   }, [currentAyat, loading])
   
-  const scrollableDivRef = useRef(null);
-
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-
-    const handleScroll = () => {
-      AOS.refresh();
-    };
-
-    const scrollableDiv = scrollableDivRef?.current;
-    scrollableDiv?.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      scrollableDiv?.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  
   const handlePlayAudio = (index) => {
     const allAudio = dataSurah?.ayahs?.map(items => items.audio.alafasy);
     
-    index === 'stop' ? stopAudio() : playAudio(allAudio, index);
+    index === 'stop' ? pauseAudio() : playAudio(allAudio, index, isSurah);
   };
   
   const handleButtonSurah = (type) => {
@@ -105,6 +90,12 @@ const AyatPages = () => {
    }
   }
   
+  useEffect(() => {
+  if (isSurah?.nama !== currentSurah?.nama) {
+    stopIfDifferentSurah(isSurah.nama);
+  }
+}, [nomor])
+  
   return (
    <div className='container' id='ayat-pages'>
     <Sidebar active='surah' />
@@ -120,7 +111,7 @@ const AyatPages = () => {
     />
     </div>
     <div
-    ref={scrollableDivRef}
+    ref={scrollRef}
     className='section-reminder' id='wrapper-ayat'>
      {!loading ? (
      <AyatList

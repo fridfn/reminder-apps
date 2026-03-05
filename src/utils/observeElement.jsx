@@ -1,5 +1,4 @@
-import AOS from 'aos';
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef } from 'react';
 
 const ObserveElement = ({ element, classes, threshold = 0.7 }) => {
   const itemRef = useRef([]);
@@ -32,32 +31,6 @@ const ObserveElement = ({ element, classes, threshold = 0.7 }) => {
    };
   }
   return { itemRef, observeItems }
-}
-
-export const useAOS = ({ duration, delay = 0 }) => {
-  const scrollableDivRef = useRef(null);
-  
-  useEffect(() => {
-    AOS.init({ duration: 1000,
-     mirror: true
-    });
-    
-    const handleScroll = () => {
-      AOS.refresh();
-    };
-    
-    const scrollableDiv = scrollableDivRef.current;
-    if (scrollableDiv) {
-     scrollableDiv.addEventListener('scroll', handleScroll);
-    }
-    
-    return () => {
-     if (scrollableDiv) {
-       scrollableDiv.removeEventListener('scroll', handleScroll);
-     }
-    };
-  }, [duration, delay]);
-  return scrollableDivRef;
 }
 
 export default ObserveElement;

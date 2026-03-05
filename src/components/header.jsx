@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import property from '@/property'
 import generateRandomValue from '@/utils/generateRandomValue'
-import useAudioPlayer from '@/utils/audioPlayer'
 
 const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }) => {
   const navigate = useNavigate()
@@ -20,7 +19,6 @@ const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }
    setMotivation(randomMotivation)
   }, []);
   
-  const { stopAudio } = useAudioPlayer()
   const handleAction = (action) => {
    switch(action) {
     case 'surah':

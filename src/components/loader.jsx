@@ -140,7 +140,6 @@ const StyledWrapper = styled.div`
     position: absolute;
     transform-origin: bottom;
   }
-
   /* ANIMATION BALL 1*/
   .loader__balls__group :nth-child(1) {
     background-color: #8893ba;

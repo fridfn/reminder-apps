@@ -32,11 +32,9 @@ function App() {
         localStorage.setItem("update-user", "done king!")
         console.log("⛔ isSend tidak ditemukan. Mungkin baru pertama kali.");
         
-        
         return;
       }
     };
-
     checkIsSend(); 
   }, []); 
   return (

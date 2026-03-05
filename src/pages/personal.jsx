@@ -35,18 +35,18 @@ const Personal = () => {
     pages: pagesMotivation,
     handle: handlePagesNext,
     background: 'background_mosque'
-   },
-   2: {
-    pages: pagesPersonalize,
-    handle: handlePagesNext,
-    background: 'background_mosque'
-   },
-   3: {
-    pages: pagesPersonality,
-    handle: handlePagesNext,
-    background: 'background_mosque'
-   },
-   4: { 
+   },// 
+//    2: {
+//     pages: pagesPersonalize,
+//     handle: handlePagesNext,
+//     background: 'background_mosque'
+//    },
+//    3: {
+//     pages: pagesPersonality,
+//     handle: handlePagesNext,
+//     background: 'background_mosque'
+//    },// 
+   2: { 
     pages: pagesFavorite,
     handle: handlePagesNext,
     background: 'background_mosque'

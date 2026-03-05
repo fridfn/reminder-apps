@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, Navigate } from 'react'
 import EachUtils from '@/utils/eachUtils';
 import TextSpeech from '@/utils/textSpeech';
-import useAudioPlayer from '@/utils/audioPlayer'
+import { useAudioPlayer } from "@/context/AudioPlayerContext";
 import { useNavigate } from 'react-router-dom'
 import Image from '@/components/common/image';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
@@ -49,8 +49,8 @@ export const AyatList = ({ ayats, attr, classes, latin, isSurah, currentIndex })
    threshold: 0.9
   });
   
-  const { playAudio, stopAudio } = useAudioPlayer();
-  const { name, numberOfAyahs, ayahs } = isSurah
+  const { playAudio, pauseAudio, registerAyatRef } = useAudioPlayer();
+  const { name, numberOfAyahs } = isSurah
   
   useEffect(() => {
    if (itemRef.current.length === ayats.length && ayats.length !== 0) {
@@ -64,8 +64,8 @@ export const AyatList = ({ ayats, attr, classes, latin, isSurah, currentIndex })
      <div
       data-aos='zoom-in'
       data-aos-duration='500'
+      ref={(el) => registerAyatRef(index, el)}
       className={`box-ayat ${currentIndex === ayat.number.inSurah - 1 ? 'in-audio': ''}`}
-      ref={(el) => (itemRef.current[index] = el)}
       key={ayat.number.inSurah}>
       <div className='wrapper-ayat'>
        <p 
@@ -91,11 +91,15 @@ export const AyatList = ({ ayats, attr, classes, latin, isSurah, currentIndex })
       </div>
       <div className='wrapper-button-ayat'>
        <span>
-        <button className='player-audio' onClick={() => playAudio(ayat.audio.alafasy, index)}>
+        <button className='player-audio' onClick={() => {
+           const arr = []
+           arr[index] = ayat.audio.alafasy;
+           playAudio(arr, index, isSurah)
+         }}>
           <ion-icon name='mic' class='md-txt'></ion-icon>
           Putar Ayat
         </button>
-        <button className='player-audio' onClick={() => stopAudio()}>
+        <button className='player-audio' onClick={() => pauseAudio()}>
           <ion-icon name='mic-off' class='md-txt'></ion-icon>
         </button>
        </span>
@@ -112,12 +116,15 @@ export const AyatList = ({ ayats, attr, classes, latin, isSurah, currentIndex })
 
 export const Surah = ({ surah, attr, classes, pages, asma }) => {
   const navigate = useNavigate();
+  
   const handleOpenSurah = ( surah ) => {
-   navigate(`/home/surah/${surah.number - 1}`, { state: { isSurah: {
-    nama: surah.name,
-    arti: surah.translation
-   },
-   pages: pages } });
+    navigate(`/home/surah/${surah.number - 1}`, { state: { isSurah: {
+      nama: surah.name,
+      arti: surah.translation,
+      numberOfAyahs: surah.numberOfAyahs,
+    },
+      pages: pages 
+    }});
   }
   
   return (
