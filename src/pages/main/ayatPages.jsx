@@ -15,6 +15,17 @@ import { LoaderDots } from '@/components/loader'
 import ButtonPagination from '@/components/common/buttonPagination';
 import { useAudioPlayer } from "@/context/AudioPlayerContext";
 
+export const getMurrotalStats = () => {
+  const stats = JSON.parse(localStorage.getItem("murrotal_stats") || "{}");
+  
+  return Object.entries(stats).map(([surah, data]) => ({
+    surah,
+    playCount: data.playCount,
+    minutes: Math.floor(data.totalSeconds / 60) /* data.totalSeconds*/
+  }));
+};
+
+
 const AyatPages = () => {
   const { nomor } = useParams()
   const { userData } = getUser()
@@ -28,6 +39,10 @@ const AyatPages = () => {
   const [currentAyat, setCurrentAyat] = useState(1);
   const { playAudio, pauseAudio, nextAudio, currentIndex, stopIfDifferentSurah, currentSurah } = useAudioPlayer();
   const scrollRef = useAOS({ duration: 1000 });
+  
+  useEffect(() => {
+    console.log(getMurrotalStats())
+  }, [])
   
   const ayatPerList = 20;
   const totalAyatList = Math.ceil(ayat.length / ayatPerList);
