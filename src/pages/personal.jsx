@@ -67,12 +67,12 @@ const Personal = () => {
       index={currentPage}
       functions={CurrentFuncComponent}
     />) : (<Loader />)}
-    {!isLoading && CurrentPagesComponent ? (
+    {(!isLoading && CurrentPagesComponent) && (
      <ComponentImages 
       pages='login'
       getting='images'
       img={CurrentBackgroundComponent}
-    />) : (null)}
+    />)}
    </div>
   )
 }
