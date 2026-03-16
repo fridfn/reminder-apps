@@ -1,5 +1,6 @@
 import EachUtils from '@/utils/eachUtils'
 
+
 export const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber, info }) => {
   return (
    <div className='container-selected-activity' data-info={info}>

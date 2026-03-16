@@ -1,5 +1,6 @@
 import getUser from '@/hooks/getUser'
 import Header from '@/components/header'
+import Input from '@/components/common/input'
 import ComponentImages from '@/components/common/componentImages'
 import { SelectedActivity} from "@/components/ui/selectedActivity"
 
