@@ -3,6 +3,7 @@ import Header from '@/components/header'
 import Input from '@/components/common/input'
 import ComponentImages from '@/components/common/componentImages'
 import InputButton from '@/components/common/buttonInput'
+import React, { useEffect, useState } from 'react'
 
 export const pagesMotivation = ({ functions, index }) => {
   const userData = getUser();

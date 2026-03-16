@@ -1,8 +1,11 @@
+import property from '@/property'm
 import getUser from '@/hooks/getUser'
 import Header from '@/components/header'
 import Input from '@/components/common/input'
 import ComponentImages from '@/components/common/componentImages'
 import { SelectedActivity} from "@/components/ui/selectedActivity"
+import React, { useEffect, useState } from 'react'
+import InputButton from '@/components/common/buttonInput'
 
 
 export const pagesPersonality = ({ functions, index }) => {

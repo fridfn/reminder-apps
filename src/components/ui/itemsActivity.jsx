@@ -1,5 +1,5 @@
 import EachUtils from '@/utils/eachUtils'
-
+import { handleClick } from "@/utils/handleClick"
 
 export const ItemsActivity = ({ datas, selectedItems, setSelectedItems, limitNumber }) => {
   return (
