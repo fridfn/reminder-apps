@@ -4,7 +4,7 @@ import generateRandomValue from '@/utils/generateRandomValue';
 import Reminder from '@/components/common/reminder';
 import ObserveElement from '@/utils/observeElement'
 
-const CardsHadist = ({ data, detail }) => {
+const HadistContent = ({ data, detail }) => {
   const { itemRef, observeItems } = ObserveElement({
    element: '.cards .reminder .full-hadits',
    classes: 'scale'
@@ -62,4 +62,4 @@ const CardsHadist = ({ data, detail }) => {
   )
 }
 
-export default CardsHadist;
+export default HadistContent;
