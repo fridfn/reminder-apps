@@ -62,9 +62,20 @@ const Reminder = () => {
       <div
        className='wrapper'>
         <div id='tops-reminder'></div>
-        <ReminderSec inti={inti} image={image || muslimWoman5} animate={animate} />
-        <ReminderThird data={reminder} value={artinya} attr='Artinya :' />
-        <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
+        <ReminderSec
+          inti={inti}
+          image={image || muslimWoman5}
+          animate={animate} 
+        />
+        <ReminderThird
+          data={reminder} 
+          value={artinya}
+          attr='Artinya :'
+        />
+        <ReminderThird
+          data={reminder}
+          attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`}
+        />
       </div>
       ) : (<WaveDots />)}
      </div>
