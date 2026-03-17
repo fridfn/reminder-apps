@@ -1,7 +1,7 @@
 import EachUtils from '@/utils/eachUtils'
 import { handleClick } from "@/utils/handleClick"
 
-export const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber, info }) => {
+const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limitNumber, info }) => {
   return (
    <div className='container-selected-activity' data-info={info}>
     <EachUtils
@@ -25,3 +25,6 @@ export const SelectedActivity = ({ datas, selectedItems, setSelectedItems, limit
    </div>
   )
 }
+
+
+export default SelectedActivity;

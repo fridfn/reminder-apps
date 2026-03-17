@@ -1,10 +1,10 @@
-import getUser from '@/hooks/getUser'
-import Input from '@/components/common/input'
+import useUser from '@/hooks/useUser'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, Navigate } from 'react-router-dom'
 
+
 const Entry = ({ functions }) => {
-  const userData = getUser()
+  const userData = useUser()
   const navigate = useNavigate()
   const [ formData, setFormData ] = useState({
    nama: '',

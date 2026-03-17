@@ -2,7 +2,7 @@ import React from 'react';
 import property from '@/property';
 import EachUtils from '@/utils/eachUtils';
 
-const ComponentImages = ({ pages, getting, img }) => {
+const Images = ({ pages, getting, img }) => {
   const values = property.pages[pages][getting][img];
   const { image, position, space } = property.pages[pages][getting][img];
   
@@ -31,4 +31,4 @@ const ComponentImages = ({ pages, getting, img }) => {
   )
 }
 
-export default ComponentImages;
+export default Images;

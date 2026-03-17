@@ -69,4 +69,4 @@ export const HeaderSec = ({ title }) => {
   )
 }
 
-export default Header
+export default Header;

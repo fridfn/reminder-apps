@@ -1,18 +1,20 @@
-import getUser from '@/hooks/getUser'
-import Header from '@/components/header'
-import Input from '@/components/common/input'
-import ComponentImages from '@/components/common/componentImages'
-import InputButton from '@/components/common/buttonInput'
+import property from '@/property'
+import useUser from '@/hooks/useUser'
+import Header from '@/components/layout'
+import { Input, InputButton } from '@/components/ui/forms'
+import Images from '@/components/shared'
+import { SelectedActivity } from "@/components/features/activity"
 import React, { useEffect, useState } from 'react'
 
+
 const Inspiration = ({ functions, index }) => {
-  const userData = getUser();
+  const userData = useUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [valueTrigger, setValueTrigger] = useState('')
   
   return (
    <section data-aos='fade-left'>
-    <ComponentImages pages='login' getting='images' img='lantern' />
+    <Images pages='login' getting='images' img='lantern' />
     <Header 
      quote='Apa janji dan motivasi kamu untuk diri kamu sendiri agar menjadi pribadi yang lebih baik?'
      title={`Welcome to Reminder App, ${nama?.split(' ')[0]}`}

@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Sidebar from '@/components/sidebar'
-import { ReminderSec, ReminderThird } from '@/components/common/reminder'
 import property from '@/property'
-import getUser from '@/hooks/getUser'
-import Header from '@/components/header'
-import Navbar from '@/components/navbar'
+import useUser from '@/hooks/useUser'
 import fetchData from '@/utils/fetchData'
-import { LoaderDots } from '@/components/loader'
+import { WaveDots } from '@/components/effects'
 import generateRandomValue from '@/utils/generateRandomValue'
-import ButtonPagination from '@/components/common/buttonPagination'
+import ButtonPagination from '@/components/shared';
 import muslimWoman5 from '@/assets/muslim_woman_5.webp'
+import React, { useState, useEffect, useRef } from 'react'
+import { Header, Sidebar, Navbar } from '@/components/layout';
+import { ReminderSec, ReminderThird } from '@/components/common/reminder'
 
 const Reminder = () => {
-  const { userData } = getUser()
+  const { userData } = useUser()
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
@@ -68,7 +66,7 @@ const Reminder = () => {
         <ReminderThird data={reminder} value={artinya} attr='Artinya :' />
         <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
       </div>
-      ) : (<LoaderDots />)}
+      ) : (<WaveDots />)}
      </div>
      <div className='section-reminder' id='wrapper-button-pagination'>
      <ButtonPagination 

@@ -1,17 +1,17 @@
 import property from '@/property'
-import getUser from '@/hooks/useUser'
-import Header from '@/components/layout/header'
-import fetchData from '@/utils/fetchData'
-import { Input, InputButton } from '@/components/ui/forms'
+import useUser from '@/hooks/useUser'
+import Header from '@/components/layout'
 import EachUtil from '@/utils/eachUtils'
+import fetchData from '@/utils/fetchData'
+import Images from '@/components/shared'
+import { WaveDots } from '@/components/effects'
+import { Input, InputButton } from '@/components/ui/forms'
 import { itemsPerViews } from '@/utils/eachUtils'
-import { LoaderDots } from '@/components/loader'
-import ComponentImages from '@/components/common/componentImages'
 import React, { useEffect, useState } from 'react'
 
 
 const Surahs = ({ functions, index }) => {
-  const userData = getUser();
+  const userData = useUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [selectedItems, setSelectedItems] = useState([]);
   const [valueTrigger, setValueTrigger] = useState('')
@@ -64,7 +64,7 @@ const Surahs = ({ functions, index }) => {
   
   return (
    <section data-aos='fade-left'>
-    <ComponentImages pages='login' getting='images' img='lantern' />
+    <Images pages='login' getting='images' img='lantern' />
     <Header 
      quote="Surat apa yang kamu sukai atau sering kamu baca ketika membaca Al - Qur'an?"
      title={`${nama?.split(' ')[0]}, Lets personalize your experience`}
@@ -84,7 +84,7 @@ const Surahs = ({ functions, index }) => {
        setSelectedItems={setSelectedItems}
       />) : (
        <div className='container-activity'>
-         <LoaderDots />
+         <WaveDots />
        </div>
        )}
      <Input

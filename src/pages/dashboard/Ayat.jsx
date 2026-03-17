@@ -1,24 +1,21 @@
 import AOS from 'aos';
-import React, { useEffect, useState, useRef } from 'react';
-import MotivasiCards, { AyatList, Surah } from '@/components/common/cardsTemplate';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import property from '@/property';
-import getUser from '@/hooks/getUser';
+import useUser from '@/hooks/useUser';
 import { useAOS } from "@/hooks/useAos";
-import Header from '@/components/header';
+import { Header, Sidebar, Navbar } from '@/components/layout';
 import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
-import Sidebar from '@/components/sidebar';
-import Navbar from '@/components/navbar';
-import TextSpeech from '@/utils/textSpeech';
-import { LoaderDots } from '@/components/loader'
-import ButtonPagination from '@/components/common/buttonPagination';
+import { TextSpeech } from '@/components/quran/service';
+import { WaveDots } from '@/components/effects'
+import ButtonPagination from '@/components/shared';
+import React, { useEffect, useState, useRef } from 'react';
 import { useAudioPlayer } from "@/context/AudioPlayerContext";
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 
 const Ayat = () => {
   const { nomor } = useParams()
-  const { userData } = getUser()
+  const { userData } = useUser()
   const navigate = useNavigate()
   const location = useLocation()
   const [ayat, setAyat] = useState([])
@@ -127,7 +124,7 @@ const Ayat = () => {
        ayats={currentListAyat}
        latin={currentListLatin}
        currentIndex={currentIndex}
-     />) : (<LoaderDots />)}
+     />) : (<WaveDots />)}
     </div>
     <div data-info={'Lembar : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination

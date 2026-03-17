@@ -1,15 +1,14 @@
 import property from '@/property'
-import getUser from '@/hooks/getUser'
-import Header from '@/components/header'
-import Input from '@/components/common/input'
-import ComponentImages from '@/components/common/componentImages'
-import { SelectedActivity} from "@/components/ui/selectedActivity"
+import useUser from '@/hooks/useUser'
+import Header from '@/components/layout'
+import { Input, InputButton } from '@/components/ui/forms'
+import Images from '@/components/shared'
+import { SelectedActivity } from "@/components/features/activity"
 import React, { useEffect, useState } from 'react'
-import InputButton from '@/components/common/buttonInput'
 
 
 const Personality = ({ functions, index }) => {
-  const userData = getUser();
+  const userData = useUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [loading, setLoading] = useState(true)
   const [selectedItems, setSelectedItems] = useState([]);
@@ -28,7 +27,7 @@ const Personality = ({ functions, index }) => {
   
   return (
    <section data-aos='fade-left'>
-    <ComponentImages pages='login' getting='images' img='lantern' />
+    <Images pages='login' getting='images' img='lantern' />
     <Header 
      quote='Bagaimana dengan personality kamu?'
      title={`${nama?.split(' ')[0]}, Lets personalize your experience`}

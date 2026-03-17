@@ -1,17 +1,15 @@
 import property from '@/property'
-import getUser from '@/hooks/getUser'
-import Header from '@/components/header'
-import Input from '@/components/common/input'
-import { LoaderDots } from '@/components/loader'
-import ComponentImages from '@/components/common/componentImages'
-import { SelectedActivity} from "@/components/ui/selectedActivity"
-import { ItemsActivity} from "@/components/ui/itemsActivity"
+import useUser from '@/hooks/useUser'
+import Header from '@/components/layout'
+import { Input, InputButton } from '@/components/ui/forms'
+import { WaveDots } from '@/components/effects'
+import Images from '@/components/shared'
+import { SelectedActivity, ItemsActivity } from "@/components/features/activity"
 import React, { useEffect, useState } from 'react'
-import InputButton from '@/components/common/buttonInput'
 
 
 const Activity = ({ functions, index }) => {
-  const userData = getUser();
+  const userData = useUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [loading, setLoading] = useState(true)
   const [selectedItems, setSelectedItems] = useState([]);
@@ -30,7 +28,7 @@ const Activity = ({ functions, index }) => {
   
   return (
    <section data-aos='fade-left'>
-    <ComponentImages pages='login' getting='images' img='lantern' />
+    <Images pages='login' getting='images' img='lantern' />
     <Header 
      quote='Kegiatan apa yang paling kamu sukai ketika kamu mempunyai waktu luang?'
      title={`${nama?.split(' ')[0]}, Lets personalize your experience`}
@@ -50,7 +48,7 @@ const Activity = ({ functions, index }) => {
       setSelectedItems={setSelectedItems}
      />) : (
        <div className='container-activity'>
-         <LoaderDots />
+         <WaveDots />
        </div>
       )}
      <Input
