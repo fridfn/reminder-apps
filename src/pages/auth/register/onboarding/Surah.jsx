@@ -1,16 +1,16 @@
 import property from '@/property'
-import getUser from '@/hooks/getUser'
-import Header from '@/components/header'
+import getUser from '@/hooks/useUser'
+import Header from '@/components/layout/header'
 import fetchData from '@/utils/fetchData'
-import Input from '@/components/common/input'
-import EachUtils, { itemsPerViews } from '@/utils/eachUtils'
-import InputButton from '@/components/common/buttonInput'
+import { Input, InputButton } from '@/components/ui/forms'
+import EachUtil from '@/utils/eachUtils'
+import { itemsPerViews } from '@/utils/eachUtils'
 import { LoaderDots } from '@/components/loader'
 import ComponentImages from '@/components/common/componentImages'
 import React, { useEffect, useState } from 'react'
 
 
-const Surah = ({ functions, index }) => {
+const Surahs = ({ functions, index }) => {
   const userData = getUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [selectedItems, setSelectedItems] = useState([]);
@@ -118,4 +118,4 @@ const Surah = ({ functions, index }) => {
   )
 }
 
-export default Surah;
+export default Surahs;

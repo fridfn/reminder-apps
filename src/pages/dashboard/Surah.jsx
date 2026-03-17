@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
 import MotivasiCards, { AyatList, Surah, SurahPendek } from '@/components/common/cardsTemplate';
 import { FixedSizeList as List } from 'react-window';
 
-const SurahPages = () => {
+const Surah = () => {
   const { userData } = getUser()
   const location = useLocation()
   const [ayat, setAyat] = useState([])
@@ -138,4 +138,4 @@ const SurahPages = () => {
   )
 }
 
-export default SurahPages;
+export default Surah;

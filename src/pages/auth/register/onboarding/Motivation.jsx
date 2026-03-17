@@ -5,7 +5,7 @@ import ComponentImages from '@/components/common/componentImages'
 import InputButton from '@/components/common/buttonInput'
 import React, { useEffect, useState } from 'react'
 
-const Motivation = ({ functions, index }) => {
+const Inspiration = ({ functions, index }) => {
   const userData = getUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [valueTrigger, setValueTrigger] = useState('')
@@ -42,4 +42,4 @@ const Motivation = ({ functions, index }) => {
   )
 }
 
-export default Motivation;
+export default Inspiration;

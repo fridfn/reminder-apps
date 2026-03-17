@@ -1,5 +1,6 @@
-export { default as Activity } from './Activity';
-export { default as Entry } from './Entry';
+export { default as Ayat } from './Ayat';
+export { default as Hadist } from './Hadist';
 export { default as Motivation } from './Motivation';
-export { default as Personality } from './Personality';
+export { default as Odos } from './Odos';
 export { default as Surah } from './Surah';
+export { default as Reminder } from './Reminder';

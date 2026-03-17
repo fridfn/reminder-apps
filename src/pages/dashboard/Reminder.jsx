@@ -1,70 +1,85 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
+import Sidebar from '@/components/sidebar'
+import { ReminderSec, ReminderThird } from '@/components/common/reminder'
 import property from '@/property'
-import getUser from '@/hooks/getUser';
+import getUser from '@/hooks/getUser'
+import Header from '@/components/header'
+import Navbar from '@/components/navbar'
 import fetchData from '@/utils/fetchData'
-import EachUtils from '@/utils/eachUtils'
-import Navbar from '@/components/navbar';
-import Header from '@/components/header';
-import Sidebar from '@/components/sidebar';
-import { StackedCards } from '@/components/common/cardsTemplate'
+import { LoaderDots } from '@/components/loader'
 import generateRandomValue from '@/utils/generateRandomValue'
-import MotivasiCards from '@/components/common/cardsTemplate';
-import ButtonPagination from '@/components/common/buttonPagination';
-import BubbleMessage from '@/components/common/cards';
+import ButtonPagination from '@/components/common/buttonPagination'
+import muslimWoman5 from '@/assets/muslim_woman_5.webp'
 
-const Odos = () => {
-  const [odos, setOdos] = useState([])
+const Reminder = () => {
   const { userData } = getUser()
-  const { nama } = userData;
-  
-  const BUTTON = property.pages.odos.button
-  const ATTRIBUTE = property.pages.odos.data.attribute;
-  const CLASSES = property.pages.odos.data.classes;
-  
-  const selectedValues = [odos.arab, odos.latin, odos.translation, odos.source, odos.explanation]
-  
-  const handleGenerateReminder = (data) => {
-   const element = document.getElementById('tops-reminder');
-   const element2 = document.querySelector('.section-reminder');
-   [element, element2].forEach((items) => {items.scrollIntoView({behavior: 'auto'})})
-  
-   setOdos(data)
-  }
+  const [image, setImage] = useState('')
+  const [animate, setAnimate] = useState(false)
+  const [reminder, setReminder] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const { inti, artinya, nomor_sumber } = reminder
+  const button_reminder = property.pages.reminder.button;
   
   useEffect(() => {
    const handlerFetchData = async () => {
-    const data = await fetchData('/odos.json')
-    const getOneDataFetch = generateRandomValue(data.odos)
-    
-    setOdos(getOneDataFetch)
+    const data = await fetchData('/hadits.json')
+    const getOneHadist = generateRandomValue(data.hadist)
+    setReminder(getOneHadist)
    }
    handlerFetchData()
+   setIsLoading(false)
   }, [])
   
+  
+  const handleGenerateReminder = (data, image) => {
+   const element = document.getElementById('tops-reminder');
+   const element2 = document.querySelector('.section-reminder');
+   [element, element2].forEach((items) => {items.scrollIntoView({behavior: 'auto'})})
+   
+   setImage(image)
+   setAnimate(true)
+   setReminder(data)
+   setIsLoading(true)
+   setIsLoading(false)
+  }
+  
+  useEffect(() => {
+   if (animate) {
+   const interval = setInterval(() => {
+    setAnimate(prevState => !prevState)
+   }, 200)
+   
+   return () => clearInterval(interval)
+   }
+  },[animate])
+ 
   return (
-   <div className='container'>
-    <Sidebar active='odos' />
+   <div className='container' id='motivasi-pages'>
+    <Sidebar active='reminder' />
     <Navbar active='home' />
-    <section className='section-reminder'>
-     <Header title={`${nama?.split(' ')[0]}, One Day One Sunnah`} quote='Selalu amalkan sunnah sunnah nabi yang di sebutkan ini ya.' />
-     <div className='wrapper' id='wrapper-surah'>
-      <span>
-       <p className='bg-txt' style={{fontFamily: "'Russo One', serif"}}>{userData?.nama?.split(' ')[0].charAt(0).toUpperCase() + userData?.nama?.split(' ')[0].slice(1).toLowerCase()}...</p>
-       <p className='nm-txt' style={{textTransform: 'capitalize', fontFamily: "'Russo One', serif"}}>Di  Sunnahkan, {odos.title}</p>
-      </span>
-      <MotivasiCards data={selectedValues} title={"Nabi Muhammad ﷺ Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
+    <div className='section-reminder' id='wrapper-content-reminder'>
+     <Header title={`Reminder Of The Day, ${userData?.nama?.split(' ')[0]}`} quote='Selalu ingat dan amalkan hadits di bawah ini dalam keseharian kamu ya!' />
+      
+     {!isLoading && reminder ? (
+      <div
+       className='wrapper'>
+        <div id='tops-reminder'></div>
+        <ReminderSec inti={inti} image={image || muslimWoman5} animate={animate} />
+        <ReminderThird data={reminder} value={artinya} attr='Artinya :' />
+        <ReminderThird data={reminder} attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`} />
+      </div>
+      ) : (<LoaderDots />)}
      </div>
-    </section>
-    <div className='section-reminder' id='wrapper-button-pagination'>
-     <ButtonPagination
-      endpoint={'/motivasi.json'} 
-      func={handleGenerateReminder}
-      props={BUTTON}
-      values='motivasi'
+     <div className='section-reminder' id='wrapper-button-pagination'>
+     <ButtonPagination 
+      endpoint='/hadits.json'
+      func={handleGenerateReminder} 
+      props={button_reminder} 
+      values='hadist'
      />
     </div>
    </div>
   )
 }
 
-export default OdosPages;
+export default Reminder;
