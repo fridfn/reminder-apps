@@ -1,11 +1,8 @@
 import EachUtils from '@/utils/eachUtils';
-import TextSpeech from '@/utils/textSpeech';
 import { useNavigate } from 'react-router-dom'
-import { setDataInfo } from '@/utils/setDataInfo'
-import { convertToArabicNumbers } from "@/utils/convertToArabicNumbers"
+import { TextSpeech, convertToArabicNumbers, setDataInfo } from '@/components/features/quran/service';
 
-
-export const SurahItems = ({ surah, attr, classes, pages, asma }) => {
+const SurahItems = ({ surah, attr, classes, pages, asma }) => {
   const navigate = useNavigate();
   
   const handleOpenSurah = ( surah ) => {
@@ -55,3 +52,6 @@ export const SurahItems = ({ surah, attr, classes, pages, asma }) => {
    )}/>
   )
 }
+
+
+export default SurahItems;

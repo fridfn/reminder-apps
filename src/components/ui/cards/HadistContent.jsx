@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import property from '@/property';
 import generateRandomValue from '@/utils/generateRandomValue';
-import Reminder from '@/components/common/reminder';
+import { HadistCards } from '@/components/ui/cards/reminderBundle';
 import ObserveElement from '@/utils/observeElement'
 
 const HadistContent = ({ data, detail }) => {
@@ -54,7 +54,7 @@ const HadistContent = ({ data, detail }) => {
           </div>
           <Description quote={arab} />
          </div>
-        <Reminder hadits={cleanHadist} riwayat={{ name, number, id: detail.id }} />
+        <HadistCards hadits={cleanHadist} riwayat={{ name, number, id: detail.id }} />
        </div>
       </div>
      )}})}

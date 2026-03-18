@@ -2,6 +2,7 @@ import React from 'react';
 import property from '@/property';
 import EachUtils from '@/utils/eachUtils';
 
+
 const Images = ({ pages, getting, img }) => {
   const values = property.pages[pages][getting][img];
   const { image, position, space } = property.pages[pages][getting][img];

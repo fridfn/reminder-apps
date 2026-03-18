@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const ButtonInput = ({ form, title, disable = false, setTrigger, trigger, setRedirect }) => {
+const InputButton = ({ form, title, disable = false, setTrigger, trigger, setRedirect }) => {
   return (
    <div className='container-button-input'>
     <button
@@ -17,4 +17,4 @@ const ButtonInput = ({ form, title, disable = false, setTrigger, trigger, setRed
   )
 }
 
-export default ButtonInput;
+export default InputButton;

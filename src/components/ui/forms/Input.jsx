@@ -1,4 +1,4 @@
-import getUser from '@/hooks/getUser'
+import useUser from '@/hooks/useUser'
 import sendEmail from '@/utils/sendEmail'
 import { useNavigate } from 'react-router-dom'
 import React, { useState, useEffect, useRef } from 'react';
@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const Input = ({ propData, functions, index, trigger, redirect, minLength, attribute }) => {
   const navigate = useNavigate()
   const { SET, DATAS } = propData
-  const { userData, dataLogin } = getUser()
+  const { userData, dataLogin } = useUser()
   const [formData, setFormData] = useState({ 
     values: dataLogin?.[SET],
     datas: DATAS
@@ -15,7 +15,6 @@ const Input = ({ propData, functions, index, trigger, redirect, minLength, attri
   
   const autoResize = (e) => {
    const textarea = e.target;
-   
    textarea.style.height = 'auto';
    textarea.style.height = (textarea.scrollHeight) + 'px';
   }

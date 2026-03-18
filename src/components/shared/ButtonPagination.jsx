@@ -5,9 +5,9 @@ import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
 import generateRandomValue from '@/utils/generateRandomValue';
 
+
 const ButtonPagination = ({ endpoint, func, props, values }) => {
   const { title, icons } = props;
-  
   const [content, setContent] = useState([]);
   const [endpoints, setEndpoint] = useState({});
   

@@ -6,6 +6,7 @@ import { Hadist, Ayat, Motivation, Odos, Surah, Reminder }  from '@/pages/dashbo
 import { Activity, Entry, Inspiration, Personality, Surahs }  from '@/pages/auth/register/onboarding';
 import ProtectedRoute from '@/protectedRoute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Settings, Profile, Message, NotFound } from "@/pages/user"
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
              <Route path='/home/surah' element={<Surah />} />
              <Route path='/home/surah/:nomor' element={<Ayat />} />
              <Route path='/home/reminder' element={<Reminder />} />
-             <Route path='/home/motivasi' element={<Motivasi />} />
+             <Route path='/home/motivasi' element={<Motivation />} />
              <Route path='/profile' element={<Profile />} />
              <Route path='/settings' element={<Settings />} />
           </Route>

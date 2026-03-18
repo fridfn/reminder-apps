@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const LoaderDots = () => {
+const WaveDots = () => {
   return (
     <StyledWrapper>
      <div className='container-loader'>

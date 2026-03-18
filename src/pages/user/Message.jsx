@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import property from '@/property';
-import getUser from '@/hooks/getUser';
-import Navbar from '@/components/navbar';
-import Sidebar from '@/components/sidebar';
+import useUser from '@/hooks/useUser';
+import { Sidebar, Navbar } from '@/components/layout';
 
 const Message = ({ data }) => {
   return (

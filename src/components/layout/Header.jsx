@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import property from '@/property'
 import generateRandomValue from '@/utils/generateRandomValue'
+import { useAudioPlayer } from "@/context/AudioPlayerContext";
+import { useSurahAudio } from "@/components/features/quran/hooks";
 
-const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }) => {
+
+const Header = ({ size, title, quote, icons, action}) => {
   const navigate = useNavigate()
   const location = useLocation()
   const { pages } = location.state || {}
@@ -12,6 +15,9 @@ const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }
   const [animate, setAnimate] = useState(false)
   const [reminder, setReminder] = useState([])
   const [motivation, setMotivation] = useState('')
+  
+  const { isPlaying, currentSurah } = useAudioPlayer();
+  const { handlePlayAudio, currentIndex, isSurah } = useSurahAudio();
   
   useEffect(() => {
    const motivation = property.pages.home.data.motivation
@@ -49,22 +55,12 @@ const Header = ({ size, title, quote, icons, action, onPlayAudio, currentIndex }
        <ion-icon 
         onClick={() => handleAction(action)}
         name={icons || 'options'} class='icons'></ion-icon>
-       {onPlayAudio && (
+       {handlePlayAudio && (
        <ion-icon 
-        onClick={() => {
-         setIsIcons((prev) => !prev)
-         isIcons ? onPlayAudio(currentIndex) : onPlayAudio('stop');
-        }}
+        onClick={() => handlePlayAudio(currentIndex)
+        }
         name={isIcons ? 'volume-mute' : `volume-medium`} class='icons'></ion-icon>)}
      </div>)}
-   </div>
-  )
-}
-
-export const HeaderSec = ({ title }) => {
-  return (
-   <div className='header-sec'>
-     <p className='text'>{title}</p>
    </div>
   )
 }

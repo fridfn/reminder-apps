@@ -1,4 +1,5 @@
 import { createContext, useContext, useRef, useState, useEffect } from "react";
+import { useSurahAudio } from "@/components/features/quran/hooks";
 
 const AudioPlayerContext = createContext();
 
@@ -86,9 +87,11 @@ export const AudioPlayerProvider = ({ children }) => {
   };
   
   const playAudio = (playlist, index = 0, surah) => {
+    const { isSurah, loading, currentAyat, currentListAyat, currentListLatin, handlePlayAudio, dataSurah } = useSurahAudio();
+    
     try {
       if (!Array.isArray(playlist)) return;
-      
+  
       const audio = audioRef.current;
       
       if (surah && currentSurahRef.current && currentSurahRef.current !== surah) {
@@ -210,11 +213,11 @@ export const AudioPlayerProvider = ({ children }) => {
         stopAudio,
         nextAudio,
         prevAudio,
-        stopIfDifferentSurah,
         isPlaying,
         currentIndex,
         currentSurah,
         registerAyatRef,
+        stopIfDifferentSurah,
       }}
     >
       {children}

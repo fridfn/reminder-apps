@@ -1,9 +1,9 @@
 import EachUtils from '@/utils/eachUtils';
-import { setDataInfo } from '@/utils/setDataInfo'
-import { convertToArabicNumbers } from "@/utils/convertToArabicNumbers"
+import { setDataInfo } from '@/components/features/quran/service'
+import { convertToArabicNumbers } from "@/components/features/quran/service"
 
 
-export const ShortSurah = ({ surah, attr, classes }) => {
+const ShortSurah = ({ surah, attr, classes }) => {
   return (
    <EachUtils
     of={surah}
@@ -43,3 +43,5 @@ export const ShortSurah = ({ surah, attr, classes }) => {
    )}/>
   )
 }
+
+export default ShortSurah;

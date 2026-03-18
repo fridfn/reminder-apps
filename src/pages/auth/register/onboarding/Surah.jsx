@@ -1,12 +1,12 @@
 import property from '@/property'
 import useUser from '@/hooks/useUser'
-import Header from '@/components/layout'
+import { Header } from '@/components/layout'
 import EachUtil from '@/utils/eachUtils'
 import fetchData from '@/utils/fetchData'
-import Images from '@/components/shared'
+import { Images } from '@/components/shared'
 import { WaveDots } from '@/components/effects'
 import { Input, InputButton } from '@/components/ui/forms'
-import { itemsPerViews } from '@/utils/eachUtils'
+import { itemsPerViews } from '@/utils/itemsViews'
 import React, { useEffect, useState } from 'react'
 
 

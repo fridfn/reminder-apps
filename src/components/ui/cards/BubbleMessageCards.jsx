@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '@/components/common/image';
+import { Image } from '@/components/shared';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
 
 const BubbleMessageCards = ({ message }) => {

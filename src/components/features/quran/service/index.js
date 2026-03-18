@@ -1,3 +1,5 @@
 export * from "./textSpeech"
 export * from "./setDataInfo"
+export * from "./getMurrotalStats"
 export * from "./convertToArabicNumbers"
+export * from "./handlePaginationSurah"

@@ -1,7 +1,7 @@
-import { setDataInfo } from '@/utils/setDataInfo'
+import EachUtils from "@/utils/eachUtils"
+import { setDataInfo } from '@/components/features/quran/service'
 
-
-export const MotivationCards = ({ data, title, attr, classes }) => {
+const MotivationCards = ({ data, title, attr, classes }) => {
   const objectToArray = Object.entries(data);
   
   return (
@@ -21,3 +21,5 @@ export const MotivationCards = ({ data, title, attr, classes }) => {
    </div>
   )
 }
+
+export default MotivationCards;

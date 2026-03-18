@@ -1,4 +1,4 @@
-const TextSpeech = (text) => {
+export const TextSpeech = (text) => {
   if ('speechSynthesis' in window) {
    let utterance = new SpeechSynthesisUtterance(text);
    const voices = window.speechSynthesis.getVoices();
@@ -12,6 +12,4 @@ const TextSpeech = (text) => {
   } else {
    alert("Web Speech API tidak didukung oleh browser Anda.");
   }
-}
-
-export default TextSpeech;
+};

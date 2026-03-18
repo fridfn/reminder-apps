@@ -1,20 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
 import property from '@/property'
-import getUser from '@/hooks/getUser';
+import useUser from '@/hooks/useUser'
+import { Header, Sidebar, Navbar } from '@/components/layout'
 import fetchData from '@/utils/fetchData'
 import EachUtils from '@/utils/eachUtils'
-import Navbar from '@/components/navbar';
-import Header from '@/components/header';
-import Sidebar from '@/components/sidebar';
-import { StackedCards } from '@/components/common/cardsTemplate'
+import { Input, InputButton } from '@/components/ui/forms'
+import { StackedCards } from '@/components/ui/cards'
 import generateRandomValue from '@/utils/generateRandomValue'
-import MotivasiCards from '@/components/common/cardsTemplate';
-import ButtonPagination from '@/components/common/buttonPagination';
-import BubbleMessage from '@/components/common/cards';
+import { ButtonPagination } from '@/components/shared';
+import { BubbleMessageCards, MotivationCards } from '@/components/ui/cards';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Odos = () => {
   const [odos, setOdos] = useState([])
-  const { userData } = getUser()
+  const { userData } = useUser()
   const { nama } = userData;
   
   const BUTTON = property.pages.odos.button
@@ -52,7 +50,7 @@ const Odos = () => {
        <p className='bg-txt' style={{fontFamily: "'Russo One', serif"}}>{userData?.nama?.split(' ')[0].charAt(0).toUpperCase() + userData?.nama?.split(' ')[0].slice(1).toLowerCase()}...</p>
        <p className='nm-txt' style={{textTransform: 'capitalize', fontFamily: "'Russo One', serif"}}>Di  Sunnahkan, {odos.title}</p>
       </span>
-      <MotivasiCards data={selectedValues} title={"Nabi Muhammad ﷺ Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
+      <MotivationCards data={selectedValues} title={"Nabi Muhammad ﷺ Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
      </div>
     </section>
     <div className='section-reminder' id='wrapper-button-pagination'>

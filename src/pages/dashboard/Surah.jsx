@@ -1,19 +1,18 @@
 import property from '@/property';
-import getUser from '@/hooks/getUser';
-import Header from '@/components/header';
-import Navbar from '@/components/navbar';
+import useUser from '@/hooks/useUser';
 import EachUtils from '@/utils/eachUtils';
 import fetchData from '@/utils/fetchData';
-import Sidebar from '@/components/sidebar';
-import { LoaderDots } from '@/components/loader'
-import React, { useEffect, useState, useRef } from 'react';
-import ButtonPagination from '@/components/common/buttonPagination';
+import { WaveDots } from '@/components/effects'
 import { useLocation } from 'react-router-dom';
-import MotivasiCards, { AyatList, Surah, SurahPendek } from '@/components/common/cardsTemplate';
+import { Header, Sidebar, Navbar } from '@/components/layout';
+import React, { useEffect, useState, useRef } from 'react';
+import { ButtonPagination } from '@/components/shared';
+import { MotivationCards } from '@/components/ui/cards'
+import { SurahItems, ShortSurah } from "@/components/features/quran/component"
 import { FixedSizeList as List } from 'react-window';
 
 const Surah = () => {
-  const { userData } = getUser()
+  const { userData } = useUser()
   const location = useLocation()
   const [ayat, setAyat] = useState([])
   const [asma, setAsma] = useState([])
@@ -120,10 +119,20 @@ const Surah = () => {
     <div className='section-reminder' id='wrapper-surah'>
      {!loading ?
       visible === 'al_quran' ? (
-      <Surah surah={currentSurah} classes={CLASSES} attr={ATTRIBUTE} pages={currentPage} asma={asma} />)
-      : (
-       <SurahPendek surah={currentSurahPendek} classes={CLASSES} attr={ATTRIBUTE} />
-      ) : (<LoaderDots />)
+      <SurahItems 
+         surah={currentSurah}
+         classes={CLASSES}
+         attr={ATTRIBUTE} 
+         pages={currentPage} 
+         asma={asma}
+      />
+       ): (
+       <ShortSurah
+          surah={currentSurahPendek}
+          classes={CLASSES}
+          attr={ATTRIBUTE}
+       />
+      ) : (<WaveDots />)
      }
     </div>
     <div data-info={!loading ? `${'Halaman : ' + currentPage}` : 'Halaman : ?'} className='section-reminder' id='wrapper-button-pagination number-pages'>

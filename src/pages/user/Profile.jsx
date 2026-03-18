@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import property from '@/property';
-import getUser from '@/hooks/getUser';
-import Navbar from '@/components/navbar';
-import Sidebar from '@/components/sidebar';
-import Image from '@/components/common/image';
+import useUser from '@/hooks/useUser';
+import { Header, Sidebar, Navbar } from '@/components/layout';
+import { Image, Images } from '@/components/shared';
 import muslimWoman from '@/assets/muslim_woman_5.webp';
-import ComponentImages from '@/components/common/componentImages'
-import { SelectedActivity } from '@/components/common/layoutsPages';
+import { SelectedActivity } from '@/components/features/activity';
 
 const HeaderSection = () => {
   return (
@@ -39,7 +37,7 @@ const Profile = ({ data }) => {
 //        <div className="box-description">
 //        </div>
 //       </section>
-//        <ComponentImages 
+//        <Images 
 //         pages='profile'
 //         getting='images'
 //         img='lantern'

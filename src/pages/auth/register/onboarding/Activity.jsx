@@ -1,9 +1,9 @@
 import property from '@/property'
 import useUser from '@/hooks/useUser'
-import Header from '@/components/layout'
+import { Header } from '@/components/layout'
 import { Input, InputButton } from '@/components/ui/forms'
 import { WaveDots } from '@/components/effects'
-import Images from '@/components/shared'
+import { Images } from '@/components/shared'
 import { SelectedActivity, ItemsActivity } from "@/components/features/activity"
 import React, { useEffect, useState } from 'react'
 

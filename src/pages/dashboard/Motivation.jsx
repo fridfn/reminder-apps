@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import getUser from '@/hooks/getUser';
-import Navbar from '@/components/navbar';
-import Header from '@/components/header';
-import Sidebar from '@/components/sidebar';
-import BubbleMessage from '@/components/common/cards';
-import MotivasiCards from '@/components/common/cardsTemplate';
-import ButtonPagination from '@/components/common/buttonPagination';
-import generateRandomValue from '@/utils/generateRandomValue'
-import fetchData from '@/utils/fetchData'
 import property from '@/property'
+import useUser from '@/hooks/useUser';
+import fetchData from '@/utils/fetchData';
+import { ButtonPagination } from '@/components/shared';
+import { MotivationCards, BubbleMessageCards } from '@/components/ui/cards';
+import { Header, Sidebar, Navbar } from '@/components/layout';
+import generateRandomValue from '@/utils/generateRandomValue'
+import React, { useState, useEffect } from 'react';
 
 const setFontSize = (length) => {
  let fontSize;
@@ -19,7 +16,7 @@ const setFontSize = (length) => {
 }
 
 const Motivation = () => {
-  const { userData } = getUser();
+  const { userData } = useUser();
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
   const [motivasi, setMotivasi] = useState([])
@@ -69,12 +66,14 @@ const Motivation = () => {
      <Header size={setFontSize(motivasi?.title?.length)} title={title} quote='Tetap semangat ya, aku tahu kamu pasti bisa melewatinya. Semangatt' />
      <div className='wrapper' id='wrapper-surah'>
        <div id='tops-reminder'></div>
-       <BubbleMessage message={motivasi.me} />
+       <BubbleMessageCards 
+          message={motivasi.me}
+       />
        <span>
          <p className='bg-txt' style={{fontFamily: "'Russo One', serif"}}>Tapi...</p>
          <p className='md-txt' style={{textTransform: 'capitalize'}}>{userData.nama?.split(' ')[0]}, harus ingat ayat ini</p>
        </span>
-       <MotivasiCards data={selectedValues} title={"Allah SWT Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
+       <MotivationCards data={selectedValues} title={"Allah SWT Berfirman :"} attr={ATTRIBUTE} classes={CLASSES} />
       </div>
      </div>
      <div className='section-reminder' id='wrapper-button-pagination'>

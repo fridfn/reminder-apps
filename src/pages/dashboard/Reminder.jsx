@@ -3,11 +3,11 @@ import useUser from '@/hooks/useUser'
 import fetchData from '@/utils/fetchData'
 import { WaveDots } from '@/components/effects'
 import generateRandomValue from '@/utils/generateRandomValue'
-import ButtonPagination from '@/components/shared';
+import { ButtonPagination } from '@/components/shared';
 import muslimWoman5 from '@/assets/muslim_woman_5.webp'
 import React, { useState, useEffect, useRef } from 'react'
 import { Header, Sidebar, Navbar } from '@/components/layout';
-import { ReminderSec, ReminderThird } from '@/components/common/reminder'
+import { HighlightCards, SpiritualQuoteCards } from '@/components/ui/cards/reminderBundle'
 
 const Reminder = () => {
   const { userData } = useUser()
@@ -62,17 +62,17 @@ const Reminder = () => {
       <div
        className='wrapper'>
         <div id='tops-reminder'></div>
-        <ReminderSec
+        <HighlightCards
           inti={inti}
           image={image || muslimWoman5}
           animate={animate} 
         />
-        <ReminderThird
+        <SpiritualQuoteCards
           data={reminder} 
           value={artinya}
           attr='Artinya :'
         />
-        <ReminderThird
+        <SpiritualQuoteCards
           data={reminder}
           attr={`Pelajaran dari ${!nomor_sumber ? 'ayat' : 'hadits'} :`}
         />

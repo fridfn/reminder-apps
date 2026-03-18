@@ -1,4 +1,4 @@
-export const StackedCards = () => {
+const StackedCards = () => {
   const [activeCards, setActiveCards] = useState(0)
   
   const handleClick = (e, index) => {
@@ -24,3 +24,6 @@ export const StackedCards = () => {
    </div>
   );
 }
+
+
+export default StackedCards;

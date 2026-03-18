@@ -32,4 +32,4 @@ export const CardsDate = ({ data, dates }) => {
   )
 }
 
-export default MotivasiCards;
+export default CardsDate;

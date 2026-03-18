@@ -1,2 +1,2 @@
-export { default as Input } from "./Input"
-export { default as ButtonInput } from "./ButtonInput"
+export { default as Input } from "./Input";
+export { default as InputButton } from "./InputButton";
