@@ -13,7 +13,7 @@ const AyatList = ({ attr, classes }) => {
   });
   
   const { playAudio, pauseAudio, registerAyatRef } = useAudioPlayer();
-  const { loading, ayat, currentAyat, currentListLatin, currentIndex, dataSurah } = useSurahAudio();
+  const { loading, ayat, currentAyat, currentListLatin, currentListAyat, currentIndex, dataSurah } = useSurahAudio();
   
   const { name, numberOfAyahs } = dataSurah;
   const removeHtmlTags = (text) => {
@@ -21,7 +21,7 @@ const AyatList = ({ attr, classes }) => {
   }
   
   useEffect(() => {
-   if (itemRef.current.length === ayat.length && ayat.length !== 0) {
+   if (itemRef.current.length === currentListAyat.length && currentListAyat.length !== 0) {
     observeItems();
    }
   }, [ayat.length])
