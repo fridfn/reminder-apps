@@ -19,7 +19,7 @@ const HeaderSection = () => {
   )
 }
 
-const ProfilePages = ({ data }) => {
+const Profile = ({ data }) => {
   return (
    <div className='container' id='profile'>
     <Sidebar />
@@ -47,4 +47,4 @@ const ProfilePages = ({ data }) => {
 //      </div>
 //     </div>
 
-export default ProfilePages;
+export default Profile;

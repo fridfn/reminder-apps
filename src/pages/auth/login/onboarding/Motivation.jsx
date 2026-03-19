@@ -5,7 +5,7 @@ import ComponentImages from '@/components/common/componentImages'
 import InputButton from '@/components/common/buttonInput'
 import React, { useEffect, useState } from 'react'
 
-export const pagesMotivation = ({ functions, index }) => {
+export const Motivation = ({ functions, index }) => {
   const userData = getUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [valueTrigger, setValueTrigger] = useState('')

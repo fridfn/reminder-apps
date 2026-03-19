@@ -4,7 +4,7 @@ import generateRandomValue from '@/utils/generateRandomValue';
 import Reminder from '@/components/common/reminder';
 import ObserveElement from '@/utils/observeElement'
 
-const Cards = ({ data, detail }) => {
+const CardsHadist = ({ data, detail }) => {
   const { itemRef, observeItems } = ObserveElement({
    element: '.cards .reminder .full-hadits',
    classes: 'scale'
@@ -37,14 +37,14 @@ const Cards = ({ data, detail }) => {
      const randomImage = generateRandomValue(images);
      
      const { id, arab, number } = item;
-     let cleanHadits = id.replace(/^.*?(Rasulullah shallallahu 'alaihi wasallam)/i, (match, p1) => {
+     let cleanHadist = id.replace(/^.*?(Rasulullah shallallahu 'alaihi wasallam)/i, (match, p1) => {
        return / bersabda:/i.test(id) ? p1 : p1 + ' bersabda :'
      });
      
-     cleanHadits = cleanHadits.replace(/Telah menceritakan kepada kami.*/i, '');
-     cleanHadits = cleanHadits.replace(/Dan telah menceritakan kepadaku.*/i, '');
+     cleanHadist = cleanHadist.replace(/Telah menceritakan kepada kami.*/i, '');
+     cleanHadist = cleanHadist.replace(/Dan telah menceritakan kepadaku.*/i, '');
      
-    if (cleanHadits.length >= 70 && cleanHadits.length <= 285) {
+    if (cleanHadist.length >= 70 && cleanHadist.length <= 285) {
      return (
       <div key={index} className='container-cards' ref={(el) => (itemRef.current[index] = el)}>
        <div className='cards'>
@@ -54,7 +54,7 @@ const Cards = ({ data, detail }) => {
           </div>
           <Description quote={arab} />
          </div>
-        <Reminder hadits={cleanHadits} riwayat={{ name, number, id: detail.id }} />
+        <Reminder hadits={cleanHadist} riwayat={{ name, number, id: detail.id }} />
        </div>
       </div>
      )}})}
@@ -62,4 +62,4 @@ const Cards = ({ data, detail }) => {
   )
 }
 
-export default Cards;
+export default CardsHadist;

@@ -5,7 +5,7 @@ import { setDataInfo } from '@/utils/setDataInfo'
 import { convertToArabicNumbers } from "@/utils/convertToArabicNumbers"
 
 
-export const Surah = ({ surah, attr, classes, pages, asma }) => {
+export const SurahItems = ({ surah, attr, classes, pages, asma }) => {
   const navigate = useNavigate();
   
   const handleOpenSurah = ( surah ) => {

@@ -15,16 +15,6 @@ import { LoaderDots } from '@/components/loader'
 import ButtonPagination from '@/components/common/buttonPagination';
 import { useAudioPlayer } from "@/context/AudioPlayerContext";
 
-export const getMurrotalStats = () => {
-  const stats = JSON.parse(localStorage.getItem("murrotal_stats") || "{}");
-  
-  return Object.entries(stats).map(([surah, data]) => ({
-    surah,
-    playCount: data.playCount,
-    minutes: Math.floor(data.totalSeconds / 60) /* data.totalSeconds*/
-  }));
-};
-
 
 const AyatPages = () => {
   const { nomor } = useParams()
@@ -117,12 +107,12 @@ const AyatPages = () => {
     <Navbar active='home' />
     <div className='section-reminder'>
     <Header
-     action='surah'
-     icons='arrow-back'
-     currentIndex={currentIndex}
-     onPlayAudio={handlePlayAudio}
-     quote={`Arti : ${isSurah?.arti}`}
-     title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah?.nama}`}
+      action='surah'
+      icons='arrow-back'
+      currentIndex={currentIndex}
+      onPlayAudio={handlePlayAudio}
+      quote={`Arti : ${isSurah?.arti}`}
+      title={`${userData?.nama?.split(' ')[0]}, Surah ${isSurah?.nama}`}
     />
     </div>
     <div
@@ -130,21 +120,21 @@ const AyatPages = () => {
     className='section-reminder' id='wrapper-ayat'>
      {!loading ? (
      <AyatList
-      attr={ATTRIBUTE}
-      classes={CLASSES}
-      pages={currentAyat}
-      isSurah={dataSurah}
-      ayats={currentListAyat}
-      latin={currentListLatin}
-      currentIndex={currentIndex}
+       attr={ATTRIBUTE}
+       classes={CLASSES}
+       pages={currentAyat}
+       isSurah={dataSurah}
+       ayats={currentListAyat}
+       latin={currentListLatin}
+       currentIndex={currentIndex}
      />) : (<LoaderDots />)}
     </div>
     <div data-info={'Lembar : ' + currentAyat} className='section-reminder' id='wrapper-button-pagination'>
       <ButtonPagination
-       values='surah'
-       props={BUTTON}
-       func={handleButtonSurah}
-       endpoint={'/motivasi.json'} 
+        values='surah'
+        props={BUTTON}
+        func={handleButtonSurah}
+        endpoint={'/motivasi.json'} 
       />
     </div>
    </div>

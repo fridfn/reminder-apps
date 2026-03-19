@@ -3,7 +3,7 @@ import { setDataInfo } from '@/utils/setDataInfo'
 import { convertToArabicNumbers } from "@/utils/convertToArabicNumbers"
 
 
-export const SurahPendek = ({ surah, attr, classes }) => {
+export const ShortSurah = ({ surah, attr, classes }) => {
   return (
    <EachUtils
     of={surah}

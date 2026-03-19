@@ -4,7 +4,7 @@ import getUser from '@/hooks/getUser';
 import Navbar from '@/components/navbar';
 import Sidebar from '@/components/sidebar';
 
-const ProfilePages = ({ data }) => {
+const Message = ({ data }) => {
   return (
    <div className='container'>
     <Sidebar />
@@ -14,4 +14,4 @@ const ProfilePages = ({ data }) => {
   )
 }
 
-export default ProfilePages;
+export default Message;

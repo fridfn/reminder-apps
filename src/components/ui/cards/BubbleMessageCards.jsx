@@ -2,7 +2,7 @@ import React from 'react';
 import Image from '@/components/common/image';
 import muslimWoman5 from '@/assets/muslim_woman_1.webp';
 
-const BubbleMessage = ({ message }) => {
+const BubbleMessageCards = ({ message }) => {
   return (
    <div className='container-bubble'>
     <div className='box-image'>
@@ -15,4 +15,4 @@ const BubbleMessage = ({ message }) => {
   )
 }
 
-export default BubbleMessage;
+export default BubbleMessageCards;

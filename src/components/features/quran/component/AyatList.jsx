@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-
 import EachUtils from '@/utils/eachUtils';
 import { setDataInfo } from '@/utils/setDataInfo'
 import { convertToArabicNumbers } from "@/utils/convertToArabicNumbers"

@@ -18,7 +18,7 @@ const setFontSize = (length) => {
  return fontSize;
 }
 
-const MotivasiPages = () => {
+const MotivationPages = () => {
   const { userData } = getUser();
   const [image, setImage] = useState('')
   const [animate, setAnimate] = useState(false)
@@ -89,4 +89,4 @@ const MotivasiPages = () => {
   )
 }
 
-export default MotivasiPages;
+export default MotivationPages;

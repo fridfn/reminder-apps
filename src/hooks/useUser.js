@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
-const getUser = () => {
+const useUser = () => {
   const location = useLocation()
   const [userData, setUserData] = useState([])
   const { dataLogin } = location.state || {} 
@@ -20,4 +20,4 @@ const getUser = () => {
   return { userData, dataLogin }
 }
 
-export default getUser
+export default useUser;

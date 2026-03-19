@@ -1,7 +1,7 @@
 import { setDataInfo } from '@/utils/setDataInfo'
 
 
-export const MotivasiCards = ({ data, title, attr, classes }) => {
+export const MotivationCards = ({ data, title, attr, classes }) => {
   const objectToArray = Object.entries(data);
   
   return (
