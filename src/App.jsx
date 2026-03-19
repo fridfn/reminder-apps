@@ -2,7 +2,7 @@ import '@/App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '@/styles/pseudo.scss';
-import HaditsPages from '@/pages/main/haditsPages';
+import { Hadist,  from '@/pages/auth/register/onboarding';
 import OdosPages from '@/pages/main/odosPages'
 import ReminderPages from '@/pages/main/reminderPages';
 import SurahPages from '@/pages/main/surahPages';

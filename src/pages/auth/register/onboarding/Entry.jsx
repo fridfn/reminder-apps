@@ -3,7 +3,7 @@ import Input from '@/components/common/input'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, Navigate } from 'react-router-dom'
 
-export const Entry = ({ functions }) => {
+const Entry = ({ functions }) => {
   const userData = getUser()
   const navigate = useNavigate()
   const [ formData, setFormData ] = useState({
@@ -98,3 +98,5 @@ export const Entry = ({ functions }) => {
    </div>
   )
 }
+
+export default Entry;

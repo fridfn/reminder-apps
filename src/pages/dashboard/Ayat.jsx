@@ -16,7 +16,7 @@ import ButtonPagination from '@/components/common/buttonPagination';
 import { useAudioPlayer } from "@/context/AudioPlayerContext";
 
 
-const AyatPages = () => {
+const Ayat = () => {
   const { nomor } = useParams()
   const { userData } = getUser()
   const navigate = useNavigate()
@@ -141,4 +141,4 @@ const AyatPages = () => {
   )
 }
 
-export default AyatPages;
+export default Ayat;

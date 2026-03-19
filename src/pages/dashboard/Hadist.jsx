@@ -10,7 +10,7 @@ import React, { useState, useEffect } from 'react'
 
 const endpoint = `https://api.hadith.gading.dev/books/muslim?range=100-180`
 
-const HaditsPages = () => {
+const Hadist = () => {
   const { userData } = getUser()
   const location = useLocation()
   const [ dataHadits, setDataHadits ] = useState([])
@@ -44,4 +44,4 @@ const HaditsPages = () => {
   )
 }
 
-export default HaditsPages
+export default Hadist;

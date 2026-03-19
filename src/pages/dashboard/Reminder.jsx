@@ -12,7 +12,7 @@ import MotivasiCards from '@/components/common/cardsTemplate';
 import ButtonPagination from '@/components/common/buttonPagination';
 import BubbleMessage from '@/components/common/cards';
 
-const OdosPages = () => {
+const Odos = () => {
   const [odos, setOdos] = useState([])
   const { userData } = getUser()
   const { nama } = userData;

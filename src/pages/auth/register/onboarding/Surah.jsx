@@ -10,7 +10,7 @@ import ComponentImages from '@/components/common/componentImages'
 import React, { useEffect, useState } from 'react'
 
 
-export const Surah = ({ functions, index }) => {
+const Surah = ({ functions, index }) => {
   const userData = getUser();
   const { nama, email, kelas } = userData?.dataLogin
   const [selectedItems, setSelectedItems] = useState([]);
@@ -117,3 +117,5 @@ export const Surah = ({ functions, index }) => {
    </section>
   )
 }
+
+export default Surah;
