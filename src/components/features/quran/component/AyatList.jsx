@@ -13,7 +13,7 @@ const AyatList = ({ attr, classes }) => {
   });
   
   const { playAudio, pauseAudio, registerAyatRef } = useAudioPlayer();
-  const { loading, ayat, currentAyat, currentListLatin, currentListAyat, currentIndex, dataSurah } = useSurahAudio();
+  const { loading, currentAyat, currentListLatin, currentListAyat, currentIndex, dataSurah } = useSurahAudio();
   
   const { name, numberOfAyahs } = dataSurah;
   const removeHtmlTags = (text) => {
@@ -24,17 +24,18 @@ const AyatList = ({ attr, classes }) => {
    if (itemRef.current.length === currentListAyat.length && currentListAyat.length !== 0) {
     observeItems();
    }
-  }, [ayat.length])
+  }, [currentListAyat.length])
   
   return (
-   <EachUtils of={ayat}
+   <EachUtils
+    of={currentListAyat}
     render={(ayats, index) => (
      <div
       data-aos='zoom-in'
       data-aos-duration='500'
+      key={ayats.number.inSurah}
       ref={(el) => registerAyatRef(index, el)}
-      className={`box-ayat ${currentIndex === ayats.number.inSurah - 1 ? 'in-audio': ''}`}
-      key={ayats.number.inSurah}>
+      className={`box-ayat ${currentIndex === ayats.number.inSurah - 1 ? 'in-audio': ''}`}>
       <div className='wrapper-ayat'>
        <p 
         className={setDataInfo({ index: 0, classes: classes })}

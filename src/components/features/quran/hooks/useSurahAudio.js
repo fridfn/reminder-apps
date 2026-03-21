@@ -70,7 +70,8 @@ const useSurahAudio = () => {
     currentSurah,
     pauseAudio,
     currentAyat,
-    currentListAyat
+    currentListAyat,
+    currentListLatin
   }
 }
 
